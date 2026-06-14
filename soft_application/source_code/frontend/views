@@ -1,0 +1,792 @@
+<template>
+  <div class="policy-page">
+    <!-- 页面头部 -->
+    <div class="page-header">
+      <div class="container">
+        <h1 class="page-title">政策解读</h1>
+        <p class="page-desc">AI智能解读中考政策，实时抓取最新政策信息</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- 搜索区域 -->
+      <div class="search-section card">
+        <div class="section-title">
+          <el-icon><Search /></el-icon>
+          <span>政策搜索</span>
+        </div>
+        <el-form :inline="true" :model="searchForm" class="search-form">
+          <el-form-item label="政策标题">
+            <el-input
+              v-model="searchForm.title"
+              placeholder="请输入政策标题"
+              clearable
+              style="width: 300px"
+            />
+          </el-form-item>
+          <el-form-item label="适用地区">
+            <el-select
+              v-model="searchForm.city"
+              placeholder="选择地区"
+              clearable
+              style="width: 150px"
+            >
+              <el-option label="全省通用" value="" />
+              <el-option
+                v-for="city in cityList"
+                :key="city"
+                :label="city"
+                :value="city"
+              />
+            </el-select>
+          </el-form-item>
+          <el-form-item label="政策分类">
+            <el-select
+              v-model="searchForm.category"
+              placeholder="选择分类"
+              clearable
+              style="width: 150px"
+            >
+              <el-option
+                v-for="category in policyCategories"
+                :key="category.value"
+                :label="category.label"
+                :value="category.value"
+              />
+            </el-select>
+          </el-form-item>
+          <el-form-item label="发布日期">
+            <el-date-picker
+              v-model="searchForm.dateRange"
+              type="daterange"
+              range-separator="至"
+              start-placeholder="开始日期"
+              end-placeholder="结束日期"
+              style="width: 300px"
+            />
+          </el-form-item>
+          <el-form-item>
+            <el-button type="primary" @click="handleSearch" :loading="loading">
+              <el-icon><Search /></el-icon>查询
+            </el-button>
+            <el-button @click="handleReset">
+              <el-icon><Refresh /></el-icon>重置
+            </el-button>
+          </el-form-item>
+        </el-form>
+      </div>
+
+      <!-- 政策列表 -->
+      <div class="policy-list">
+        <div v-if="loading" class="loading-wrapper">
+          <el-skeleton :rows="4" animated />
+        </div>
+        <div v-else-if="policyList.length === 0" class="empty-wrapper">
+          <el-empty description="暂无政策数据" />
+        </div>
+        <div v-else class="policy-grid">
+          <div class="policy-card" v-for="policy in policyList" :key="policy.id">
+            <div class="policy-header">
+              <h3 class="policy-title">{{ policy.title }}</h3>
+              <div class="policy-meta">
+                <el-tag v-if="policy.city" type="info" size="small">
+                  {{ policy.city }}
+                </el-tag>
+                <el-tag v-else type="success" size="small">
+                  全省通用
+                </el-tag>
+                <el-tag type="warning" size="small">
+                  {{ policy.publishDate }}
+                </el-tag>
+                <el-tag v-if="policy.category" type="primary" size="small" effect="plain">
+                  {{ policy.category }}
+                </el-tag>
+              </div>
+            </div>
+            <div class="policy-content">
+              <p class="content-text">{{ policy.content }}</p>
+            </div>
+            <div class="policy-actions">
+              <el-button type="primary" size="small" @click="viewDetail(policy)">
+                查看详情
+              </el-button>
+              <el-button type="success" size="small" @click="aiInterpret(policy)">
+                <el-icon><MagicStick /></el-icon>
+                AI解读
+              </el-button>
+              <el-button type="info" size="small" @click="downloadPolicy(policy)">
+                <el-icon><Download /></el-icon>
+                下载
+              </el-button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 分页 -->
+      <div class="pagination-wrapper" v-if="total > 0">
+        <el-pagination
+          v-model:current-page="currentPage"
+          v-model:page-size="pageSize"
+          :page-sizes="[10, 20, 50, 100]"
+          :total="total"
+          layout="total, sizes, prev, pager, next, jumper"
+          @size-change="handleSizeChange"
+          @current-change="handleCurrentChange"
+        />
+      </div>
+
+      <!-- 政策问答机器人 -->
+      <div class="policy-qa-section card">
+        <div class="section-title">
+          <el-icon><Message /></el-icon>
+          <span>AI政策问答</span>
+        </div>
+        <div class="qa-container">
+          <div class="qa-chat" ref="qaChat">
+            <div class="message-item ai-message" v-for="(msg, index) in qaMessages" :key="index">
+              <div class="message-avatar">
+                <el-avatar size="40" type="primary">AI</el-avatar>
+              </div>
+              <div class="message-content">
+                <div class="message-text">{{ msg.content }}</div>
+                <div class="message-time">{{ msg.time }}</div>
+              </div>
+            </div>
+          </div>
+          <div class="qa-input">
+            <el-input
+              v-model="qaInput"
+              placeholder="输入您的问题，如：指标到校政策、加分政策等"
+              @keyup.enter="sendQAMessage"
+            />
+            <el-button type="primary" @click="sendQAMessage" :loading="qaLoading">
+              <el-icon><Message /></el-icon>发送
+            </el-button>
+            <el-button type="info" @click="startVoiceInput">
+              <el-icon><MagicStick /></el-icon>语音
+            </el-button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI解读对话框 -->
+    <el-dialog v-model="aiDialogVisible" title="AI政策解读" width="80%">
+      <div class="ai-interpretation">
+        <div class="original-policy">
+          <h4>原文政策</h4>
+          <div class="policy-info">
+            <h3>{{ currentPolicy.title }}</h3>
+            <div class="policy-meta">
+              <span v-if="currentPolicy.city">{{ currentPolicy.city }}</span>
+              <span v-else>全省通用</span>
+              <span>{{ currentPolicy.publishDate }}</span>
+            </div>
+            <p class="policy-text">{{ currentPolicy.content }}</p>
+          </div>
+        </div>
+        <div class="ai-analysis" v-if="!aiLoading">
+          <h4>AI智能分析</h4>
+          <div class="analysis-content">
+            <div class="analysis-section">
+              <h5>政策要点</h5>
+              <ul>
+                <li v-for="(point, index) in aiInterpretation.keyPoints" :key="index">
+                  {{ point }}
+                </li>
+              </ul>
+            </div>
+            <div class="analysis-section">
+              <h5>对考生的影响</h5>
+              <p>{{ aiInterpretation.impact }}</p>
+            </div>
+            <div class="analysis-section">
+              <h5>应对建议</h5>
+              <p>{{ aiInterpretation.suggestions }}</p>
+            </div>
+          </div>
+        </div>
+        <div v-else class="ai-loading">
+          <el-skeleton :rows="10" animated />
+        </div>
+      </div>
+      <template #footer>
+        <span class="dialog-footer">
+          <el-button @click="aiDialogVisible = false">关闭</el-button>
+          <el-button type="primary" @click="saveInterpretation">保存解读</el-button>
+        </span>
+      </template>
+    </el-dialog>
+  </div>
+</template>
+
+<script>
+import { ref, reactive, onMounted, nextTick } from 'vue'
+import { useRouter } from 'vue-router'
+import { ElMessage } from 'element-plus'
+import {
+  Search, Refresh, MagicStick, Download, Message
+} from '@element-plus/icons-vue'
+import { policyApi, aiApi } from '../api'
+import { cityList, policyCategories } from '../utils'
+
+export default {
+  name: 'Policy',
+  components: {
+    Search, Refresh, MagicStick, Download, Message
+  },
+  setup() {
+    const router = useRouter()
+    const qaChat = ref(null)
+
+    const loading = ref(false)
+    const policyList = ref([])
+    const currentPage = ref(1)
+    const pageSize = ref(10)
+    const total = ref(0)
+
+    const aiDialogVisible = ref(false)
+    const aiLoading = ref(false)
+    const currentPolicy = ref({})
+    const aiInterpretation = ref({
+      keyPoints: [],
+      impact: '',
+      suggestions: ''
+    })
+
+    const qaInput = ref('')
+    const qaLoading = ref(false)
+    const qaMessages = ref([
+      {
+        content: '您好！我是AI政策助手，有什么中考政策问题可以问我，比如指标到校、加分政策、志愿填报等。',
+        time: new Date().toLocaleTimeString()
+      }
+    ])
+
+    const searchForm = reactive({
+      title: '',
+      city: '',
+      category: '',
+      dateRange: []
+    })
+
+    const fetchPolicyList = async () => {
+      loading.value = true
+      try {
+        // 构建搜索参数
+        const params = {
+          page: currentPage.value,
+          pageSize: pageSize.value,
+          title: searchForm.title,
+          city: searchForm.city,
+          category: searchForm.category
+        }
+        
+        // 添加日期范围参数
+        if (searchForm.dateRange && searchForm.dateRange.length === 2) {
+          params.startDate = searchForm.dateRange[0]
+          params.endDate = searchForm.dateRange[1]
+        }
+        
+        // 调用真实API
+        const response = await policyApi.getPolicyList(params)
+        if (response.success) {
+          policyList.value = response.data.list || []
+          total.value = response.data.total || 0
+        } else {
+          ElMessage.error(response.message || '获取政策列表失败')
+        }
+      } catch (error) {
+        console.error('获取政策列表失败:', error)
+        ElMessage.error('获取政策列表失败')
+      } finally {
+        loading.value = false
+      }
+    }
+
+    const handleSearch = () => {
+      currentPage.value = 1
+      fetchPolicyList()
+    }
+
+    const handleReset = () => {
+      searchForm.title = ''
+      searchForm.city = ''
+      searchForm.category = ''
+      searchForm.dateRange = []
+      currentPage.value = 1
+      fetchPolicyList()
+    }
+
+    const viewDetail = async (policy) => {
+      try {
+        const response = await policyApi.getPolicyDetail(policy.id)
+        if (response.success) {
+          // 可以在这里打开详情对话框或跳转到详情页面
+          ElMessage.success(`查看${policy.title}详情成功`)
+        } else {
+          ElMessage.error(response.message || '获取政策详情失败')
+        }
+      } catch (error) {
+        console.error('获取政策详情失败:', error)
+        ElMessage.error('获取政策详情失败')
+      }
+    }
+
+    const aiInterpret = async (policy) => {
+      currentPolicy.value = policy
+      aiDialogVisible.value = true
+      aiLoading.value = true
+
+      try {
+        // 调用真实API获取AI解读
+        const response = await aiApi.interpretPolicy({
+          policyId: policy.id,
+          policyContent: policy.content
+        })
+        
+        if (response.success) {
+          aiInterpretation.value = response.data || {
+            keyPoints: [],
+            impact: '',
+            suggestions: ''
+          }
+        } else {
+          ElMessage.error(response.message || '获取AI解读失败')
+        }
+      } catch (error) {
+        console.error('获取AI解读失败:', error)
+        ElMessage.error('获取AI解读失败')
+      } finally {
+        aiLoading.value = false
+      }
+    }
+
+    const downloadPolicy = (policy) => {
+      ElMessage.success(`开始下载${policy.title}`)
+    }
+
+    const saveInterpretation = () => {
+      ElMessage.success('解读已保存')
+      aiDialogVisible.value = false
+    }
+
+    const handleSizeChange = (val) => {
+      pageSize.value = val
+      fetchPolicyList()
+    }
+
+    const handleCurrentChange = (val) => {
+      currentPage.value = val
+      fetchPolicyList()
+    }
+
+    const sendQAMessage = async () => {
+      if (!qaInput.value.trim()) return
+
+      const question = qaInput.value.trim()
+      qaInput.value = ''
+
+      // 添加用户问题
+      qaMessages.value.push({
+        content: question,
+        time: new Date().toLocaleTimeString()
+      })
+
+      qaLoading.value = true
+
+      try {
+        // 调用真实API获取AI回答
+        const response = await aiApi.openclawChat({
+          message: question,
+          type: 'policy'
+        })
+        
+        if (response.success) {
+          qaMessages.value.push({
+            content: response.data.answer || '感谢您的问题，我正在学习更多政策知识，稍后为您解答。',
+            time: new Date().toLocaleTimeString()
+          })
+        } else {
+          ElMessage.error(response.message || '获取AI回答失败')
+        }
+      } catch (error) {
+        console.error('获取AI回答失败:', error)
+        ElMessage.error('获取AI回答失败')
+      } finally {
+        qaLoading.value = false
+        scrollToBottom()
+      }
+    }
+
+    const startVoiceInput = () => {
+      // 检查浏览器是否支持语音识别
+      if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
+        const recognition = new SpeechRecognition()
+        
+        recognition.lang = 'zh-CN'
+        recognition.continuous = false
+        recognition.interimResults = false
+        
+        ElMessage.info('请开始说话...')
+        
+        recognition.onstart = () => {
+          console.log('语音识别开始')
+        }
+        
+        recognition.onresult = (event) => {
+          const transcript = event.results[0][0].transcript
+          qaInput.value = transcript
+          ElMessage.success('语音识别成功')
+        }
+        
+        recognition.onerror = (event) => {
+          console.error('语音识别错误:', event.error)
+          ElMessage.error('语音识别失败，请重试')
+        }
+        
+        recognition.onend = () => {
+          console.log('语音识别结束')
+        }
+        
+        recognition.start()
+      } else {
+        ElMessage.error('您的浏览器不支持语音识别功能')
+      }
+    }
+
+    const scrollToBottom = () => {
+      nextTick(() => {
+        if (qaChat.value) {
+          qaChat.value.scrollTop = qaChat.value.scrollHeight
+        }
+      })
+    }
+
+    onMounted(() => {
+      fetchPolicyList()
+    })
+
+    return {
+      loading,
+      policyList,
+      currentPage,
+      pageSize,
+      total,
+      searchForm,
+      cityList,
+      policyCategories,
+      aiDialogVisible,
+      aiLoading,
+      currentPolicy,
+      aiInterpretation,
+      qaInput,
+      qaLoading,
+      qaMessages,
+      qaChat,
+      handleSearch,
+      handleReset,
+      viewDetail,
+      aiInterpret,
+      downloadPolicy,
+      saveInterpretation,
+      handleSizeChange,
+      handleCurrentChange,
+      sendQAMessage,
+      startVoiceInput
+    }
+  }
+}
+</script>
+
+<style scoped>
+.policy-page {
+  min-height: 100%;
+}
+
+.page-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  padding: 40px 0;
+  margin-bottom: 30px;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.page-title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  border: none;
+  padding: 0;
+  color: #fff;
+}
+
+.page-desc {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #303133;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ebeef5;
+}
+
+.section-title .el-icon {
+  font-size: 20px;
+  color: #409EFF;
+}
+
+.search-section {
+  margin-bottom: 30px;
+}
+
+.search-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+}
+
+.policy-list {
+  margin-bottom: 30px;
+}
+
+.policy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.policy-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.policy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.policy-header {
+  margin-bottom: 15px;
+}
+
+.policy-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #303133;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.policy-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.policy-content {
+  margin-bottom: 20px;
+}
+
+.content-text {
+  font-size: 14px;
+  color: #606266;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.policy-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.policy-qa-section {
+  margin-bottom: 30px;
+}
+
+.qa-container {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+}
+
+.qa-chat {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  background: #f5f7fa;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 10px;
+}
+
+.message-item {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.message-avatar {
+  flex-shrink: 0;
+}
+
+.message-content {
+  flex: 1;
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.message-text {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.message-time {
+  font-size: 12px;
+  color: #909399;
+  text-align: right;
+}
+
+.qa-input {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.qa-input .el-input {
+  flex: 1;
+}
+
+.ai-interpretation {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.original-policy {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ebeef5;
+}
+
+.original-policy h4 {
+  margin-bottom: 15px;
+  color: #303133;
+}
+
+.policy-info h3 {
+  margin-bottom: 10px;
+  color: #303133;
+}
+
+.policy-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #606266;
+  margin-top: 15px;
+}
+
+.ai-analysis h4 {
+  margin-bottom: 20px;
+  color: #303133;
+}
+
+.analysis-section {
+  margin-bottom: 20px;
+}
+
+.analysis-section h5 {
+  margin-bottom: 10px;
+  color: #409EFF;
+}
+
+.analysis-section ul {
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.analysis-section li {
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+
+.analysis-section p {
+  line-height: 1.6;
+  color: #606266;
+}
+
+.loading-wrapper {
+  padding: 40px 0;
+}
+
+.empty-wrapper {
+  padding: 60px 0;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    padding: 30px 0;
+  }
+
+  .page-title {
+    font-size: 24px;
+  }
+
+  .search-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-form .el-form-item {
+    margin-right: 0;
+  }
+
+  .policy-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .qa-container {
+    height: 300px;
+  }
+
+  .qa-input {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .qa-input .el-button {
+    width: 100%;
+  }
+}
+</style>

@@ -1,0 +1,33 @@
+{
+  "steps": [
+    {
+      "step": "test_1_auth_init",
+      "success": true,
+      "timestamp": 1781388804.450895
+    },
+    {
+      "step": "test_2_jwt_handler",
+      "success": true,
+      "timestamp": 1781388804.450895
+    },
+    {
+      "step": "test_3_rbac",
+      "success": true,
+      "timestamp": 1781388804.451907,
+      "data": {
+        "roles": [
+          "admin",
+          "teacher",
+          "student",
+          "guest"
+        ]
+      }
+    },
+    {
+      "step": "test_4_auth_module",
+      "success": true,
+      "timestamp": 1781388952.7596138
+    }
+  ],
+  "final_status": "completed"
+}

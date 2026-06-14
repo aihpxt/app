@@ -1,0 +1,90 @@
+{
+  "steps": [
+    {
+      "step": "step_1_fastapi",
+      "success": true,
+      "timestamp": 1781389112.1556213
+    },
+    {
+      "step": "step_2_rate_limit",
+      "success": true,
+      "timestamp": 1781389112.1803496
+    },
+    {
+      "step": "step_3_config",
+      "success": true,
+      "timestamp": 1781389112.1949148
+    },
+    {
+      "step": "step_4_trace_middleware",
+      "success": true,
+      "timestamp": 1781389112.1969748
+    },
+    {
+      "step": "step_5_logging",
+      "success": true,
+      "timestamp": 1781389112.2141416
+    },
+    {
+      "step": "step_6_start_agents",
+      "success": true,
+      "timestamp": 1781389112.2141416
+    },
+    {
+      "step": "step_6_agents",
+      "success": true,
+      "timestamp": 1781389307.2090461
+    },
+    {
+      "step": "step_7_create_app",
+      "success": true,
+      "timestamp": 1781389307.2095609
+    },
+    {
+      "step": "step_8_audit",
+      "success": true,
+      "timestamp": 1781389307.223417
+    },
+    {
+      "step": "step_9_prometheus",
+      "success": true,
+      "timestamp": 1781389307.3142455
+    },
+    {
+      "step": "step_10_start_routes",
+      "success": true,
+      "timestamp": 1781389307.315087
+    },
+    {
+      "step": "step_10_import_routes",
+      "success": true,
+      "timestamp": 1781389307.3360112
+    },
+    {
+      "step": "step_10_register_routes",
+      "success": true,
+      "timestamp": 1781389307.9016447,
+      "data": {
+        "routes_count": 194
+      }
+    },
+    {
+      "step": "step_11_exception",
+      "success": true,
+      "timestamp": 1781389307.903664
+    },
+    {
+      "step": "step_12_test_register",
+      "success": true,
+      "timestamp": 1781389308.1723602,
+      "data": {
+        "status_code": 200,
+        "response": {
+          "success": false,
+          "message": "注册失败: (sqlite3.OperationalError) no such column: users.password_hash\n[SQL: SELECT users.id AS users_id, users.username AS users_username, users.password_hash AS users_password_hash, users.email AS users_email, users.phone AS users_phone, users.role AS users_role, users.created_at AS users_created_at, users.updated_at AS users_updated_at \nFROM users \nWHERE users.username = ? OR users.phone = ?\n LIMIT ? OFFSET ?]\n[parameters: ('final_test_1781389308', '13581389308', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)"
+        }
+      }
+    }
+  ],
+  "final_status": "completed"
+}

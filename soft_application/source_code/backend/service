@@ -1,0 +1,66 @@
+package com.yunnan.ai.service;
+
+import com.yunnan.ai.model.School;
+import com.yunnan.ai.repository.SchoolRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+
+@Service
+public class SchoolService {
+
+    @Autowired
+    private SchoolRepository schoolRepository;
+
+    public List<School> getAllSchools() {
+        return schoolRepository.findActiveSchools();
+    }
+
+    public School getSchoolById(Long id) {
+        return schoolRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("学校不存在"));
+    }
+
+    public School getSchoolByCode(String code) {
+        return schoolRepository.findByCode(code)
+                .orElseThrow(() -> new RuntimeException("学校不存在"));
+    }
+
+    public List<School> getSchoolsByCity(String city) {
+        return schoolRepository.findByCity(city);
+    }
+
+    public List<School> getSchoolsByType(Integer type) {
+        return schoolRepository.findByType(type);
+    }
+
+    public List<School> getSchoolsByCityAndType(String city, Integer type) {
+        return schoolRepository.findByCityAndType(city, type);
+    }
+
+    public List<School> searchSchools(String keyword) {
+        return schoolRepository.searchByKeyword(keyword);
+    }
+
+    @Transactional
+    public School saveSchool(School school) {
+        if (schoolRepository.existsByCode(school.getCode())) {
+            throw new RuntimeException("学校代码已存在");
+        }
+        return schoolRepository.save(school);
+    }
+
+    @Transactional
+    public School updateSchool(School school) {
+        return schoolRepository.save(school);
+    }
+
+    @Transactional
+    public void deleteSchool(Long id) {
+        School school = getSchoolById(id);
+        school.setStatus(0);
+        schoolRepository.save(school);
+    }
+}

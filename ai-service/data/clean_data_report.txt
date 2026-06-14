@@ -1,0 +1,30 @@
+
+================================================================================
+学校数据清洗报告 - 2026-05-24 23:22:13
+================================================================================
+
+数据来源统计:
+  - backup: 438 所
+  - wechat: 339 所
+  - platform: 294 所
+
+合并结果:
+  - 原始去重后: 783 所
+  - 最终入库: 783 所
+
+字段统一:
+  - type: 整数类型 (1=普通高中, 2=重点高中等)
+  - type_name: 字符串类型 (完全中学, 重点高中等)
+  - school_type: 保留原始类型
+
+新建统一数据库:
+  - 路径: E:\aiphxt-app\ai-service\data\unified_school_data.db
+  - 字段: id, name, city, district, type, type_name, school_type, level,
+          is_public, is_key, address, phone, website, description, features,
+          min_score, one_rate, view_count 等
+
+下一步:
+  1. 将 unified_school_data.db 复制到后端数据目录
+  2. 更新后端配置指向新的数据库
+  3. 重启后端服务
+================================================================================

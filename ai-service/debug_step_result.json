@@ -1,0 +1,112 @@
+{
+  "steps": [
+    {
+      "step": "step_1_python_check",
+      "success": true,
+      "timestamp": 1781388680.9802163,
+      "data": {
+        "python_version": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+        "working_dir": "D:\\aiphxt-app\\ai-service"
+      }
+    },
+    {
+      "step": "step_2_import_fastapi",
+      "success": true,
+      "timestamp": 1781388681.7508597,
+      "data": {
+        "version": "0.136.3"
+      }
+    },
+    {
+      "step": "step_3_database_pool",
+      "success": true,
+      "timestamp": 1781388682.0975664,
+      "data": {
+        "database_url": "sqlite:///D:\\aiphxt-app\\ai-service\\app.db"
+      }
+    },
+    {
+      "step": "step_4_import_user_model",
+      "success": true,
+      "timestamp": 1781388682.1117544,
+      "data": {
+        "tablename": "users"
+      }
+    },
+    {
+      "step": "step_5_import_auth",
+      "success": true,
+      "timestamp": 1781388828.9302998,
+      "data": {
+        "roles": [
+          "admin",
+          "teacher",
+          "student",
+          "guest"
+        ]
+      }
+    },
+    {
+      "step": "step_6_direct_user_creation",
+      "success": true,
+      "timestamp": 1781388829.2375019,
+      "data": {
+        "created_user": "direct_func_test_1781388828",
+        "user_id": 3
+      }
+    },
+    {
+      "step": "step_7_start_import_app",
+      "success": true,
+      "timestamp": 1781388829.2385108
+    },
+    {
+      "step": "step_7_import_app",
+      "success": true,
+      "timestamp": 1781388874.6468952,
+      "data": {
+        "routes_count": 194
+      }
+    },
+    {
+      "step": "step_8_test_health",
+      "success": true,
+      "timestamp": 1781388874.7855954,
+      "data": {
+        "status_code": 200,
+        "response": {
+          "success": true,
+          "data": {
+            "status": "healthy",
+            "service": "ai-service",
+            "version": "1.0.0"
+          },
+          "message": "服务运行正常"
+        }
+      }
+    },
+    {
+      "step": "step_9_test_register",
+      "success": true,
+      "timestamp": 1781388875.1038835,
+      "data": {
+        "status_code": 200,
+        "response": {
+          "success": true,
+          "data": {
+            "user_id": "4",
+            "username": "endpoint_test_1781388874",
+            "email": "endpoint_test_1781388874@test.com",
+            "phone": "13781388874",
+            "roles": [
+              "student"
+            ],
+            "created_at": "2026-06-13T22:14:34"
+          },
+          "message": "注册成功"
+        }
+      }
+    }
+  ],
+  "final_status": "completed"
+}

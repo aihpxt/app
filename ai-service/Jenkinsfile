@@ -1,0 +1,114 @@
+pipeline {
+    agent any
+
+    environment {
+        DOCKER_IMAGE = "ai-service"
+        DOCKER_REGISTRY = "registry.example.com"
+        APP_NAME = "ai-service"
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Lint') {
+            steps {
+                sh '''
+                    python -m pip install flake8 black
+                    flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+                    black --check .
+                '''
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh '''
+                    python -m pip install -r requirements.txt
+                    python -m pip install pytest pytest-cov pytest-asyncio
+                    pytest tests/ --cov=. --cov-report=xml -v
+                '''
+            }
+            post {
+                always {
+                    junit 'coverage.xml'
+                    publishHTML(target: [
+                        reportDir: 'htmlcov',
+                        reportFiles: 'index.html',
+                        reportName: 'Coverage Report'
+                    ])
+                }
+            }
+        }
+
+        stage('Build') {
+            steps {
+                script {
+                    def imageTag = "${env.BUILD_NUMBER}-${env.GIT_COMMIT[0..7]}"
+                    env.IMAGE_TAG = imageTag
+
+                    def dockerImage = docker.build("${DOCKER_REGISTRY}/${DOCKER_IMAGE}:${imageTag}", "-f Dockerfile .")
+                    dockerImage.push("${imageTag}")
+                    dockerImage.push("latest")
+                }
+            }
+        }
+
+        stage('Security Scan') {
+            steps {
+                sh '''
+                    python -m pip install safety bandit
+                    safety check || true
+                    bandit -r . -f json -o bandit_report.json || true
+                '''
+            }
+        }
+
+        stage('Deploy to Staging') {
+            when {
+                branch 'develop'
+            }
+            steps {
+                sh '''
+                    ssh ${DEPLOY_USER}@staging.server.com "
+                        cd /opt/ai-service
+                        docker pull ${DOCKER_REGISTRY}/${DOCKER_IMAGE}:${IMAGE_TAG}
+                        docker-compose up -d
+                    "
+                '''
+            }
+        }
+
+        stage('Deploy to Production') {
+            when {
+                branch 'main'
+            }
+            steps {
+                input message: 'Deploy to Production?', ok: 'Deploy'
+                sh '''
+                    ssh ${DEPLOY_USER}@production.server.com "
+                        cd /opt/ai-service
+                        docker pull ${DOCKER_REGISTRY}/${DOCKER_IMAGE}:${IMAGE_TAG}
+                        docker-compose up -d
+                        docker image prune -af
+                    "
+                '''
+            }
+        }
+    }
+
+    post {
+        always {
+            cleanWs()
+        }
+        success {
+            echo 'Pipeline succeeded!'
+        }
+        failure {
+            echo 'Pipeline failed!'
+        }
+    }
+}

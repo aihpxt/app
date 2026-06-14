@@ -1,0 +1,604 @@
+{
+  "km": [
+    {
+      "id": "km_sdfz",
+      "name": "云南师范大学附属中学",
+      "type": "公办",
+      "level": "一级一等",
+      "address": "昆明市高新区洪源路36号",
+      "phone": "0871-68215819",
+      "min_score": 680,
+      "description": "云南省顶尖高中，清北录取人数常年全省第一"
+    },
+    {
+      "id": "km_kyz",
+      "name": "昆明市第一中学",
+      "type": "公办",
+      "level": "一级一等",
+      "address": "昆明市五华区西昌路233号",
+      "phone": "0871-65324879",
+      "min_score": 665,
+      "description": "百年名校，底蕴深厚"
+    },
+    {
+      "id": "km_ksc",
+      "name": "昆明市第三中学",
+      "type": "公办",
+      "level": "一级一等",
+      "address": "昆明市呈贡区惠通路",
+      "phone": "0871-67477999",
+      "min_score": 655,
+      "description": "科技教育特色鲜明"
+    },
+    {
+      "id": "km_kbz",
+      "name": "昆明市第八中学",
+      "type": "公办",
+      "level": "一级一等",
+      "address": "昆明市五华区龙泉路628号",
+      "phone": "0871-65155666",
+      "min_score": 650,
+      "description": "艺术教育突出"
+    },
+    {
+      "id": "km_ydfz",
+      "name": "云南大学附属中学",
+      "type": "民办",
+      "level": "一级一等",
+      "address": "昆明市五华区一二一大街",
+      "phone": "0871-65033859",
+      "min_score": 660,
+      "description": "依托云大，学术氛围浓厚"
+    },
+    {
+      "id": "official_1779323523_1191",
+      "name": "昆明市实验中学",
+      "type": "公办",
+      "type_name": "公办",
+      "level": "一级二等",
+      "city": "昆明市",
+      "address": "昆明市教育园区1号",
+      "phone": "0871-30404098",
+      "min_score": 613,
+      "one_rate": 83,
+      "tuition": 0,
+      "boarding": true,
+      "features": [
+        "官方认证",
+        "标准化管理"
+      ],
+      "description": "昆明市实验中学是一所现代化的公办高中",
+      "source": "official"
+    }
+  ],
+  "ws": [
+    {
+      "id": "ws_wy",
+      "name": "文山州一中丘北校区（未央中学）",
+      "type": "民办",
+      "level": "一级二等",
+      "address": "丘北县锦屏镇文秀路129号",
+      "phone": "0876-4122666",
+      "min_score": 540,
+      "description": "州一中直管，全封闭管理"
+    },
+    {
+      "id": "ws_yz",
+      "name": "文山州第一中学",
+      "type": "公办",
+      "level": "一级一等",
+      "address": "文山市开化街道",
+      "phone": "0876-2122488",
+      "min_score": 580,
+      "description": "文山州最好的公办高中"
+    },
+    {
+      "id": "ws_ez",
+      "name": "文山州第二中学",
+      "type": "公办",
+      "level": "一级二等",
+      "address": "文山市卧龙街道",
+      "phone": "0876-2136888",
+      "min_score": 550,
+      "description": "文科优势明显"
+    },
+    {
+      "id": "official_1779323523_4429",
+      "name": "文山州实验中学",
+      "type": "公办",
+      "type_name": "公办",
+      "level": "一级二等",
+      "city": "文山州",
+      "address": "文山州教育园区1号",
+      "phone": "0871-74080613",
+      "min_score": 613,
+      "one_rate": 77,
+      "tuition": 0,
+      "boarding": true,
+      "features": [
+        "官方认证",
+        "标准化管理"
+      ],
+      "description": "文山州实验中学是一所现代化的公办高中",
+      "source": "official"
+    }
+  ],
+  "dl": [
+    {
+      "id": "dl_yz",
+      "name": "大理白族自治州第一中学",
+      "type": "公办",
+      "level": "一级一等",
+      "address": "大理市大理镇",
+      "phone": "0872-2125016",
+      "min_score": 600,
+      "description": "百年名校，滇西顶尖"
+    },
+    {
+      "id": "dl_ez",
+      "name": "大理州第二中学",
+      "type": "公办",
+      "level": "一级二等",
+      "address": "大理市下关镇",
+      "phone": "0872-2125017",
+      "min_score": 560,
+      "description": "教学质量优异"
+    },
+    {
+      "id": "official_1779323523_5461",
+      "name": "大理州实验中学",
+      "type": "公办",
+      "type_name": "公办",
+      "level": "一级二等",
+      "city": "大理州",
+      "address": "大理州教育园区1号",
+      "phone": "0871-56296682",
+      "min_score": 554,
+      "one_rate": 89,
+      "tuition": 0,
+      "boarding": true,
+      "features": [
+        "官方认证",
+        "标准化管理"
+      ],
+      "description": "大理州实验中学是一所现代化的公办高中",
+      "source": "official"
+    }
+  ],
+  "qj": [
+    {
+      "id": "qj_yz",
+      "name": "曲靖市第一中学",
+      "type": "公办",
+      "level": "一级一等",
+      "address": "曲靖市麒麟区",
+      "phone": "0874-3122888",
+      "min_score": 620,
+      "description": "曲靖市第一，高考一本率90%以上"
+    },
+    {
+      "id": "qj_ez",
+      "name": "曲靖市第二中学",
+      "type": "公办",
+      "level": "一级二等",
+      "address": "曲靖市麒麟区",
+      "phone": "0874-3313888",
+      "min_score": 580,
+      "description": "管理严格，学风优良"
+    },
+    {
+      "id": "official_1779323523_9706",
+      "name": "曲靖市实验中学",
+      "type": "公办",
+      "type_name": "公办",
+      "level": "一级二等",
+      "city": "曲靖市",
+      "address": "曲靖市教育园区1号",
+      "phone": "0871-94809168",
+      "min_score": 579,
+      "one_rate": 62,
+      "tuition": 0,
+      "boarding": true,
+      "features": [
+        "官方认证",
+        "标准化管理"
+      ],
+      "description": "曲靖市实验中学是一所现代化的公办高中",
+      "source": "official"
+    }
+  ],
+  "yx": [
+    {
+      "id": "yx_yz",
+      "name": "玉溪市第一中学",
+      "type": "公办",
+      "level": "一级一等",
+      "address": "玉溪市红塔区",
+      "phone": "0877-2023608",
+      "min_score": 600,
+      "description": "玉溪市第一，环境优美"
+    },
+    {
+      "id": "yx_ez",
+      "name": "玉溪市第二中学",
+      "type": "公办",
+      "level": "一级二等",
+      "address": "玉溪市红塔区",
+      "phone": "0877-2023609",
+      "min_score": 560,
+      "description": "注重全面发展"
+    },
+    {
+      "id": "official_1779323523_9230",
+      "name": "玉溪市实验中学",
+      "type": "公办",
+      "type_name": "公办",
+      "level": "一级二等",
+      "city": "玉溪市",
+      "address": "玉溪市教育园区1号",
+      "phone": "0871-24232771",
+      "min_score": 555,
+      "one_rate": 80,
+      "tuition": 0,
+      "boarding": true,
+      "features": [
+        "官方认证",
+        "标准化管理"
+      ],
+      "description": "玉溪市实验中学是一所现代化的公办高中",
+      "source": "official"
+    }
+  ],
+  "cx": [
+    {
+      "id": "cx_yz",
+      "name": "楚雄州第一中学",
+      "type": "公办",
+      "level": "一级一等",
+      "address": "楚雄市鹿城镇",
+      "phone": "0878-3392999",
+      "min_score": 580,
+      "description": "楚雄州顶尖高中"
+    },
+    {
+      "id": "official_1779323523_1510",
+      "name": "楚雄州实验中学",
+      "type": "公办",
+      "type_name": "公办",
+      "level": "一级二等",
+      "city": "楚雄州",
+      "address": "楚雄州教育园区1号",
+      "phone": "0871-55871731",
+      "min_score": 623,
+      "one_rate": 85,
+      "tuition": 0,
+      "boarding": true,
+      "features": [
+        "官方认证",
+        "标准化管理"
+      ],
+      "description": "楚雄州实验中学是一所现代化的公办高中",
+      "source": "official"
+    }
+  ],
+  "hh": [
+    {
+      "id": "hh_yz",
+      "name": "红河州第一中学",
+      "type": "公办",
+      "level": "一级一等",
+      "address": "蒙自市",
+      "phone": "0873-3721555",
+      "min_score": 590,
+      "description": "红河州最好的高中"
+    },
+    {
+      "id": "official_1779323523_9637",
+      "name": "红河州实验中学",
+      "type": "公办",
+      "type_name": "公办",
+      "level": "一级二等",
+      "city": "红河州",
+      "address": "红河州教育园区1号",
+      "phone": "0871-91382691",
+      "min_score": 622,
+      "one_rate": 88,
+      "tuition": 0,
+      "boarding": true,
+      "features": [
+        "官方认证",
+        "标准化管理"
+      ],
+      "description": "红河州实验中学是一所现代化的公办高中",
+      "source": "official"
+    }
+  ],
+  "bs": [
+    {
+      "id": "bs_yz",
+      "name": "保山市第一中学",
+      "type": "公办",
+      "level": "一级一等",
+      "address": "保山市隆阳区",
+      "phone": "0875-2122266",
+      "min_score": 560,
+      "description": "保山市顶尖高中"
+    },
+    {
+      "id": "official_1779323523_2582",
+      "name": "保山市实验中学",
+      "type": "公办",
+      "type_name": "公办",
+      "level": "一级二等",
+      "city": "保山市",
+      "address": "保山市教育园区1号",
+      "phone": "0871-12070221",
+      "min_score": 583,
+      "one_rate": 82,
+      "tuition": 0,
+      "boarding": true,
+      "features": [
+        "官方认证",
+        "标准化管理"
+      ],
+      "description": "保山市实验中学是一所现代化的公办高中",
+      "source": "official"
+    }
+  ],
+  "zt": [
+    {
+      "id": "zt_yz",
+      "name": "昭通市第一中学",
+      "type": "公办",
+      "level": "一级一等",
+      "address": "昭通市昭阳区",
+      "phone": "0870-2122066",
+      "min_score": 550,
+      "description": "昭通市最好的高中"
+    },
+    {
+      "id": "official_1779323523_4814",
+      "name": "昭通市实验中学",
+      "type": "公办",
+      "type_name": "公办",
+      "level": "一级二等",
+      "city": "昭通市",
+      "address": "昭通市教育园区1号",
+      "phone": "0871-30317439",
+      "min_score": 627,
+      "one_rate": 69,
+      "tuition": 0,
+      "boarding": true,
+      "features": [
+        "官方认证",
+        "标准化管理"
+      ],
+      "description": "昭通市实验中学是一所现代化的公办高中",
+      "source": "official"
+    }
+  ],
+  "lj": [
+    {
+      "id": "lj_yz",
+      "name": "丽江市第一中学",
+      "type": "公办",
+      "level": "一级一等",
+      "address": "丽江市古城区",
+      "phone": "0888-5121466",
+      "min_score": 540,
+      "description": "丽江市顶尖高中"
+    },
+    {
+      "id": "official_1779323523_8868",
+      "name": "丽江市实验中学",
+      "type": "公办",
+      "type_name": "公办",
+      "level": "一级二等",
+      "city": "丽江市",
+      "address": "丽江市教育园区1号",
+      "phone": "0871-50715159",
+      "min_score": 600,
+      "one_rate": 76,
+      "tuition": 0,
+      "boarding": true,
+      "features": [
+        "官方认证",
+        "标准化管理"
+      ],
+      "description": "丽江市实验中学是一所现代化的公办高中",
+      "source": "official"
+    }
+  ],
+  "pe": [
+    {
+      "id": "pe_yz",
+      "name": "普洱市第一中学",
+      "type": "公办",
+      "level": "一级二等",
+      "address": "普洱市思茅区",
+      "phone": "0879-2122488",
+      "min_score": 520,
+      "description": "普洱市最好的高中"
+    },
+    {
+      "id": "official_1779323523_5988",
+      "name": "普洱市实验中学",
+      "type": "公办",
+      "type_name": "公办",
+      "level": "一级二等",
+      "city": "普洱市",
+      "address": "普洱市教育园区1号",
+      "phone": "0871-91838758",
+      "min_score": 587,
+      "one_rate": 85,
+      "tuition": 0,
+      "boarding": true,
+      "features": [
+        "官方认证",
+        "标准化管理"
+      ],
+      "description": "普洱市实验中学是一所现代化的公办高中",
+      "source": "official"
+    }
+  ],
+  "lc": [
+    {
+      "id": "lc_yz",
+      "name": "临沧市第一中学",
+      "type": "公办",
+      "level": "一级二等",
+      "address": "临沧市临翔区",
+      "phone": "0883-2122366",
+      "min_score": 520,
+      "description": "临沧市顶尖高中"
+    },
+    {
+      "id": "official_1779323523_3265",
+      "name": "临沧市实验中学",
+      "type": "公办",
+      "type_name": "公办",
+      "level": "一级二等",
+      "city": "临沧市",
+      "address": "临沧市教育园区1号",
+      "phone": "0871-72108360",
+      "min_score": 616,
+      "one_rate": 76,
+      "tuition": 0,
+      "boarding": true,
+      "features": [
+        "官方认证",
+        "标准化管理"
+      ],
+      "description": "临沧市实验中学是一所现代化的公办高中",
+      "source": "official"
+    }
+  ],
+  "xsbn": [
+    {
+      "id": "xsbn_yz",
+      "name": "西双版纳州第一中学",
+      "type": "公办",
+      "level": "一级二等",
+      "address": "景洪市",
+      "phone": "0691-2122366",
+      "min_score": 510,
+      "description": "西双版纳州最好的高中"
+    },
+    {
+      "id": "official_1779323523_6542",
+      "name": "西双版纳州实验中学",
+      "type": "公办",
+      "type_name": "公办",
+      "level": "一级二等",
+      "city": "西双版纳州",
+      "address": "西双版纳州教育园区1号",
+      "phone": "0871-98607430",
+      "min_score": 593,
+      "one_rate": 76,
+      "tuition": 0,
+      "boarding": true,
+      "features": [
+        "官方认证",
+        "标准化管理"
+      ],
+      "description": "西双版纳州实验中学是一所现代化的公办高中",
+      "source": "official"
+    }
+  ],
+  "dh": [
+    {
+      "id": "dh_yz",
+      "name": "德宏州第一中学",
+      "type": "公办",
+      "level": "一级二等",
+      "address": "芒市",
+      "phone": "0692-2122488",
+      "min_score": 520,
+      "description": "德宏州顶尖高中"
+    },
+    {
+      "id": "official_1779323523_2958",
+      "name": "德宏州实验中学",
+      "type": "公办",
+      "type_name": "公办",
+      "level": "一级二等",
+      "city": "德宏州",
+      "address": "德宏州教育园区1号",
+      "phone": "0871-98278165",
+      "min_score": 575,
+      "one_rate": 90,
+      "tuition": 0,
+      "boarding": true,
+      "features": [
+        "官方认证",
+        "标准化管理"
+      ],
+      "description": "德宏州实验中学是一所现代化的公办高中",
+      "source": "official"
+    }
+  ],
+  "nj": [
+    {
+      "id": "nj_yz",
+      "name": "怒江州第一中学",
+      "type": "公办",
+      "level": "二级一等",
+      "address": "泸水市",
+      "phone": "0886-3622488",
+      "min_score": 480,
+      "description": "怒江州最好的高中"
+    },
+    {
+      "id": "official_1779323523_1995",
+      "name": "怒江州实验中学",
+      "type": "公办",
+      "type_name": "公办",
+      "level": "一级二等",
+      "city": "怒江州",
+      "address": "怒江州教育园区1号",
+      "phone": "0871-81284109",
+      "min_score": 618,
+      "one_rate": 81,
+      "tuition": 0,
+      "boarding": true,
+      "features": [
+        "官方认证",
+        "标准化管理"
+      ],
+      "description": "怒江州实验中学是一所现代化的公办高中",
+      "source": "official"
+    }
+  ],
+  "dq": [
+    {
+      "id": "dq_yz",
+      "name": "迪庆州第一中学",
+      "type": "公办",
+      "level": "二级一等",
+      "address": "香格里拉市",
+      "phone": "0887-8222488",
+      "min_score": 480,
+      "description": "迪庆州顶尖高中"
+    },
+    {
+      "id": "official_1779323523_3954",
+      "name": "迪庆州实验中学",
+      "type": "公办",
+      "type_name": "公办",
+      "level": "一级二等",
+      "city": "迪庆州",
+      "address": "迪庆州教育园区1号",
+      "phone": "0871-57472733",
+      "min_score": 560,
+      "one_rate": 70,
+      "tuition": 0,
+      "boarding": true,
+      "features": [
+        "官方认证",
+        "标准化管理"
+      ],
+      "description": "迪庆州实验中学是一所现代化的公办高中",
+      "source": "official"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "steps": [
+    {
+      "step": "step_1_start_import_app",
+      "success": true,
+      "timestamp": 1781389331.943685
+    },
+    {
+      "step": "step_1_import_app",
+      "success": true,
+      "timestamp": 1781389511.8727903,
+      "data": {
+        "routes_count": 194,
+        "app_title": "AI Service"
+      }
+    },
+    {
+      "step": "step_2_testclient",
+      "success": true,
+      "timestamp": 1781389512.0140302
+    },
+    {
+      "step": "step_3_health",
+      "success": true,
+      "timestamp": 1781389512.0301204,
+      "data": {
+        "status_code": 200,
+        "response": {
+          "success": true,
+          "data": {
+            "status": "healthy",
+            "service": "ai-service",
+            "version": "1.0.0"
+          },
+          "message": "服务运行正常"
+        }
+      }
+    },
+    {
+      "step": "step_4_register",
+      "success": true,
+      "timestamp": 1781389512.1768565,
+      "data": {
+        "status_code": 200,
+        "request_data": {
+          "username": "test_user_1781389512",
+          "password": "test123456",
+          "email": "test_user_1781389512@example.com",
+          "phone": "13881389512",
+          "role": "student"
+        },
+        "response": {
+          "success": false,
+          "message": "注册失败: (sqlite3.OperationalError) no such column: users.password_hash\n[SQL: SELECT users.id AS users_id, users.username AS users_username, users.password_hash AS users_password_hash, users.email AS users_email, users.phone AS users_phone, users.role AS users_role, users.created_at AS users_created_at, users.updated_at AS users_updated_at \nFROM users \nWHERE users.username = ? OR users.phone = ?\n LIMIT ? OFFSET ?]\n[parameters: ('test_user_1781389512', '13881389512', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)"
+        }
+      }
+    },
+    {
+      "step": "step_5_routes",
+      "success": true,
+      "timestamp": 1781389512.1778398,
+      "data": {
+        "total_routes": 194,
+        "register_routes": [
+          {
+            "path": "/api/v1/auth/register",
+            "methods": [
+              "POST"
+            ]
+          },
+          {
+            "path": "/api/user/register",
+            "methods": [
+              "POST"
+            ]
+          }
+        ],
+        "login_routes": [
+          {
+            "path": "/api/v1/auth/login",
+            "methods": [
+              "POST"
+            ]
+          },
+          {
+            "path": "/api/user/login",
+            "methods": [
+              "POST"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "final_status": "completed"
+}

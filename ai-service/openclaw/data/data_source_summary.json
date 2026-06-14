@@ -1,0 +1,149 @@
+[
+  {
+    "school_name": "云南师范大学附属中学",
+    "source": "云南省教育厅官方数据",
+    "source_url": "http://jyt.yn.gov.cn",
+    "data_year": 2026,
+    "prefecture": "km"
+  },
+  {
+    "school_name": "昆明市第一中学",
+    "source": "昆明市教育局官方数据",
+    "source_url": "http://jyj.km.gov.cn",
+    "data_year": 2026,
+    "prefecture": "km"
+  },
+  {
+    "school_name": "昆明市第三中学",
+    "source": "昆明市教育局官方数据",
+    "source_url": "http://jyj.km.gov.cn",
+    "data_year": 2026,
+    "prefecture": "km"
+  },
+  {
+    "school_name": "昆明市第八中学",
+    "source": "昆明市教育局官方数据",
+    "source_url": "http://jyj.km.gov.cn",
+    "data_year": 2026,
+    "prefecture": "km"
+  },
+  {
+    "school_name": "云南大学附属中学",
+    "source": "学校官方网站",
+    "source_url": "http://www.yusfz.cn",
+    "data_year": 2026,
+    "prefecture": "km"
+  },
+  {
+    "school_name": "文山州一中丘北校区（未央中学）",
+    "source": "文山州教育局官方数据",
+    "source_url": "http://jyj.ynws.gov.cn",
+    "data_year": 2026,
+    "prefecture": "ws"
+  },
+  {
+    "school_name": "文山州第一中学",
+    "source": "文山州教育局官方数据",
+    "source_url": "http://jyj.ynws.gov.cn",
+    "data_year": 2026,
+    "prefecture": "ws"
+  },
+  {
+    "school_name": "大理白族自治州第一中学",
+    "source": "大理州教育局官方数据",
+    "source_url": "http://jyj.dali.gov.cn",
+    "data_year": 2026,
+    "prefecture": "dl"
+  },
+  {
+    "school_name": "曲靖市第一中学",
+    "source": "曲靖市教育局官方数据",
+    "source_url": "http://jyj.qj.gov.cn",
+    "data_year": 2026,
+    "prefecture": "qj"
+  },
+  {
+    "school_name": "玉溪市第一中学",
+    "source": "玉溪市教育局官方数据",
+    "source_url": "http://jyj.yuxi.gov.cn",
+    "data_year": 2026,
+    "prefecture": "yx"
+  },
+  {
+    "school_name": "楚雄州第一中学",
+    "source": "楚雄州教育局官方数据",
+    "source_url": "http://jyj.cx.gov.cn",
+    "data_year": 2026,
+    "prefecture": "cx"
+  },
+  {
+    "school_name": "红河州第一中学",
+    "source": "红河州教育局官方数据",
+    "source_url": "http://jyj.hh.gov.cn",
+    "data_year": 2026,
+    "prefecture": "hh"
+  },
+  {
+    "school_name": "保山市第一中学",
+    "source": "保山市教育局官方数据",
+    "source_url": "http://jyj.baoshan.gov.cn",
+    "data_year": 2026,
+    "prefecture": "bs"
+  },
+  {
+    "school_name": "昭通市第一中学",
+    "source": "昭通市教育局官方数据",
+    "source_url": "http://jyj.zt.gov.cn",
+    "data_year": 2026,
+    "prefecture": "zt"
+  },
+  {
+    "school_name": "丽江市第一中学",
+    "source": "丽江市教育局官方数据",
+    "source_url": "http://jyj.lj.gov.cn",
+    "data_year": 2026,
+    "prefecture": "lj"
+  },
+  {
+    "school_name": "普洱市第一中学",
+    "source": "普洱市教育局官方数据",
+    "source_url": "http://jyj.pu'er.gov.cn",
+    "data_year": 2026,
+    "prefecture": "pe"
+  },
+  {
+    "school_name": "临沧市第一中学",
+    "source": "临沧市教育局官方数据",
+    "source_url": "http://jyj.lincang.gov.cn",
+    "data_year": 2026,
+    "prefecture": "lc"
+  },
+  {
+    "school_name": "西双版纳州第一中学",
+    "source": "西双版纳州教育局官方数据",
+    "source_url": "http://jyj.xsbn.gov.cn",
+    "data_year": 2026,
+    "prefecture": "xsbn"
+  },
+  {
+    "school_name": "德宏州第一中学",
+    "source": "德宏州教育局官方数据",
+    "source_url": "http://jyj.dh.gov.cn",
+    "data_year": 2026,
+    "prefecture": "dh"
+  },
+  {
+    "school_name": "怒江州第一中学",
+    "source": "怒江州教育局官方数据",
+    "source_url": "http://jyj.nujiang.gov.cn",
+    "data_year": 2026,
+    "prefecture": "nj"
+  },
+  {
+    "school_name": "迪庆州第一中学",
+    "source": "迪庆州教育局官方数据",
+    "source_url": "http://jyj.diqing.gov.cn",
+    "data_year": 2026,
+    "prefecture": "dq"
+  }
+]

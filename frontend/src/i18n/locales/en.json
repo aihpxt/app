@@ -1,0 +1,166 @@
+{
+  "common": {
+    "home": "Home",
+    "school": "Schools",
+    "aiAssistant": "AI Assistant",
+    "data": "Data",
+    "login": "Login",
+    "logout": "Logout",
+    "register": "Register",
+    "search": "Search",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "add": "Add",
+    "view": "View",
+    "detail": "Detail",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "confirm": "Confirm",
+    "yes": "Yes",
+    "no": "No",
+    "loading": "Loading...",
+    "success": "Success",
+    "error": "Error",
+    "warning": "Warning",
+    "info": "Info",
+    "required": "Please fill in {field}",
+    "placeholder": {
+      "search": "Search...",
+      "name": "Enter name",
+      "phone": "Enter phone",
+      "email": "Enter email",
+      "password": "Enter password"
+    }
+  },
+  "school": {
+    "title": "School Search",
+    "total": "Total Schools",
+    "public": "Public Schools",
+    "private": "Private Schools",
+    "key": "Key High Schools",
+    "searchPlaceholder": "Search school name...",
+    "filter": {
+      "city": "Select City",
+      "type": "School Type",
+      "nature": "School Nature"
+    },
+    "sort": {
+      "default": "Default",
+      "scoreDesc": "Score (High to Low)",
+      "scoreAsc": "Score (Low to High)",
+      "views": "Views (High to Low)"
+    },
+    "detail": {
+      "title": "School Detail",
+      "basicInfo": "Basic Info",
+      "address": "Address",
+      "phone": "Phone",
+      "founded": "Founded Year",
+      "students": "Students",
+      "teachers": "Teachers",
+      "tuition": "Tuition",
+      "boarding": "Boarding",
+      "features": "Features",
+      "description": "Description"
+    },
+    "compare": "Compare",
+    "favorite": "Favorite",
+    "unfavorite": "Unfavorite",
+    "viewCount": "Views"
+  },
+  "aiAssistant": {
+    "title": "AI Assistant",
+    "welcome": "Hello! I'm your AI School Selection Assistant",
+    "description": "I can help you with high school entrance exam policies, school selection, volunteer applications, etc.",
+    "inputPlaceholder": "Enter your question...",
+    "newChat": "New Chat",
+    "history": "History",
+    "schoolInfo": "School Info",
+    "scoreLine": "Score Line",
+    "policy": "Policy",
+    "study": "Study Guide"
+  },
+  "aiSelection": {
+    "title": "AI School Selection",
+    "step1": "Enter your estimated score",
+    "step2": "Select your preferences",
+    "step3": "Get recommendations",
+    "score": "Estimated Score",
+    "prefecture": "Target Region",
+    "schoolType": "School Type",
+    "nature": "School Nature",
+    "recommend": "Recommend",
+    "result": "Results",
+    "reason": "Reasons"
+  },
+  "volunteer": {
+    "title": "Volunteer Application",
+    "practice": "Practice",
+    "guide": "Guide",
+    "order": "Order",
+    "preview": "Preview"
+  },
+  "data": {
+    "title": "Data Visualization",
+    "subjectCompare": "Subject Comparison",
+    "examAnalysis": "Exam Analysis",
+    "schoolStatistics": "School Statistics",
+    "trend": "Trend Analysis"
+  },
+  "user": {
+    "title": "Profile",
+    "profile": "Profile",
+    "goals": "Learning Goals",
+    "plans": "Study Plans",
+    "progress": "Progress",
+    "favorites": "Favorites",
+    "notifications": "Notifications",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "policy": {
+    "title": "Policy",
+    "provincial": "Provincial",
+    "prefecture": "Prefecture",
+    "detail": "Detail",
+    "effectiveDate": "Effective Date",
+    "scope": "Scope"
+  },
+  "learning": {
+    "plan": "Study Plan",
+    "progress": "Progress",
+    "task": "Task",
+    "goal": "Goal",
+    "duration": "Duration",
+    "completed": "Completed",
+    "pending": "Pending",
+    "reminder": "Reminder",
+    "dailyGoal": "Daily Goal"
+  },
+  "notification": {
+    "title": "Notifications",
+    "reminder": "Reminders",
+    "system": "System",
+    "progress": "Progress",
+    "markAllRead": "Mark All Read",
+    "empty": "No notifications"
+  },
+  "help": {
+    "title": "Help Center",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "feedback": "Feedback"
+  },
+  "date": {
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "tomorrow": "Tomorrow",
+    "week": "This Week",
+    "month": "This Month",
+    "year": "This Year"
+  }
+}

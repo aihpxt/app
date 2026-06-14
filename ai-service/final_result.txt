@@ -1,0 +1,8 @@
+1. DB_INIT_OK
+2. APP_CREATE_OK (routes=199)
+3. TEST_CLIENT_OK
+4. REGISTER: status=200, success=True, msg=注册成功
+5. LOGIN: status=200, success=True
+6. V1_REGISTER: status=200, success=True, msg=注册成功
+7. V1_LOGIN: status=200, success=True
+8. ALL_TESTS_PASSED!

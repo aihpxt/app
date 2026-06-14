@@ -1,0 +1,2324 @@
+{
+  "test_summary": {
+    "total_tests": 24,
+    "passed": 24,
+    "failed": 0,
+    "pass_rate": "100.00%",
+    "avg_response_time": "0.961s",
+    "min_response_time": "0.003s",
+    "max_response_time": "10.175s",
+    "total_time": "23.11s"
+  },
+  "test_results": [
+    {
+      "test_name": "GET /",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.026526,
+      "timestamp": "2026-05-18T13:35:36.629319",
+      "response_data": {
+        "success": true,
+        "data": {
+          "app": "AI Service",
+          "version": "1.0.0",
+          "message": "Welcome to AI Service API"
+        }
+      }
+    },
+    {
+      "test_name": "GET /health",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.068342,
+      "timestamp": "2026-05-18T13:35:36.699232",
+      "response_data": {
+        "success": true,
+        "data": {
+          "app": "AI Service",
+          "version": "1.0.0",
+          "status": "healthy",
+          "issues": [
+            "Redis服务不可用，已降级为内存缓存",
+            "Hermes服务不可用，部分高级功能可能受限"
+          ],
+          "system": {
+            "cpu": {
+              "percent": 10.7,
+              "count": 8
+            },
+            "memory": {
+              "used": 11.85,
+              "total": 15.24,
+              "percent": 77.7
+            },
+            "disk": {
+              "used": 58.25,
+              "total": 400.39,
+              "percent": 14.5
+            },
+            "network": {
+              "sent": 2979.02,
+              "recv": 19168.33
+            },
+            "uptime": 0.06,
+            "timestamp": "2026-05-18T13:35:36.697651"
+          },
+          "services": {
+            "redis": {
+              "available": false,
+              "url": "redis://localhost:6379/0"
+            },
+            "hermes": {
+              "available": false,
+              "url": "http://localhost:8888/v1/agent"
+            },
+            "timestamp": "2026-05-18T13:35:36.697667"
+          }
+        }
+      }
+    },
+    {
+      "test_name": "GET /health/metrics",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.066116,
+      "timestamp": "2026-05-18T13:35:36.766883",
+      "response_data": {
+        "success": true,
+        "data": {
+          "cpu": {
+            "percent": 20.8,
+            "count": 8
+          },
+          "memory": {
+            "used": 11.86,
+            "total": 15.24,
+            "percent": 77.8
+          },
+          "disk": {
+            "used": 58.25,
+            "total": 400.39,
+            "percent": 14.5
+          },
+          "network": {
+            "sent": 2979.02,
+            "recv": 19168.33
+          },
+          "uptime": 0.13,
+          "timestamp": "2026-05-18T13:35:36.765324"
+        }
+      }
+    },
+    {
+      "test_name": "GET /health/services",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.003155,
+      "timestamp": "2026-05-18T13:35:36.771605",
+      "response_data": {
+        "success": true,
+        "data": {
+          "redis": {
+            "available": false,
+            "url": "redis://localhost:6379/0"
+          },
+          "hermes": {
+            "available": false,
+            "url": "http://localhost:8888/v1/agent"
+          },
+          "timestamp": "2026-05-18T13:35:36.770190"
+        }
+      }
+    },
+    {
+      "test_name": "GET /health/cache",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.024156,
+      "timestamp": "2026-05-18T13:35:36.797299",
+      "response_data": {
+        "success": true,
+        "data": {
+          "cache_type": "Redis",
+          "test_result": "success"
+        }
+      }
+    },
+    {
+      "test_name": "GET /health/tasks",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.003373,
+      "timestamp": "2026-05-18T13:35:36.801980",
+      "response_data": {
+        "success": true,
+        "data": {
+          "tasks": {},
+          "scheduler_running": false
+        }
+      }
+    },
+    {
+      "test_name": "GET /api/utils/string/uuid",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.025987,
+      "timestamp": "2026-05-18T13:35:36.829488",
+      "response_data": {
+        "success": true,
+        "message": "UUID生成成功",
+        "status_code": 200,
+        "timestamp": "2026-05-18T13:35:36.826936",
+        "data": {
+          "uuid": "c870e2f9-3e68-4d2a-91f8-d2f974b77d9f",
+          "short_id": "7239c8b8b65e44f78680fcb154d73bc6"
+        }
+      }
+    },
+    {
+      "test_name": "GET /api/utils/time/current",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.004482,
+      "timestamp": "2026-05-18T13:35:36.835245",
+      "response_data": {
+        "success": true,
+        "message": "获取当前时间成功",
+        "status_code": 200,
+        "timestamp": "2026-05-18T13:35:36.832922",
+        "data": {
+          "datetime": "2026-05-18 13:35:36",
+          "timestamp": 1779082536.8329136,
+          "date": "2026-05-18",
+          "time": "13:35:36"
+        }
+      }
+    },
+    {
+      "test_name": "POST /api/utils/validate/email",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.006127,
+      "timestamp": "2026-05-18T13:35:36.842770",
+      "response_data": {
+        "success": true,
+        "message": "邮箱验证完成",
+        "status_code": 200,
+        "timestamp": "2026-05-18T13:35:36.840194",
+        "data": {
+          "valid": true,
+          "email": "test@example.com",
+          "masked": "te***@example.com"
+        }
+      }
+    },
+    {
+      "test_name": "GET /api/v1/cache/stats",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 2.054979,
+      "timestamp": "2026-05-18T13:35:38.899109",
+      "response_data": {
+        "success": true,
+        "data": {
+          "total_requests": 0,
+          "l1_hits": 0,
+          "l2_hits": 0,
+          "misses": 0,
+          "overall_hit_rate": 0,
+          "l1_hit_rate": 0,
+          "l2_hit_rate": 0,
+          "l1_cache": {
+            "hits": 0,
+            "misses": 0,
+            "sets": 0,
+            "evictions": 0,
+            "expired": 0,
+            "hit_rate": 0,
+            "size": 0,
+            "max_size": 1000,
+            "ttl": 300
+          },
+          "redis_available": true
+        }
+      }
+    },
+    {
+      "test_name": "GET /api/v1/cache/health",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.004039,
+      "timestamp": "2026-05-18T13:35:38.904335",
+      "response_data": {
+        "success": true,
+        "data": {
+          "status": "unhealthy",
+          "alerts": [
+            "缓存命中率过低: 0%"
+          ],
+          "warnings": [],
+          "metrics": {
+            "total_requests": 0,
+            "l1_hits": 0,
+            "l2_hits": 0,
+            "misses": 0,
+            "overall_hit_rate": 0,
+            "l1_hit_rate": 0,
+            "l2_hit_rate": 0,
+            "l1_cache": {
+              "hits": 0,
+              "misses": 0,
+              "sets": 0,
+              "evictions": 0,
+              "expired": 0,
+              "hit_rate": 0,
+              "size": 0,
+              "max_size": 1000,
+              "ttl": 300
+            },
+            "redis_available": true
+          }
+        }
+      }
+    },
+    {
+      "test_name": "GET /api/v1/cache/report",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.004735,
+      "timestamp": "2026-05-18T13:35:38.910956",
+      "response_data": {
+        "success": true,
+        "data": {
+          "statistics": {
+            "total_requests": 0,
+            "l1_hits": 0,
+            "l2_hits": 0,
+            "misses": 0,
+            "overall_hit_rate": 0,
+            "l1_hit_rate": 0,
+            "l2_hit_rate": 0,
+            "l1_cache": {
+              "hits": 0,
+              "misses": 0,
+              "sets": 0,
+              "evictions": 0,
+              "expired": 0,
+              "hit_rate": 0,
+              "size": 0,
+              "max_size": 1000,
+              "ttl": 300
+            },
+            "redis_available": true
+          },
+          "health": {
+            "status": "unhealthy",
+            "alerts": [
+              "缓存命中率过低: 0%"
+            ],
+            "warnings": [],
+            "metrics": {
+              "total_requests": 0,
+              "l1_hits": 0,
+              "l2_hits": 0,
+              "misses": 0,
+              "overall_hit_rate": 0,
+              "l1_hit_rate": 0,
+              "l2_hit_rate": 0,
+              "l1_cache": {
+                "hits": 0,
+                "misses": 0,
+                "sets": 0,
+                "evictions": 0,
+                "expired": 0,
+                "hit_rate": 0,
+                "size": 0,
+                "max_size": 1000,
+                "ttl": 300
+              },
+              "redis_available": true
+            }
+          },
+          "recommendations": [
+            "考虑增加缓存容量或延长TTL",
+            "检查数据访问模式，优化缓存键设计",
+            "L1缓存命中率较低，考虑增大L1缓存容量"
+          ]
+        }
+      }
+    },
+    {
+      "test_name": "GET /api/metrics/prometheus",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.007329,
+      "timestamp": "2026-05-18T13:35:38.920273",
+      "response_data": "# HELP python_gc_objects_collected_total Objects collected during gc\n# TYPE python_gc_objects_collected_total counter\npython_gc_objects_collected_total{generation=\"0\"} 0.0\npython_gc_objects_collected_"
+    },
+    {
+      "test_name": "GET /api/metrics/summary",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.004603,
+      "timestamp": "2026-05-18T13:35:38.926486",
+      "response_data": {
+        "cache_hit_rate": "0.00%",
+        "active_users": 0.0,
+        "redis_connected": false,
+        "db_active_connections": 0.0,
+        "db_idle_connections": 0.0
+      }
+    },
+    {
+      "test_name": "GET /api/performance/",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.069242,
+      "timestamp": "2026-05-18T13:35:38.997268",
+      "response_data": {
+        "success": true,
+        "data": {
+          "system": {
+            "cpu": {
+              "percent": 17.9,
+              "count": 8
+            },
+            "memory": {
+              "used": 11.85,
+              "total": 15.24,
+              "percent": 77.7
+            },
+            "disk": {
+              "used": 58.25,
+              "total": 400.39,
+              "percent": 14.5
+            },
+            "uptime": 2.36
+          },
+          "cache": {
+            "hits": 0,
+            "misses": 0,
+            "sets": 0,
+            "deletes": 0,
+            "hit_rate": "0.00%"
+          },
+          "response_time": {
+            "unit": "ms",
+            "timestamp": 1779082538.9943662
+          }
+        }
+      }
+    },
+    {
+      "test_name": "GET /api/performance/cache/stats",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.008508,
+      "timestamp": "2026-05-18T13:35:39.007685",
+      "response_data": {
+        "success": true,
+        "data": {
+          "optimizer_stats": {
+            "hits": 0,
+            "misses": 0,
+            "sets": 0,
+            "deletes": 0,
+            "hit_rate": "0.00%"
+          },
+          "redis_info": {
+            "connected_clients": 3,
+            "used_memory_human": "763.79K",
+            "total_connections_received": 757,
+            "keyspace_hits": 486,
+            "keyspace_misses": 231
+          }
+        }
+      }
+    },
+    {
+      "test_name": "GET /api/performance/recommendations",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.067751,
+      "timestamp": "2026-05-18T13:35:39.077357",
+      "response_data": {
+        "success": true,
+        "data": {
+          "recommendations_count": 1,
+          "recommendations": [
+            {
+              "category": "Cache",
+              "level": "info",
+              "message": "缓存命中率较低(0.0%)，建议优化缓存策略"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "test_name": "GET /api/v1/agents",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.255556,
+      "timestamp": "2026-05-18T13:35:39.334749",
+      "response_data": {
+        "success": true,
+        "data": [
+          {
+            "id": "zk-master",
+            "intent": "control_center",
+            "name": "总控智能体",
+            "role": "总调度",
+            "description": "负责接待用户、识别意图、智能分派、统一回复",
+            "related_skills": [
+              "find",
+              "policy-parser"
+            ],
+            "performance": {}
+          },
+          {
+            "id": "zk-dev",
+            "intent": "website_issue",
+            "name": "网络开发工程师",
+            "role": "技术支持",
+            "description": "负责网站技术问题、代码错误、系统异常等问题的处理",
+            "related_skills": [
+              "find"
+            ],
+            "performance": {}
+          },
+          {
+            "id": "zk-ui",
+            "intent": "design",
+            "name": "UI美工",
+            "role": "设计支持",
+            "description": "负责海报设计、界面美化、图片处理等设计相关工作",
+            "related_skills": [
+              "figma"
+            ],
+            "performance": {}
+          },
+          {
+            "id": "zk-info",
+            "intent": "info_query",
+            "name": "信息获取与审核",
+            "role": "信息服务",
+            "description": "负责政策解读、学校信息查询、分数线查询等信息服务",
+            "related_skills": [
+              "search",
+              "wechat-scraper",
+              "data-analyzer"
+            ],
+            "performance": {}
+          },
+          {
+            "id": "zk-marketing",
+            "intent": "marketing",
+            "name": "市场品宣与推广",
+            "role": "市场推广",
+            "description": "负责市场推广、文案策划、引流宣传等市场相关工作",
+            "related_skills": [
+              "figma"
+            ],
+            "performance": {}
+          },
+          {
+            "id": "zk-outside",
+            "intent": "out_province",
+            "name": "外省市场拓展专员",
+            "role": "外省服务",
+            "description": "负责贵州、四川、广西等外省市场拓展和服务",
+            "related_skills": [],
+            "performance": {}
+          },
+          {
+            "id": "zk-finance",
+            "intent": "finance",
+            "name": "财务",
+            "role": "财务服务",
+            "description": "负责费用咨询、价格查询、收费标准等财务相关问题",
+            "related_skills": [],
+            "performance": {}
+          },
+          {
+            "id": "zk-legal",
+            "intent": "legal",
+            "name": "法务合规",
+            "role": "法务支持",
+            "description": "负责合同审核、法律咨询、纠纷处理等法务相关工作",
+            "related_skills": [],
+            "performance": {}
+          },
+          {
+            "id": "zk-sales",
+            "intent": "conversion",
+            "name": "促单转化专员",
+            "role": "转化服务",
+            "description": "负责报名咨询、预约服务、开放日安排等转化相关工作",
+            "related_skills": [],
+            "performance": {}
+          },
+          {
+            "id": "zk-pay",
+            "intent": "payment",
+            "name": "缴费办理专员",
+            "role": "缴费服务",
+            "description": "负责缴费办理、支付处理、订单查询等缴费相关工作",
+            "related_skills": [],
+            "performance": {}
+          },
+          {
+            "id": "zk-logistics",
+            "intent": "logistics",
+            "name": "后勤保障服务",
+            "role": "后勤支持",
+            "description": "负责参观接待、交通指引、食宿安排等后勤相关工作",
+            "related_skills": [],
+            "performance": {}
+          },
+          {
+            "id": "zk-learning",
+            "intent": "learning_plan",
+            "name": "个性化学习计划生成",
+            "role": "学习规划",
+            "description": "负责根据学生情况生成个性化学习计划和学习建议",
+            "related_skills": [
+              "learning-style-analyzer",
+              "weak-subjects-analyzer",
+              "study-time-planner",
+              "stress-assessor"
+            ],
+            "performance": {}
+          }
+        ]
+      }
+    },
+    {
+      "test_name": "POST /api/v1/agent/chat",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.007206,
+      "timestamp": "2026-05-18T13:35:39.343435",
+      "response_data": {
+        "success": true,
+        "data": {
+          "success": true,
+          "agent_id": "zk-master",
+          "agent_name": "总控智能体",
+          "response": "🦞 你好！我是云南中考择校智能服务中心\n\n我能为你提供：\n✅ 云南中考政策查询\n✅ 文山/丘北学校对比\n✅ 未央中学报名咨询\n✅ 志愿填报指导\n✅ 免费看校预约\n✅ 个性化学习计划生成\n\n请问孩子现在几年级？在哪个城市？",
+          "skills_used": [],
+          "skill_results": {},
+          "input_analysis": {
+            "length": 10,
+            "word_count": 1,
+            "type": "general",
+            "complexity": "low",
+            "keywords": []
+          },
+          "processing_time": 0.0004990100860595703,
+          "timestamp": "2026-05-18T13:35:39.340140"
+        }
+      }
+    },
+    {
+      "test_name": "POST /api/v1/auth/login",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.006099,
+      "timestamp": "2026-05-18T13:35:39.351125",
+      "response_data": {
+        "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbl8wMDEiLCJ1c2VybmFtZSI6ImFkbWluIiwicm9sZXMiOlsiYWRtaW4iXSwidHlwZSI6ImFjY2VzcyIsImlhdCI6MTc3OTA4MjUzOSwiZXhwIjoxNzc5MDg0MzM5LCJqdGkiOiJTb1o4WTZpaHBBU2pDaTF6M0ZNTWlBIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSJ9.mV04afDF6SvAaEvhmzCo5BS2JLE_-1i2ihLPLuExevQ",
+        "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbl8wMDEiLCJ0eXBlIjoicmVmcmVzaCIsImlhdCI6MTc3OTA4MjUzOSwiZXhwIjoxNzc5Njg3MzM5LCJqdGkiOiJlMGtPY2hRMi1tZTJuTkZjeWwxOFRRIn0.cZv1omJ95nwjBmBsT07kslLE3J8S2bhgsX4ApkC2MXQ",
+        "token_type": "Bearer",
+        "expires_in": 1800,
+        "user": {
+          "user_id": "admin_001",
+          "username": "admin",
+          "email": "admin@example.com",
+          "roles": [
+            "admin"
+          ]
+        }
+      }
+    },
+    {
+      "test_name": "GET /api/v1/auth/me",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.005475,
+      "timestamp": "2026-05-18T13:35:39.358076",
+      "response_data": {
+        "user_id": "admin_001",
+        "username": "admin",
+        "email": null,
+        "phone": null,
+        "roles": [
+          "admin"
+        ],
+        "created_at": null
+      }
+    },
+    {
+      "test_name": "GET /api/audit/logs",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.007265,
+      "timestamp": "2026-05-18T13:35:39.366983",
+      "response_data": [
+        {
+          "timestamp": "2026-05-18T08:32:51.938446",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 404,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "9ff37cc56db7"
+        },
+        {
+          "timestamp": "2026-05-18T08:33:08.434060",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/health",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.074
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "108042dd2aed"
+        },
+        {
+          "timestamp": "2026-05-18T08:33:23.846911",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/metrics/health",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "50905d6deb83"
+        },
+        {
+          "timestamp": "2026-05-18T08:33:39.498503",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/audit/logs",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.006
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "d5465fb08ce5"
+        },
+        {
+          "timestamp": "2026-05-18T08:33:53.847788",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/metrics/summary",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "8eebb89f23ec"
+        },
+        {
+          "timestamp": "2026-05-18T08:34:09.844823",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/metrics/prometheus",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.003
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "5d60789f0413"
+        },
+        {
+          "timestamp": "2026-05-18T08:34:36.837910",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/audit/statistics",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.003
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "4195b04acdeb"
+        },
+        {
+          "timestamp": "2026-05-18T09:04:58.641981",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 404,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "39f01c0e777c"
+        },
+        {
+          "timestamp": "2026-05-18T09:11:13.075361",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.003
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "92e2117306de"
+        },
+        {
+          "timestamp": "2026-05-18T09:11:39.243325",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "93aee846313d"
+        },
+        {
+          "timestamp": "2026-05-18T09:11:41.280724",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/health",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 404,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "a4325c5e868a"
+        },
+        {
+          "timestamp": "2026-05-18T09:11:43.315285",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/audit/logs",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.003
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "3d9876d9afbc"
+        },
+        {
+          "timestamp": "2026-05-18T09:11:45.344092",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/audit/statistics",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.002
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "d006908f531e"
+        },
+        {
+          "timestamp": "2026-05-18T09:11:47.391855",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/metrics/health",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "f96ef007dbf6"
+        },
+        {
+          "timestamp": "2026-05-18T09:11:49.437376",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/metrics/summary",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "454a6b41f357"
+        },
+        {
+          "timestamp": "2026-05-18T09:11:51.468777",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/metrics/prometheus",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.002
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "b77a7a0ebcee"
+        },
+        {
+          "timestamp": "2026-05-18T09:11:53.509712",
+          "action": "DATA_CREATE",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/v1/auth/login",
+          "details": {
+            "method": "POST",
+            "query_params": "",
+            "status_code": 401,
+            "duration": 0.003
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "1c121731c7cb"
+        },
+        {
+          "timestamp": "2026-05-18T09:11:57.580280",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/cache/stats",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 2.03
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "53f3f1c27b37"
+        },
+        {
+          "timestamp": "2026-05-18T09:17:51.158127",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/alerts/check",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 10.116
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "d2c2c2097437"
+        },
+        {
+          "timestamp": "2026-05-18T09:19:25.126495",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/alerts/check",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 10.109
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "d611b53708a6"
+        },
+        {
+          "timestamp": "2026-05-18T09:19:37.342680",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/alerts/",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 10.109
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "ad832a93ec27"
+        },
+        {
+          "timestamp": "2026-05-18T09:19:39.433177",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/alerts/rules",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "9d8a551bc5d8"
+        },
+        {
+          "timestamp": "2026-05-18T09:19:41.537182",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/performance/",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.063
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "101ed0d21345"
+        },
+        {
+          "timestamp": "2026-05-18T09:19:43.596738",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/performance/cache/stats",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.007
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "9078c2264b40"
+        },
+        {
+          "timestamp": "2026-05-18T09:19:45.716740",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/performance/recommendations",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.062
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "e14f287f4716"
+        },
+        {
+          "timestamp": "2026-05-18T09:19:53.870501",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/performance/recommendations",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.062
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "943a21dbe277"
+        },
+        {
+          "timestamp": "2026-05-18T10:00:08.508989",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/utils/",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.002
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "f0d95c3fa601"
+        },
+        {
+          "timestamp": "2026-05-18T10:00:25.259277",
+          "action": "DATA_CREATE",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/utils/validate/email",
+          "details": {
+            "method": "POST",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.004
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "dccb603aed2f"
+        },
+        {
+          "timestamp": "2026-05-18T10:00:27.306114",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/utils/string/uuid",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "76512557a17d"
+        },
+        {
+          "timestamp": "2026-05-18T10:00:29.355930",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/utils/time/current",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "c32495952931"
+        },
+        {
+          "timestamp": "2026-05-18T13:13:44.593534",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/health",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 404,
+            "duration": 0.002
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "2409774fa0af"
+        },
+        {
+          "timestamp": "2026-05-18T13:13:44.614923",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/health/metrics",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 404,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "a2603f1d7e0a"
+        },
+        {
+          "timestamp": "2026-05-18T13:13:44.620741",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/health/services",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 404,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "f1568b88abfd"
+        },
+        {
+          "timestamp": "2026-05-18T13:13:44.627348",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/health/cache",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 404,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "a36a79b02044"
+        },
+        {
+          "timestamp": "2026-05-18T13:13:44.672996",
+          "action": "DATA_CREATE",
+          "level": "ERROR",
+          "user_id": null,
+          "resource": "/api/v1/agents/chat",
+          "details": {
+            "method": "POST",
+            "query_params": "",
+            "status_code": 500,
+            "duration": 0.027
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "d49d4a1f2bdb"
+        },
+        {
+          "timestamp": "2026-05-18T13:13:44.686768",
+          "action": "DATA_CREATE",
+          "level": "ERROR",
+          "user_id": null,
+          "resource": "/api/v1/agents/chat",
+          "details": {
+            "method": "POST",
+            "query_params": "",
+            "status_code": 500,
+            "duration": 0.005
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "924da35b9d4c"
+        },
+        {
+          "timestamp": "2026-05-18T13:13:44.698070",
+          "action": "DATA_CREATE",
+          "level": "ERROR",
+          "user_id": null,
+          "resource": "/api/v1/agents/chat",
+          "details": {
+            "method": "POST",
+            "query_params": "",
+            "status_code": 500,
+            "duration": 0.005
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "460834f75c5d"
+        },
+        {
+          "timestamp": "2026-05-18T13:13:44.709682",
+          "action": "DATA_CREATE",
+          "level": "ERROR",
+          "user_id": null,
+          "resource": "/api/v1/agents/chat",
+          "details": {
+            "method": "POST",
+            "query_params": "",
+            "status_code": 500,
+            "duration": 0.006
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "095714b7fdaf"
+        },
+        {
+          "timestamp": "2026-05-18T13:15:29.065114",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.004
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "536d6d7a5287"
+        },
+        {
+          "timestamp": "2026-05-18T13:15:29.256196",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/utils/string/uuid",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "da78569ebf0c"
+        },
+        {
+          "timestamp": "2026-05-18T13:15:29.266421",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/utils/time/current",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "5ef9132c833f"
+        },
+        {
+          "timestamp": "2026-05-18T13:15:29.276755",
+          "action": "DATA_CREATE",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/utils/validate/email",
+          "details": {
+            "method": "POST",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.002
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "19f0810a35bc"
+        },
+        {
+          "timestamp": "2026-05-18T13:15:29.284322",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/cache/metrics",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 404,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "b59e503925ab"
+        },
+        {
+          "timestamp": "2026-05-18T13:15:29.302170",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/v1/performance/metrics",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 404,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "bffd170e7988"
+        },
+        {
+          "timestamp": "2026-05-18T13:15:29.311624",
+          "action": "API_ACCESS",
+          "level": "ERROR",
+          "user_id": null,
+          "resource": "/api/v1/tasks",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 500,
+            "duration": 0.002
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "9aa8c9072654"
+        },
+        {
+          "timestamp": "2026-05-18T13:15:29.328061",
+          "action": "API_ACCESS",
+          "level": "ERROR",
+          "user_id": null,
+          "resource": "/api/v1/agents",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 500,
+            "duration": 0.007
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "a52a315f9b32"
+        },
+        {
+          "timestamp": "2026-05-18T13:15:29.343635",
+          "action": "DATA_CREATE",
+          "level": "ERROR",
+          "user_id": null,
+          "resource": "/api/v1/agent/chat",
+          "details": {
+            "method": "POST",
+            "query_params": "",
+            "status_code": 500,
+            "duration": 0.008
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "112bb0207470"
+        },
+        {
+          "timestamp": "2026-05-18T13:15:29.375452",
+          "action": "DATA_CREATE",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/auth/register",
+          "details": {
+            "method": "POST",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.024
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "3a1034b47eb3"
+        },
+        {
+          "timestamp": "2026-05-18T13:15:29.385508",
+          "action": "DATA_CREATE",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/v1/auth/login",
+          "details": {
+            "method": "POST",
+            "query_params": "",
+            "status_code": 401,
+            "duration": 0.003
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "a5ff3d0cd52a"
+        },
+        {
+          "timestamp": "2026-05-18T13:15:29.393778",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/v1/audit/logs",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 404,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "2f4f9c5367e6"
+        },
+        {
+          "timestamp": "2026-05-18T13:15:29.402896",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/v1/alerts",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 404,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "71b6b8feb637"
+        },
+        {
+          "timestamp": "2026-05-18T13:17:29.123546",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "acf43604ba89"
+        },
+        {
+          "timestamp": "2026-05-18T13:17:29.293322",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/utils/string/uuid",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "e22d2f913f09"
+        },
+        {
+          "timestamp": "2026-05-18T13:17:29.300240",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/utils/time/current",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "fedef883755d"
+        },
+        {
+          "timestamp": "2026-05-18T13:17:29.308025",
+          "action": "DATA_CREATE",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/utils/validate/email",
+          "details": {
+            "method": "POST",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.003
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "018df9c08ba4"
+        },
+        {
+          "timestamp": "2026-05-18T13:17:31.368102",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/cache/stats",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 2.054
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "1255b8de703e"
+        },
+        {
+          "timestamp": "2026-05-18T13:17:31.399175",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/cache/health",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "587f8de05556"
+        },
+        {
+          "timestamp": "2026-05-18T13:17:31.405300",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/cache/report",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "1cb12c92eb0b"
+        },
+        {
+          "timestamp": "2026-05-18T13:17:31.440856",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/metrics/prometheus",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.012
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "2c7ffbb595a2"
+        },
+        {
+          "timestamp": "2026-05-18T13:17:31.450998",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/metrics/summary",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "0d73b73d3a86"
+        },
+        {
+          "timestamp": "2026-05-18T13:17:31.523289",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/performance/",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.064
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "46a6f8d38c51"
+        },
+        {
+          "timestamp": "2026-05-18T13:17:31.534866",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/performance/cache/stats",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.003
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "d3e7bce27b7b"
+        },
+        {
+          "timestamp": "2026-05-18T13:17:31.606146",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/performance/recommendations",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.065
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "280e903bdd0e"
+        },
+        {
+          "timestamp": "2026-05-18T13:17:31.637851",
+          "action": "API_ACCESS",
+          "level": "ERROR",
+          "user_id": null,
+          "resource": "/api/v1/agents",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 500,
+            "duration": 0.007
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "cf5bc90b8db6"
+        },
+        {
+          "timestamp": "2026-05-18T13:17:31.651388",
+          "action": "DATA_CREATE",
+          "level": "ERROR",
+          "user_id": null,
+          "resource": "/api/v1/agent/chat",
+          "details": {
+            "method": "POST",
+            "query_params": "",
+            "status_code": 500,
+            "duration": 0.007
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "5482f5cb0f6d"
+        },
+        {
+          "timestamp": "2026-05-18T13:17:31.662344",
+          "action": "DATA_CREATE",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/auth/login",
+          "details": {
+            "method": "POST",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.005
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "b718447d56d2"
+        },
+        {
+          "timestamp": "2026-05-18T13:17:31.670737",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/v1/auth/me",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 401,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "e620ca750a89"
+        },
+        {
+          "timestamp": "2026-05-18T13:17:31.682362",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/audit/logs",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.005
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "1f6e7c57a471"
+        },
+        {
+          "timestamp": "2026-05-18T13:17:41.794631",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/alerts/",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 10.106
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "ac26f5881add"
+        },
+        {
+          "timestamp": "2026-05-18T13:17:51.973338",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/alerts/check",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 10.113
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "d9e79efc3d24"
+        },
+        {
+          "timestamp": "2026-05-18T13:24:36.219193",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "5ef4a9e7d56d"
+        },
+        {
+          "timestamp": "2026-05-18T13:24:36.372200",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/utils/string/uuid",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "8b2214a632e5"
+        },
+        {
+          "timestamp": "2026-05-18T13:24:36.378097",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/utils/time/current",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "6eb8594364a6"
+        },
+        {
+          "timestamp": "2026-05-18T13:24:36.385325",
+          "action": "DATA_CREATE",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/utils/validate/email",
+          "details": {
+            "method": "POST",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.002
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "3bb8eeee7e4e"
+        },
+        {
+          "timestamp": "2026-05-18T13:24:36.392969",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/cache/stats",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "c33d4c43c465"
+        },
+        {
+          "timestamp": "2026-05-18T13:24:36.399646",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/cache/health",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "94eecfa6f44d"
+        },
+        {
+          "timestamp": "2026-05-18T13:24:36.407922",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/cache/report",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "f5e4fb192758"
+        },
+        {
+          "timestamp": "2026-05-18T13:24:36.423037",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/metrics/prometheus",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.009
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "c5f54dfed032"
+        },
+        {
+          "timestamp": "2026-05-18T13:24:36.429675",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/metrics/summary",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "d53e5390087f"
+        },
+        {
+          "timestamp": "2026-05-18T13:24:36.501112",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/performance/",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.066
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "52bb870990ba"
+        },
+        {
+          "timestamp": "2026-05-18T13:24:36.511535",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/performance/cache/stats",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.005
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "38537c9cbaf9"
+        },
+        {
+          "timestamp": "2026-05-18T13:24:36.593154",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/performance/recommendations",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.066
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "d39c21d883e1"
+        },
+        {
+          "timestamp": "2026-05-18T13:24:36.602236",
+          "action": "API_ACCESS",
+          "level": "ERROR",
+          "user_id": null,
+          "resource": "/api/v1/agents",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 500,
+            "duration": 0.004
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "9e34a4ccfe06"
+        },
+        {
+          "timestamp": "2026-05-18T13:24:36.613241",
+          "action": "DATA_CREATE",
+          "level": "ERROR",
+          "user_id": null,
+          "resource": "/api/v1/agent/chat",
+          "details": {
+            "method": "POST",
+            "query_params": "",
+            "status_code": 500,
+            "duration": 0.005
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "1649d8c839ac"
+        },
+        {
+          "timestamp": "2026-05-18T13:24:36.623776",
+          "action": "DATA_CREATE",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/auth/login",
+          "details": {
+            "method": "POST",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.004
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "d4aa76a33353"
+        },
+        {
+          "timestamp": "2026-05-18T13:24:36.631322",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/v1/auth/me",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 401,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "28280be375e6"
+        },
+        {
+          "timestamp": "2026-05-18T13:24:36.641909",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/audit/logs",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.003
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "d8d8d129fbed"
+        },
+        {
+          "timestamp": "2026-05-18T13:24:46.771097",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/alerts/",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 10.123
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "5048afff6b64"
+        },
+        {
+          "timestamp": "2026-05-18T13:24:56.911187",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/alerts/check",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 10.074
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "821aa33fed32"
+        },
+        {
+          "timestamp": "2026-05-18T13:26:43.273654",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.003
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "8686e1b8c076"
+        },
+        {
+          "timestamp": "2026-05-18T13:26:43.465939",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/utils/string/uuid",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.002
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "d183cf8202ee"
+        },
+        {
+          "timestamp": "2026-05-18T13:26:43.473557",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/utils/time/current",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "24470fd0713b"
+        },
+        {
+          "timestamp": "2026-05-18T13:26:43.483017",
+          "action": "DATA_CREATE",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/utils/validate/email",
+          "details": {
+            "method": "POST",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.004
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "6ea2a13a8299"
+        },
+        {
+          "timestamp": "2026-05-18T13:26:45.533541",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/cache/stats",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 2.044
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "f7aa270ab711"
+        },
+        {
+          "timestamp": "2026-05-18T13:26:45.540434",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/cache/health",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "626666363297"
+        },
+        {
+          "timestamp": "2026-05-18T13:26:45.546836",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/cache/report",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "9b8e67f5e841"
+        },
+        {
+          "timestamp": "2026-05-18T13:26:45.556632",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/metrics/prometheus",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.004
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "34ebbb293d0f"
+        },
+        {
+          "timestamp": "2026-05-18T13:26:45.563659",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/metrics/summary",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "517f5e0e1d61"
+        },
+        {
+          "timestamp": "2026-05-18T13:26:45.635140",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/performance/",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.066
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "80b9234edf34"
+        },
+        {
+          "timestamp": "2026-05-18T13:26:45.642909",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/performance/cache/stats",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.002
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "b49509f27acb"
+        }
+      ]
+    },
+    {
+      "test_name": "GET /api/alerts/",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 10.174835,
+      "timestamp": "2026-05-18T13:35:49.543662",
+      "response_data": {
+        "success": true,
+        "data": {
+          "count": 0,
+          "alerts": []
+        }
+      }
+    },
+    {
+      "test_name": "GET /api/alerts/check",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 10.165375,
+      "timestamp": "2026-05-18T13:35:59.710077",
+      "response_data": {
+        "success": true,
+        "data": {
+          "new_alerts_count": 0,
+          "new_alerts": []
+        }
+      }
+    }
+  ],
+  "timestamp": "2026-05-18T13:35:59.710553"
+}

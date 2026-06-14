@@ -1,0 +1,54 @@
+{
+  "steps": [
+    {
+      "step": "test_1_auth_syntax",
+      "success": true,
+      "timestamp": 1781388861.80024,
+      "data": {
+        "lines": 317
+      }
+    },
+    {
+      "step": "test_2_config",
+      "success": true,
+      "timestamp": 1781388861.8826506
+    },
+    {
+      "step": "test_3_logging",
+      "success": true,
+      "timestamp": 1781388861.9195735
+    },
+    {
+      "step": "test_4_agents",
+      "success": true,
+      "timestamp": 1781389051.5145285
+    },
+    {
+      "step": "test_5_routes_init",
+      "success": true,
+      "timestamp": 1781389052.6645694
+    },
+    {
+      "step": "test_6_start_import_auth",
+      "success": true,
+      "timestamp": 1781389052.6645694
+    },
+    {
+      "step": "test_6_import_auth",
+      "success": true,
+      "timestamp": 1781389052.6655788
+    },
+    {
+      "step": "test_7_start_import_app",
+      "success": true,
+      "timestamp": 1781389052.6655788
+    },
+    {
+      "step": "test_7_import_app",
+      "success": false,
+      "timestamp": 1781389052.7002964,
+      "error": "NameError: name 'logger' is not defined\nTraceback (most recent call last):\n  File \"D:\\aiphxt-app\\ai-service\\app\\core\\app.py\", line 17, in <module>\n    logger.info(\"智能体注册模块初始化成功\")\n    ^^^^^^\nNameError: name 'logger' is not defined\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"D:\\aiphxt-app\\ai-service\\test_syntax_and_app.py\", line 71, in <module>\n    import app.core.app\n  File \"D:\\aiphxt-app\\ai-service\\app\\core\\app.py\", line 19, in <module>\n    logger.warning(f\"智能体注册模块初始化失败，应用将继续启动: {e}\")\n    ^^^^^^\nNameError: name 'logger' is not defined\n"
+    }
+  ],
+  "final_status": "completed"
+}

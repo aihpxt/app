@@ -1,0 +1,33 @@
+=== FastAPI TestClient Test ===
+Working dir: D:\aiphxt-app\ai-service
+TestClient and app imported OK
+
+=== Test 1: Health Check ===
+Status: 200
+Response: {
+  "success": true,
+  "data": {
+    "status": "healthy",
+    "service": "ai-service",
+    "version": "1.0.0"
+  },
+  "message": "服务运行正常"
+}
+
+=== Test 2: Register ===
+Request: {"username": "testuser_1781388703", "password": "password123", "email": "testuser_1781388703@test.com", "phone": "13881388703", "role": "student"}
+Status: 200
+Response: {
+  "success": false,
+  "message": "注册失败: (sqlite3.OperationalError) no such column: users.password_hash\n[SQL: SELECT users.id AS users_id, users.username AS users_username, users.password_hash AS users_password_hash, users.email AS users_email, users.phone AS users_phone, users.role AS users_role, users.created_at AS users_created_at, users.updated_at AS users_updated_at \nFROM users \nWHERE users.username = ? OR users.phone = ?\n LIMIT ? OFFSET ?]\n[parameters: ('testuser_1781388703', '13881388703', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)"
+}
+
+=== Test 3: /api/v1/auth/register ===
+Request: {"username": "testuser_v1_1781388703", "password": "password123", "email": "testuser_v1_1781388703@test.com", "phone": "13981388703", "role": "student"}
+Status: 200
+Response: {
+  "success": false,
+  "message": "注册失败: (sqlite3.OperationalError) no such column: users.password_hash\n[SQL: SELECT users.id AS users_id, users.username AS users_username, users.password_hash AS users_password_hash, users.email AS users_email, users.phone AS users_phone, users.role AS users_role, users.created_at AS users_created_at, users.updated_at AS users_updated_at \nFROM users \nWHERE users.username = ? OR users.phone = ?\n LIMIT ? OFFSET ?]\n[parameters: ('testuser_v1_1781388703', '13981388703', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)"
+}
+
+=== TEST END ===

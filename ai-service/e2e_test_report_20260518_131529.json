@@ -1,0 +1,370 @@
+{
+  "test_summary": {
+    "total_tests": 19,
+    "passed": 10,
+    "failed": 9,
+    "pass_rate": "52.63%",
+    "avg_response_time": "0.016s",
+    "min_response_time": "0.004s",
+    "max_response_time": "0.081s",
+    "total_time": "0.35s"
+  },
+  "test_results": [
+    {
+      "test_name": "GET /",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.009504,
+      "timestamp": "2026-05-18T13:15:29.068022",
+      "response_data": {
+        "success": true,
+        "data": {
+          "app": "AI Service",
+          "version": "1.0.0",
+          "message": "Welcome to AI Service API"
+        }
+      }
+    },
+    {
+      "test_name": "GET /health",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.080766,
+      "timestamp": "2026-05-18T13:15:29.151204",
+      "response_data": {
+        "success": true,
+        "data": {
+          "app": "AI Service",
+          "version": "1.0.0",
+          "status": "healthy",
+          "issues": [
+            "Redis服务不可用，已降级为内存缓存",
+            "Hermes服务不可用，部分高级功能可能受限"
+          ],
+          "system": {
+            "cpu": {
+              "percent": 68.0,
+              "count": 8
+            },
+            "memory": {
+              "used": 11.9,
+              "total": 15.24,
+              "percent": 78.1
+            },
+            "disk": {
+              "used": 58.25,
+              "total": 400.39,
+              "percent": 14.5
+            },
+            "network": {
+              "sent": 2967.06,
+              "recv": 19116.08
+            },
+            "uptime": 0.07,
+            "timestamp": "2026-05-18T13:15:29.149390"
+          },
+          "services": {
+            "redis": {
+              "available": false,
+              "url": "redis://localhost:6379/0"
+            },
+            "hermes": {
+              "available": false,
+              "url": "http://localhost:8888/v1/agent"
+            },
+            "timestamp": "2026-05-18T13:15:29.149410"
+          }
+        }
+      }
+    },
+    {
+      "test_name": "GET /health/metrics",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.066783,
+      "timestamp": "2026-05-18T13:15:29.219984",
+      "response_data": {
+        "success": true,
+        "data": {
+          "cpu": {
+            "percent": 70.4,
+            "count": 8
+          },
+          "memory": {
+            "used": 11.91,
+            "total": 15.24,
+            "percent": 78.1
+          },
+          "disk": {
+            "used": 58.25,
+            "total": 400.39,
+            "percent": 14.5
+          },
+          "network": {
+            "sent": 2967.08,
+            "recv": 19116.08
+          },
+          "uptime": 0.14,
+          "timestamp": "2026-05-18T13:15:29.218054"
+        }
+      }
+    },
+    {
+      "test_name": "GET /health/services",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.004169,
+      "timestamp": "2026-05-18T13:15:29.226244",
+      "response_data": {
+        "success": true,
+        "data": {
+          "redis": {
+            "available": false,
+            "url": "redis://localhost:6379/0"
+          },
+          "hermes": {
+            "available": false,
+            "url": "http://localhost:8888/v1/agent"
+          },
+          "timestamp": "2026-05-18T13:15:29.224827"
+        }
+      }
+    },
+    {
+      "test_name": "GET /health/cache",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.016515,
+      "timestamp": "2026-05-18T13:15:29.244315",
+      "response_data": {
+        "success": true,
+        "data": {
+          "cache_type": "Redis",
+          "test_result": "success"
+        }
+      }
+    },
+    {
+      "test_name": "GET /health/tasks",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.00457,
+      "timestamp": "2026-05-18T13:15:29.250646",
+      "response_data": {
+        "success": true,
+        "data": {
+          "tasks": {},
+          "scheduler_running": false
+        }
+      }
+    },
+    {
+      "test_name": "GET /api/utils/string/uuid",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.006572,
+      "timestamp": "2026-05-18T13:15:29.259385",
+      "response_data": {
+        "success": true,
+        "message": "UUID生成成功",
+        "status_code": 200,
+        "timestamp": "2026-05-18T13:15:29.255494",
+        "data": {
+          "uuid": "c970b085-26d3-4d53-9738-59997f1075b7",
+          "short_id": "ca1c797e4f7049b58867b727e93bbfd4"
+        }
+      }
+    },
+    {
+      "test_name": "GET /api/utils/time/current",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.007713,
+      "timestamp": "2026-05-18T13:15:29.269826",
+      "response_data": {
+        "success": true,
+        "message": "获取当前时间成功",
+        "status_code": 200,
+        "timestamp": "2026-05-18T13:15:29.265717",
+        "data": {
+          "datetime": "2026-05-18 13:15:29",
+          "timestamp": 1779081329.2657042,
+          "date": "2026-05-18",
+          "time": "13:15:29"
+        }
+      }
+    },
+    {
+      "test_name": "POST /api/utils/validate/email",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.006707,
+      "timestamp": "2026-05-18T13:15:29.279484",
+      "response_data": {
+        "success": true,
+        "message": "邮箱验证完成",
+        "status_code": 200,
+        "timestamp": "2026-05-18T13:15:29.276442",
+        "data": {
+          "valid": true,
+          "email": "test@example.com",
+          "masked": "te***@example.com"
+        }
+      }
+    },
+    {
+      "test_name": "GET /api/cache/metrics",
+      "expected_status": 200,
+      "actual_status": 404,
+      "success": false,
+      "response_time": 0.005561,
+      "timestamp": "2026-05-18T13:15:29.286917",
+      "response_data": {
+        "detail": "Not Found"
+      },
+      "error": "Expected 200, got 404"
+    },
+    {
+      "test_name": "GET /metrics",
+      "expected_status": 200,
+      "actual_status": 404,
+      "success": false,
+      "response_time": 0.005272,
+      "timestamp": "2026-05-18T13:15:29.296767",
+      "response_data": {
+        "detail": "Not Found"
+      },
+      "error": "Expected 200, got 404"
+    },
+    {
+      "test_name": "GET /api/v1/performance/metrics",
+      "expected_status": 200,
+      "actual_status": 404,
+      "success": false,
+      "response_time": 0.006733,
+      "timestamp": "2026-05-18T13:15:29.305508",
+      "response_data": {
+        "detail": "Not Found"
+      },
+      "error": "Expected 200, got 404"
+    },
+    {
+      "test_name": "GET /api/v1/tasks",
+      "expected_status": 200,
+      "actual_status": 500,
+      "success": false,
+      "response_time": 0.007618,
+      "timestamp": "2026-05-18T13:15:29.315618",
+      "response_data": {
+        "detail": {
+          "success": false,
+          "error": {
+            "code": "INTERNAL_SERVER_ERROR",
+            "message": "'AutoTaskScheduler' object has no attribute 'get_tasks'"
+          }
+        }
+      },
+      "error": "Expected 200, got 500"
+    },
+    {
+      "test_name": "GET /api/v1/agents",
+      "expected_status": 200,
+      "actual_status": 500,
+      "success": false,
+      "response_time": 0.012932,
+      "timestamp": "2026-05-18T13:15:29.330867",
+      "response_data": {
+        "detail": {
+          "success": false,
+          "error": {
+            "code": "INTERNAL_SERVER_ERROR",
+            "message": "No module named 'config'"
+          }
+        }
+      },
+      "error": "Expected 200, got 500"
+    },
+    {
+      "test_name": "POST /api/v1/agent/chat",
+      "expected_status": 200,
+      "actual_status": 500,
+      "success": false,
+      "response_time": 0.014423,
+      "timestamp": "2026-05-18T13:15:29.346972",
+      "response_data": {
+        "detail": {
+          "success": false,
+          "error": {
+            "code": "INTERNAL_SERVER_ERROR",
+            "message": "No module named 'config'"
+          }
+        }
+      },
+      "error": "Expected 200, got 500"
+    },
+    {
+      "test_name": "POST /api/v1/auth/register",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.029071,
+      "timestamp": "2026-05-18T13:15:29.378201",
+      "response_data": {
+        "user_id": "user_1779081329",
+        "username": "test_user_1779081329",
+        "email": "test_1779081329@example.com",
+        "phone": null,
+        "roles": [
+          "student"
+        ],
+        "created_at": "2026-05-18T13:15:29.372975"
+      }
+    },
+    {
+      "test_name": "POST /api/v1/auth/login",
+      "expected_status": 200,
+      "actual_status": 401,
+      "success": false,
+      "response_time": 0.007988,
+      "timestamp": "2026-05-18T13:15:29.388668",
+      "response_data": {
+        "detail": "用户名或密码错误"
+      },
+      "error": "Expected 200, got 401"
+    },
+    {
+      "test_name": "GET /api/v1/audit/logs",
+      "expected_status": 200,
+      "actual_status": 404,
+      "success": false,
+      "response_time": 0.006847,
+      "timestamp": "2026-05-18T13:15:29.397321",
+      "response_data": {
+        "detail": "Not Found"
+      },
+      "error": "Expected 200, got 404"
+    },
+    {
+      "test_name": "GET /api/v1/alerts",
+      "expected_status": 200,
+      "actual_status": 404,
+      "success": false,
+      "response_time": 0.006314,
+      "timestamp": "2026-05-18T13:15:29.406135",
+      "response_data": {
+        "detail": "Not Found"
+      },
+      "error": "Expected 200, got 404"
+    }
+  ],
+  "timestamp": "2026-05-18T13:15:29.406782"
+}

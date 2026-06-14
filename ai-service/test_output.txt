@@ -1,0 +1,10 @@
+=== Starting Test ===
+✓ Database initialized
+✓ App created with 199 routes
+✓ TestClient created
+✓ Register: status=200, success=True
+✓ Login: status=200, success=True
+✓ V1 Register: status=200, success=True
+✓ V1 Login: status=200, success=True
+
+=== ALL TESTS PASSED ===

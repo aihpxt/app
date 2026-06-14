@@ -1,0 +1,25 @@
+=== TEST START ===
+Working dir: D:\aiphxt-app\ai-service
+APP_DIR: D:\aiphxt-app\ai-service
+ABS_DB_PATH: D:\aiphxt-app\ai-service\app.db
+DATABASE_URL: sqlite:///D:\aiphxt-app\ai-service\app.db
+DB Manager created: <app.core.database_pool.DatabaseManager object at 0x00000242451BF010>
+Session created: <sqlalchemy.orm.session.Session object at 0x0000024248A8F410>
+DB: OK
+
+bcrypt: OK (hash=$2b$12$8yxWh2/GKTUnhgztb1DYyuu...)
+
+User model: <class 'app.models.user.User'>
+User.__tablename__: users
+User model: OK
+
+register function: <function register at 0x000002424AC61940>
+RegisterRequest: <class 'app.api.routes.auth.RegisterRequest'>
+Role: ['admin', 'teacher', 'student', 'guest']
+Auth imports: OK
+
+=== Creating test user directly ===
+Created user: id=2, username=direct_test_1781388551
+Direct user creation: OK
+
+=== TEST END ===

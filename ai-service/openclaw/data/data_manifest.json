@@ -1,0 +1,75 @@
+{
+  "total_prefectures": 16,
+  "total_schools": 41,
+  "prefectures": [
+    {
+      "code": "km",
+      "school_count": 6
+    },
+    {
+      "code": "ws",
+      "school_count": 4
+    },
+    {
+      "code": "dl",
+      "school_count": 3
+    },
+    {
+      "code": "qj",
+      "school_count": 3
+    },
+    {
+      "code": "yx",
+      "school_count": 3
+    },
+    {
+      "code": "cx",
+      "school_count": 2
+    },
+    {
+      "code": "hh",
+      "school_count": 2
+    },
+    {
+      "code": "bs",
+      "school_count": 2
+    },
+    {
+      "code": "zt",
+      "school_count": 2
+    },
+    {
+      "code": "lj",
+      "school_count": 2
+    },
+    {
+      "code": "pe",
+      "school_count": 2
+    },
+    {
+      "code": "lc",
+      "school_count": 2
+    },
+    {
+      "code": "xsbn",
+      "school_count": 2
+    },
+    {
+      "code": "dh",
+      "school_count": 2
+    },
+    {
+      "code": "nj",
+      "school_count": 2
+    },
+    {
+      "code": "dq",
+      "school_count": 2
+    }
+  ],
+  "updated_at": "2026-05-21",
+  "sources": [
+    "independent_crawler",
+    "official_platform"
+  ]
+}

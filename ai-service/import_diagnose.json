@@ -1,0 +1,69 @@
+{
+  "steps": [
+    {
+      "step": "step_1_fastapi",
+      "success": true,
+      "timestamp": 1781389383.7613165
+    },
+    {
+      "step": "step_2_config",
+      "success": true,
+      "timestamp": 1781389383.7860422,
+      "data": {
+        "app_name": "AI Service"
+      }
+    },
+    {
+      "step": "step_3_logging",
+      "success": true,
+      "timestamp": 1781389383.8032064
+    },
+    {
+      "step": "step_4_create_app",
+      "success": true,
+      "timestamp": 1781389383.8032064
+    },
+    {
+      "step": "step_5_auth_module",
+      "success": true,
+      "timestamp": 1781389383.9815638,
+      "data": {
+        "auth_routes": 5
+      }
+    },
+    {
+      "step": "step_6_test_register",
+      "success": true,
+      "timestamp": 1781389384.5937605,
+      "data": {
+        "status_code": 200,
+        "response": {
+          "success": false,
+          "message": "注册失败: (sqlite3.OperationalError) no such column: users.password_hash\n[SQL: SELECT users.id AS users_id, users.username AS users_username, users.password_hash AS users_password_hash, users.email AS users_email, users.phone AS users_phone, users.role AS users_role, users.created_at AS users_created_at, users.updated_at AS users_updated_at \nFROM users \nWHERE users.username = ? OR users.phone = ?\n LIMIT ? OFFSET ?]\n[parameters: ('import_test_1781389384', '13681389384', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)"
+        }
+      }
+    },
+    {
+      "step": "step_7_routes",
+      "success": true,
+      "timestamp": 1781389384.5952735,
+      "data": {
+        "total": 11,
+        "routes": [
+          "GET /openapi.json",
+          "GET /docs",
+          "GET /docs/oauth2-redirect",
+          "GET /redoc",
+          "POST /api/v1/auth/login",
+          "POST /api/v1/auth/logout",
+          "POST /api/v1/auth/refresh",
+          "GET /api/v1/auth/me",
+          "POST /api/v1/auth/register",
+          "POST /api/user/login",
+          "POST /api/user/register"
+        ]
+      }
+    }
+  ],
+  "final_status": "completed"
+}

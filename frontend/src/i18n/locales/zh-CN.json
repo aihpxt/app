@@ -1,0 +1,166 @@
+{
+  "common": {
+    "home": "首页",
+    "school": "学校",
+    "aiAssistant": "AI助手",
+    "data": "数据",
+    "login": "登录",
+    "logout": "退出登录",
+    "register": "注册",
+    "search": "搜索",
+    "submit": "提交",
+    "cancel": "取消",
+    "save": "保存",
+    "edit": "编辑",
+    "delete": "删除",
+    "add": "添加",
+    "view": "查看",
+    "detail": "详情",
+    "back": "返回",
+    "next": "下一步",
+    "previous": "上一步",
+    "confirm": "确认",
+    "yes": "是",
+    "no": "否",
+    "loading": "加载中...",
+    "success": "操作成功",
+    "error": "操作失败",
+    "warning": "警告",
+    "info": "提示",
+    "required": "请填写{field}",
+    "placeholder": {
+      "search": "请输入搜索内容",
+      "name": "请输入名称",
+      "phone": "请输入手机号",
+      "email": "请输入邮箱",
+      "password": "请输入密码"
+    }
+  },
+  "school": {
+    "title": "学校查询",
+    "total": "学校总数",
+    "public": "公办学校",
+    "private": "民办学校",
+    "key": "重点高中",
+    "searchPlaceholder": "搜索学校名称...",
+    "filter": {
+      "city": "选择城市",
+      "type": "学校类型",
+      "nature": "办学性质"
+    },
+    "sort": {
+      "default": "综合排序",
+      "scoreDesc": "录取分数从高到低",
+      "scoreAsc": "录取分数从低到高",
+      "views": "浏览量从高到低"
+    },
+    "detail": {
+      "title": "学校详情",
+      "basicInfo": "基本信息",
+      "address": "地址",
+      "phone": "电话",
+      "founded": "创办时间",
+      "students": "在校生人数",
+      "teachers": "教职工人数",
+      "tuition": "学费",
+      "boarding": "住宿情况",
+      "features": "学校特色",
+      "description": "学校简介"
+    },
+    "compare": "对比学校",
+    "favorite": "收藏",
+    "unfavorite": "取消收藏",
+    "viewCount": "浏览"
+  },
+  "aiAssistant": {
+    "title": "小龙虾择校助手",
+    "welcome": "你好！我是小龙虾择校助手",
+    "description": "我可以帮助你了解中考政策、学校选择、志愿填报等问题",
+    "inputPlaceholder": "请输入你的问题...",
+    "newChat": "新建对话",
+    "history": "历史对话",
+    "schoolInfo": "学校查询",
+    "scoreLine": "分数线查询",
+    "policy": "政策咨询",
+    "study": "学习指导"
+  },
+  "aiSelection": {
+    "title": "AI智能择校",
+    "step1": "输入你的预估分数",
+    "step2": "选择你的偏好",
+    "step3": "获取推荐结果",
+    "score": "预估分数",
+    "prefecture": "目标地区",
+    "schoolType": "学校类型",
+    "nature": "办学性质",
+    "recommend": "智能推荐",
+    "result": "推荐结果",
+    "reason": "推荐理由"
+  },
+  "volunteer": {
+    "title": "AI志愿填报",
+    "practice": "模拟志愿填报演练",
+    "guide": "志愿填报指导",
+    "order": "志愿顺序",
+    "preview": "志愿预览"
+  },
+  "data": {
+    "title": "数据可视化",
+    "subjectCompare": "学科对比分析",
+    "examAnalysis": "模拟考试分析",
+    "schoolStatistics": "学校统计",
+    "trend": "趋势分析"
+  },
+  "user": {
+    "title": "个人中心",
+    "profile": "个人资料",
+    "goals": "学习目标",
+    "plans": "学习计划",
+    "progress": "学习进度",
+    "favorites": "我的收藏",
+    "notifications": "通知中心",
+    "settings": "设置",
+    "logout": "退出登录"
+  },
+  "policy": {
+    "title": "政策解读",
+    "provincial": "省级政策",
+    "prefecture": "各地州政策",
+    "detail": "政策详情",
+    "effectiveDate": "生效日期",
+    "scope": "适用范围"
+  },
+  "learning": {
+    "plan": "学习计划",
+    "progress": "学习进度",
+    "task": "学习任务",
+    "goal": "学习目标",
+    "duration": "学习时长",
+    "completed": "已完成",
+    "pending": "待完成",
+    "reminder": "学习提醒",
+    "dailyGoal": "今日目标"
+  },
+  "notification": {
+    "title": "通知中心",
+    "reminder": "学习提醒",
+    "system": "系统通知",
+    "progress": "目标进度",
+    "markAllRead": "全部已读",
+    "empty": "暂无通知"
+  },
+  "help": {
+    "title": "帮助中心",
+    "faq": "常见问题",
+    "contact": "联系我们",
+    "feedback": "意见反馈"
+  },
+  "date": {
+    "today": "今天",
+    "yesterday": "昨天",
+    "tomorrow": "明天",
+    "week": "本周",
+    "month": "本月",
+    "year": "本年"
+  }
+}

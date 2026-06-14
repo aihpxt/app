@@ -1,0 +1,224 @@
+import { createRouter, createWebHashHistory } from 'vue-router'
+
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: () => import('../views/Home.vue'),
+    meta: { title: '首页' }
+  },
+  {
+    path: '/school',
+    name: 'School',
+    component: () => import('../views/School.vue'),
+    meta: { title: '学校查询' }
+  },
+  {
+    path: '/school/:id',
+    name: 'SchoolDetail',
+    component: () => import('../views/SchoolDetail.vue'),
+    meta: { title: '学校详情' }
+  },
+  {
+    path: '/ai-selection',
+    name: 'AiSelection',
+    component: () => import('../views/AiSelection.vue'),
+    meta: { title: 'AI智能择校', requiresAuth: true }
+  },
+  {
+    path: '/score-prediction',
+    name: 'ScorePrediction',
+    component: () => import('../views/ScorePrediction.vue'),
+    meta: { title: 'AI分数预测', requiresAuth: true }
+  },
+  {
+    path: '/volunteer',
+    name: 'Volunteer',
+    component: () => import('../views/Volunteer.vue'),
+    meta: { title: 'AI志愿填报', requiresAuth: true }
+  },
+  {
+    path: '/compare',
+    name: 'Compare',
+    component: () => import('../views/Compare.vue'),
+    meta: { title: 'AI学校对比' }
+  },
+  {
+    path: '/transition',
+    name: 'Transition',
+    component: () => import('../views/Transition.vue'),
+    meta: { title: 'AI高中衔接', requiresAuth: true }
+  },
+  {
+    path: '/volunteer-practice',
+    name: 'VolunteerPractice',
+    component: () => import('../views/VolunteerPractice.vue'),
+    meta: { title: '模拟志愿填报演练', requiresAuth: true }
+  },
+  {
+    path: '/policy',
+    name: 'Policy',
+    component: () => import('../views/Policy.vue'),
+    meta: { title: '政策解读' }
+  },
+  {
+    path: '/policy/:id',
+    name: 'PolicyDetail',
+    component: () => import('../views/Policy.vue'),
+    meta: { title: '政策详情' }
+  },
+  {
+    path: '/prefecture-policy',
+    name: 'PrefecturePolicy',
+    component: () => import('../views/PrefecturePolicy.vue'),
+    meta: { title: '各地州招录政策' }
+  },
+  {
+    path: '/dashboard',
+    name: 'Dashboard',
+    component: () => import('../views/Dashboard.vue'),
+    meta: { title: '数据仪表盘' }
+  },
+  {
+    path: '/unified-dashboard',
+    name: 'UnifiedDashboard',
+    component: () => import('../views/UnifiedDashboard.vue'),
+    meta: { title: '统一管理平台' }
+  },
+  {
+    path: '/help',
+    name: 'Help',
+    component: () => import('../views/Help.vue'),
+    meta: { title: '帮助中心' }
+  },
+  {
+    path: '/data',
+    name: 'Data',
+    component: () => import('../views/Data.vue'),
+    meta: { title: '数据中心' }
+  },
+  {
+    path: '/campus-events',
+    name: 'CampusEvents',
+    component: () => import('../views/CampusEvents.vue'),
+    meta: { title: '校园活动日历' }
+  },
+  {
+    path: '/high-school-transition',
+    name: 'HighSchoolTransitionCourses',
+    component: () => import('../views/HighSchoolTransitionCourses.vue'),
+    meta: { title: '高中衔接课程', requiresAuth: true }
+  },
+  {
+    path: '/data-visualization',
+    name: 'DataVisualization',
+    component: () => import('../views/DataVisualization.vue'),
+    meta: { title: '数据分析', requiresAuth: true }
+  },
+  {
+    path: '/online-test',
+    name: 'OnlineTest',
+    component: () => import('../views/OnlineTest.vue'),
+    meta: { title: '在线测试', requiresAuth: true }
+  },
+  {
+    path: '/learning-progress',
+    name: 'LearningProgress',
+    component: () => import('../views/LearningProgress.vue'),
+    meta: { title: '学习进度', requiresAuth: true }
+  },
+  {
+    path: '/user',
+    name: 'User',
+    component: () => import('../views/User.vue'),
+    meta: { title: '个人中心', requiresAuth: true }
+  },
+  {
+    path: '/admin',
+    name: 'Admin',
+    component: () => import('../views/Admin.vue'),
+    meta: { title: '后台管理', requiresAuth: true, requiresAdmin: true }
+  },
+  {
+    path: '/ai-assistant',
+    name: 'AiAssistant',
+    component: () => import('../views/AiAssistant.vue'),
+    meta: { title: '小龙虾智能助手' }
+  },
+  {
+    path: '/learning-resources',
+    name: 'LearningResources',
+    component: () => import('../views/LearningResources.vue'),
+    meta: { title: '学习资源推荐' }
+  },
+  {
+    path: '/notification',
+    name: 'Notification',
+    component: () => import('../views/Notification.vue'),
+    meta: { title: '消息通知' }
+  },
+  {
+    path: '/favorite',
+    name: 'Favorite',
+    component: () => import('../views/Favorite.vue'),
+    meta: { title: '我的收藏' }
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import('../views/Login.vue'),
+    meta: { title: '登录' }
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: () => import('../views/Login.vue'),
+    meta: { title: '注册' }
+  },
+  {
+    path: '/legal/:type',
+    name: 'Legal',
+    component: () => import('../views/Legal.vue'),
+    meta: { title: '法律文档' }
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: () => import('../views/Home.vue'),
+    meta: { title: '页面不存在' }
+  }
+]
+
+const router = createRouter({
+  history: createWebHashHistory(),
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { top: 0 }
+    }
+  }
+})
+
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title ? `${to.meta.title} - 云南省AI择校平台` : '云南省AI全域赋能中考择校智能决策平台'
+  
+  const token = localStorage.getItem('token')
+  const userInfo = JSON.parse(localStorage.getItem('userInfo'))
+  
+  if (to.meta.requiresAuth && !token) {
+    next({
+      path: '/login',
+      query: { redirect: to.fullPath }
+    })
+  } else if (to.meta.requiresAdmin && (!userInfo || userInfo.role !== 3)) {
+    next('/user')
+  } else if ((to.path === '/login' || to.path === '/register') && token) {
+    next('/user')
+  } else {
+    next()
+  }
+})
+
+export default router

@@ -1,0 +1,214 @@
+{
+  "steps": [
+    {
+      "step": "step_1_db_manager",
+      "success": true
+    },
+    {
+      "step": "step_2_db_path",
+      "success": true,
+      "data": {
+        "database_url": "sqlite:///D:\\aiphxt-app\\ai-service\\app.db"
+      }
+    },
+    {
+      "step": "step_3_check_users_table",
+      "success": true,
+      "data": {
+        "columns": [
+          {
+            "cid": 0,
+            "name": "id",
+            "type": "INTEGER",
+            "notnull": 1,
+            "dflt_value": null,
+            "pk": 1
+          },
+          {
+            "cid": 1,
+            "name": "username",
+            "type": "VARCHAR(50)",
+            "notnull": 1,
+            "dflt_value": null,
+            "pk": 0
+          },
+          {
+            "cid": 2,
+            "name": "password_hash",
+            "type": "VARCHAR(255)",
+            "notnull": 1,
+            "dflt_value": null,
+            "pk": 0
+          },
+          {
+            "cid": 3,
+            "name": "email",
+            "type": "VARCHAR(100)",
+            "notnull": 0,
+            "dflt_value": null,
+            "pk": 0
+          },
+          {
+            "cid": 4,
+            "name": "phone",
+            "type": "VARCHAR(20)",
+            "notnull": 0,
+            "dflt_value": null,
+            "pk": 0
+          },
+          {
+            "cid": 5,
+            "name": "role",
+            "type": "VARCHAR(20)",
+            "notnull": 1,
+            "dflt_value": null,
+            "pk": 0
+          },
+          {
+            "cid": 6,
+            "name": "created_at",
+            "type": "DATETIME",
+            "notnull": 0,
+            "dflt_value": "CURRENT_TIMESTAMP",
+            "pk": 0
+          },
+          {
+            "cid": 7,
+            "name": "updated_at",
+            "type": "DATETIME",
+            "notnull": 0,
+            "dflt_value": "CURRENT_TIMESTAMP",
+            "pk": 0
+          }
+        ]
+      }
+    },
+    {
+      "step": "step_4_drop_table",
+      "success": true
+    },
+    {
+      "step": "step_5_create_table",
+      "success": true
+    },
+    {
+      "step": "step_6_verify_new_table",
+      "success": true,
+      "data": {
+        "columns": [
+          {
+            "cid": 0,
+            "name": "id",
+            "type": "INTEGER",
+            "notnull": 1,
+            "dflt_value": null,
+            "pk": 1
+          },
+          {
+            "cid": 1,
+            "name": "username",
+            "type": "VARCHAR(50)",
+            "notnull": 1,
+            "dflt_value": null,
+            "pk": 0
+          },
+          {
+            "cid": 2,
+            "name": "password_hash",
+            "type": "VARCHAR(255)",
+            "notnull": 1,
+            "dflt_value": null,
+            "pk": 0
+          },
+          {
+            "cid": 3,
+            "name": "email",
+            "type": "VARCHAR(100)",
+            "notnull": 0,
+            "dflt_value": null,
+            "pk": 0
+          },
+          {
+            "cid": 4,
+            "name": "phone",
+            "type": "VARCHAR(20)",
+            "notnull": 0,
+            "dflt_value": null,
+            "pk": 0
+          },
+          {
+            "cid": 5,
+            "name": "role",
+            "type": "VARCHAR(20)",
+            "notnull": 1,
+            "dflt_value": null,
+            "pk": 0
+          },
+          {
+            "cid": 6,
+            "name": "created_at",
+            "type": "DATETIME",
+            "notnull": 0,
+            "dflt_value": "CURRENT_TIMESTAMP",
+            "pk": 0
+          },
+          {
+            "cid": 7,
+            "name": "updated_at",
+            "type": "DATETIME",
+            "notnull": 0,
+            "dflt_value": "CURRENT_TIMESTAMP",
+            "pk": 0
+          }
+        ]
+      }
+    },
+    {
+      "step": "step_7_test_register",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "response": {
+          "success": true,
+          "data": {
+            "user_id": "1",
+            "username": "db_test_1781389503",
+            "email": "db_test_1781389503@test.com",
+            "phone": "13781389503",
+            "roles": [
+              "student"
+            ],
+            "created_at": "2026-06-13T22:25:03"
+          },
+          "message": "注册成功"
+        }
+      }
+    },
+    {
+      "step": "step_8_test_login",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "response": {
+          "success": true,
+          "data": {
+            "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwidXNlcm5hbWUiOiJkYl90ZXN0XzE3ODEzODk1MDMiLCJyb2xlcyI6WyJzdHVkZW50Il0sInR5cGUiOiJhY2Nlc3MiLCJpYXQiOjE3ODEzODk1MDMsImV4cCI6MTc4MTM5MTMwMywianRpIjoiU3EzRHZ3NDRXMmU1NmNnZUJodHVwUSIsImVtYWlsIjoiZGJfdGVzdF8xNzgxMzg5NTAzQHRlc3QuY29tIn0.qa8rlaQpueloCGKpeJLUEn84vr5IXhz4j3QRWlXjL_Y",
+            "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwidHlwZSI6InJlZnJlc2giLCJpYXQiOjE3ODEzODk1MDMsImV4cCI6MTc4MTk5NDMwMywianRpIjoiWElXbmlhX2tHU3NUUy1nUFo1U2xIUSJ9.eBcDmtHaHwwA_ovlueN-j56APg0wGxE96WjO2uvfdOc",
+            "token_type": "Bearer",
+            "expires_in": 1800,
+            "user": {
+              "user_id": "1",
+              "username": "db_test_1781389503",
+              "phone": "13781389503",
+              "email": "db_test_1781389503@test.com",
+              "roles": [
+                "student"
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "final_status": "completed"
+}

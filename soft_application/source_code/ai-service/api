@@ -1,0 +1,51 @@
+"""
+API路由注册模块
+"""
+
+from fastapi import APIRouter
+from typing import List, Callable
+
+# 路由注册函数
+routes_to_register: List[Callable] = []
+
+# 路由注册装饰器
+def register_router():
+    """路由注册装饰器"""
+    def decorator(func):
+        routes_to_register.append(func)
+        return func
+    return decorator
+
+# 注册所有路由
+def register_routes(router: APIRouter):
+    """
+    注册所有API路由
+    
+    Args:
+        router: 主路由实例
+    """
+    # 导入并注册各模块路由
+    try:
+        from .v1 import agents, auth, data, ai, openclaw
+        
+        # 注册v1版本路由
+        v1_router = APIRouter(prefix="/v1")
+        
+        # 注册各模块路由
+        agents.register_routes(v1_router)
+        auth.register_routes(v1_router)
+        data.register_routes(v1_router)
+        ai.register_routes(v1_router)
+        openclaw.register_routes(v1_router)
+        
+        # 将v1路由添加到主路由
+        router.include_router(v1_router, tags=["v1"])
+    except Exception as e:
+        print(f"注册路由失败: {e}")
+
+    # 执行所有注册的路由函数
+    for route_func in routes_to_register:
+        try:
+            route_func(router)
+        except Exception as e:
+            print(f"执行路由注册函数失败: {e}")

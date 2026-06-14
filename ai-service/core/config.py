@@ -1,0 +1,74 @@
+import os
+from pathlib import Path
+from typing import List
+from pydantic_settings import BaseSettings
+from functools import lru_cache
+
+class Settings(BaseSettings):
+    APP_NAME: str = "小龙虾择校"
+    APP_ENV: str = "development"
+    APP_DEBUG: bool = True
+    APP_VERSION: str = "1.0.0"
+    
+    API_HOST: str = "0.0.0.0"
+    API_PORT: int = 8080
+    API_WORKERS: int = 1
+    
+    DATABASE_URL: str = "sqlite:///data/schools.db"
+    DATABASE_POOL_SIZE: int = 5
+    DATABASE_MAX_OVERFLOW: int = 5
+    
+    REDIS_URL: str = "redis://localhost:6379/0"
+    CACHE_TTL: int = 3600
+    
+    CORS_ORIGINS: str = "http://localhost:5173,http://127.0.0.1:5173"
+    CORS_ALLOW_CREDENTIALS: bool = True
+    
+    JWT_SECRET_KEY: str = os.getenv("JWT_SECRET_KEY", "")
+    JWT_ALGORITHM: str = "HS256"
+    JWT_EXPIRE_HOURS: int = 24
+    
+    DEEPSEEK_API_KEY: str = ""
+    DEEPSEEK_API_URL: str = "https://api.deepseek.com/v1"
+    DEEPSEEK_MODEL: str = "deepseek-chat"
+    LLM_TIMEOUT: int = 60
+    
+    RATE_LIMIT_REQUESTS: int = 1000
+    RATE_LIMIT_PERIOD: int = 60
+    
+    LOG_LEVEL: str = "DEBUG"
+    LOG_FILE: str = "logs/app.log"
+    LOG_MAX_SIZE: int = 10485760
+    LOG_BACKUP_COUNT: int = 3
+    
+    SMTP_HOST: str = ""
+    SMTP_PORT: int = 587
+    SMTP_USER: str = ""
+    SMTP_PASSWORD: str = ""
+    SMTP_FROM: str = ""
+    
+    UPLOAD_DIR: str = "uploads"
+    MAX_UPLOAD_SIZE: int = 10485760
+    
+    @property
+    def cors_origins_list(self) -> List[str]:
+        return [origin.strip() for origin in self.CORS_ORIGINS.split(",")]
+    
+    @property
+    def is_production(self) -> bool:
+        return self.APP_ENV == "production"
+    
+    @property
+    def base_dir(self) -> Path:
+        return Path(__file__).parent.parent
+    
+    class Config:
+        env_file = ".env"
+        env_file_encoding = "utf-8"
+        case_sensitive = True
+
+@lru_cache()
+def get_settings() -> Settings:
+    return Settings()
+
+settings = get_settings()

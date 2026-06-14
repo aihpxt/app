@@ -1,0 +1,14 @@
+{
+  "name": "sync-images-to-db",
+  "version": "1.0.0",
+  "description": "Sync image metadata to MySQL database",
+  "main": "sync.js",
+  "scripts": {
+    "start": "node sync.js"
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0",
+    "sharp": "^0.33.2",
+    "sqlite3": "^5.1.7"
+  }
+}

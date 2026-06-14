@@ -1,0 +1,72 @@
+Testing app import at d:\aiphxt-app\ai-service
+Python: D:\aiphxt-app\ai-service\venv\Scripts\python.exe
+CWD: d:\aiphxt-app\ai-service
+Loading .env...
+Loaded .env from d:\aiphxt-app\ai-service\.env
+SECRET_KEY: your-secre...
+DATABASE_URL: sqlite:///sqlite/data/unified_school_data.db
+Importing app.core.app...
+SUCCESS: app imported!
+Number of routes: 188
+First 30 route paths:
+  ['GET', 'HEAD'] /openapi.json
+  ['GET', 'HEAD'] /docs
+  ['GET', 'HEAD'] /docs/oauth2-redirect
+  ['GET', 'HEAD'] /redoc
+  ['GET'] /
+  ['GET'] /health/live
+  ['GET'] /health/ready
+  ['GET'] /health/deps
+  ['GET'] /api/health/live
+  ['GET'] /api/health/ready
+  ['GET'] /api/health/deps
+  ['GET'] /api/v1/health/live
+  ['GET'] /api/v1/health/ready
+  ['GET'] /api/v1/health/deps
+  ['POST'] /api/v1/auth/login
+  ['POST'] /api/v1/auth/logout
+  ['POST'] /api/v1/auth/refresh
+  ['GET'] /api/v1/auth/me
+  ['POST'] /api/v1/auth/register
+  ['POST'] /api/user/login
+  ['POST'] /api/user/register
+  ['GET'] /api/user/info
+  ['POST'] /api/user/logout
+  ['POST'] /api/user/refresh
+  ['GET'] /api/v1/cache/stats
+  ['GET'] /api/v1/cache/health
+  ['GET'] /api/v1/cache/recommendations
+  ['POST'] /api/v1/cache/warmup
+  ['POST'] /api/v1/cache/clear
+  ['DELETE'] /api/v1/cache/{key}
+
+Looking for specific routes...
+  FOUND: ['GET', 'HEAD'] /docs/oauth2-redirect
+  FOUND: ['POST'] /api/v1/auth/login
+  FOUND: ['POST'] /api/v1/auth/logout
+  FOUND: ['POST'] /api/v1/auth/refresh
+  FOUND: ['GET'] /api/v1/auth/me
+  FOUND: ['POST'] /api/v1/auth/register
+  FOUND: ['POST'] /api/user/login
+  FOUND: ['POST'] /api/user/register
+  FOUND: ['GET'] /api/user/info
+  FOUND: ['POST'] /api/user/logout
+  FOUND: ['POST'] /api/user/refresh
+  FOUND: ['GET'] /api/metrics/prometheus
+  FOUND: ['GET'] /api/metrics/summary
+  FOUND: ['GET'] /api/metrics/health
+  FOUND: ['GET'] /api/metrics/web-vitals
+  FOUND: ['POST'] /api/metrics/web-vitals
+  FOUND: ['GET'] /api/v1/metrics/prometheus
+  FOUND: ['GET'] /api/v1/metrics/summary
+  FOUND: ['GET'] /api/v1/metrics/health
+  FOUND: ['GET'] /api/v1/metrics/web-vitals
+  FOUND: ['POST'] /api/v1/metrics/web-vitals
+  FOUND: ['GET'] /api/v1/integration/metrics
+  FOUND: ['GET'] /api/integration/metrics
+  FOUND: ['GET'] /api/v1/policies/{policy_id}
+  FOUND: ['GET'] /api/policies/{policy_id}
+  FOUND: ['GET'] /api/admin/users
+  FOUND: ['POST'] /api/admin/users
+
+DONE - App loaded successfully!

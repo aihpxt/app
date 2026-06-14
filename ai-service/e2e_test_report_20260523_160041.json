@@ -1,0 +1,2184 @@
+{
+  "test_summary": {
+    "total_tests": 23,
+    "passed": 21,
+    "failed": 2,
+    "pass_rate": "91.30%",
+    "avg_response_time": "0.998s",
+    "min_response_time": "0.004s",
+    "max_response_time": "10.193s",
+    "total_time": "23.00s"
+  },
+  "test_results": [
+    {
+      "test_name": "GET /",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.019239,
+      "timestamp": "2026-05-23T16:00:18.178169",
+      "response_data": {
+        "success": true,
+        "data": {
+          "app": "AI Service",
+          "version": "1.0.0",
+          "message": "Welcome to AI Service API"
+        }
+      }
+    },
+    {
+      "test_name": "GET /health",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.071574,
+      "timestamp": "2026-05-23T16:00:18.251121",
+      "response_data": {
+        "success": true,
+        "data": {
+          "app": "AI Service",
+          "version": "1.0.0",
+          "status": "healthy",
+          "issues": [
+            "Redis服务不可用，已降级为内存缓存",
+            "Hermes服务不可用，部分高级功能可能受限"
+          ],
+          "system": {
+            "cpu": {
+              "percent": 20.7,
+              "count": 8
+            },
+            "memory": {
+              "used": 12.74,
+              "total": 15.24,
+              "percent": 83.6
+            },
+            "disk": {
+              "used": 58.85,
+              "total": 400.39,
+              "percent": 14.7
+            },
+            "network": {
+              "sent": 2252.9,
+              "recv": 8533.31
+            },
+            "uptime": 0.07,
+            "timestamp": "2026-05-23T16:00:18.249294"
+          },
+          "services": {
+            "redis": {
+              "available": false,
+              "url": "redis://localhost:6379/0"
+            },
+            "hermes": {
+              "available": false,
+              "url": "http://localhost:8888/v1/agent"
+            },
+            "timestamp": "2026-05-23T16:00:18.249313"
+          }
+        }
+      }
+    },
+    {
+      "test_name": "GET /health/metrics",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.064359,
+      "timestamp": "2026-05-23T16:00:18.316605",
+      "response_data": {
+        "success": true,
+        "data": {
+          "cpu": {
+            "percent": 20.8,
+            "count": 8
+          },
+          "memory": {
+            "used": 12.74,
+            "total": 15.24,
+            "percent": 83.6
+          },
+          "disk": {
+            "used": 58.85,
+            "total": 400.39,
+            "percent": 14.7
+          },
+          "network": {
+            "sent": 2252.9,
+            "recv": 8533.32
+          },
+          "uptime": 0.13,
+          "timestamp": "2026-05-23T16:00:18.315002"
+        }
+      }
+    },
+    {
+      "test_name": "GET /health/services",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.019189,
+      "timestamp": "2026-05-23T16:00:18.336930",
+      "response_data": {
+        "success": true,
+        "data": {
+          "redis": {
+            "available": false,
+            "url": "redis://localhost:6379/0"
+          },
+          "hermes": {
+            "available": false,
+            "url": "http://localhost:8888/v1/agent"
+          },
+          "timestamp": "2026-05-23T16:00:18.335488"
+        }
+      }
+    },
+    {
+      "test_name": "GET /health/cache",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.005555,
+      "timestamp": "2026-05-23T16:00:18.343646",
+      "response_data": {
+        "success": true,
+        "data": {
+          "cache_type": "Redis",
+          "test_result": "success"
+        }
+      }
+    },
+    {
+      "test_name": "GET /health/tasks",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.023501,
+      "timestamp": "2026-05-23T16:00:18.368664",
+      "response_data": {
+        "success": true,
+        "data": {
+          "tasks": {},
+          "scheduler_running": false
+        }
+      }
+    },
+    {
+      "test_name": "GET /api/utils/string/uuid",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.005696,
+      "timestamp": "2026-05-23T16:00:18.375610",
+      "response_data": {
+        "success": true,
+        "message": "UUID生成成功",
+        "status_code": 200,
+        "timestamp": "2026-05-23T16:00:18.372870",
+        "data": {
+          "uuid": "45f906de-9c79-41e2-9627-2c7e4b4f20ef",
+          "short_id": "0508662abf6c40b084440b69fe454369"
+        }
+      }
+    },
+    {
+      "test_name": "GET /api/utils/time/current",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.005433,
+      "timestamp": "2026-05-23T16:00:18.382169",
+      "response_data": {
+        "success": true,
+        "message": "获取当前时间成功",
+        "status_code": 200,
+        "timestamp": "2026-05-23T16:00:18.379143",
+        "data": {
+          "datetime": "2026-05-23 16:00:18",
+          "timestamp": 1779523218.3791325,
+          "date": "2026-05-23",
+          "time": "16:00:18"
+        }
+      }
+    },
+    {
+      "test_name": "POST /api/utils/validate/email",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.023147,
+      "timestamp": "2026-05-23T16:00:18.406586",
+      "response_data": {
+        "success": true,
+        "message": "邮箱验证完成",
+        "status_code": 200,
+        "timestamp": "2026-05-23T16:00:18.403669",
+        "data": {
+          "valid": true,
+          "email": "test@example.com",
+          "masked": "te***@example.com"
+        }
+      }
+    },
+    {
+      "test_name": "GET /api/v1/cache/stats",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 2.064506,
+      "timestamp": "2026-05-23T16:00:20.472502",
+      "response_data": {
+        "success": true,
+        "data": {
+          "total_requests": 0,
+          "l1_hits": 0,
+          "l2_hits": 0,
+          "misses": 0,
+          "overall_hit_rate": 0,
+          "l1_hit_rate": 0,
+          "l2_hit_rate": 0,
+          "l1_cache": {
+            "hits": 0,
+            "misses": 0,
+            "sets": 0,
+            "evictions": 0,
+            "expired": 0,
+            "hit_rate": 0,
+            "size": 0,
+            "max_size": 1000,
+            "ttl": 300
+          },
+          "redis_available": true
+        }
+      }
+    },
+    {
+      "test_name": "GET /api/v1/cache/health",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.004013,
+      "timestamp": "2026-05-23T16:00:20.477527",
+      "response_data": {
+        "success": true,
+        "data": {
+          "status": "unhealthy",
+          "alerts": [
+            "缓存命中率过低: 0%"
+          ],
+          "warnings": [],
+          "metrics": {
+            "total_requests": 0,
+            "l1_hits": 0,
+            "l2_hits": 0,
+            "misses": 0,
+            "overall_hit_rate": 0,
+            "l1_hit_rate": 0,
+            "l2_hit_rate": 0,
+            "l1_cache": {
+              "hits": 0,
+              "misses": 0,
+              "sets": 0,
+              "evictions": 0,
+              "expired": 0,
+              "hit_rate": 0,
+              "size": 0,
+              "max_size": 1000,
+              "ttl": 300
+            },
+            "redis_available": true
+          }
+        }
+      }
+    },
+    {
+      "test_name": "GET /api/v1/cache/report",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.004084,
+      "timestamp": "2026-05-23T16:00:20.482703",
+      "response_data": {
+        "success": true,
+        "data": {
+          "statistics": {
+            "total_requests": 0,
+            "l1_hits": 0,
+            "l2_hits": 0,
+            "misses": 0,
+            "overall_hit_rate": 0,
+            "l1_hit_rate": 0,
+            "l2_hit_rate": 0,
+            "l1_cache": {
+              "hits": 0,
+              "misses": 0,
+              "sets": 0,
+              "evictions": 0,
+              "expired": 0,
+              "hit_rate": 0,
+              "size": 0,
+              "max_size": 1000,
+              "ttl": 300
+            },
+            "redis_available": true
+          },
+          "health": {
+            "status": "unhealthy",
+            "alerts": [
+              "缓存命中率过低: 0%"
+            ],
+            "warnings": [],
+            "metrics": {
+              "total_requests": 0,
+              "l1_hits": 0,
+              "l2_hits": 0,
+              "misses": 0,
+              "overall_hit_rate": 0,
+              "l1_hit_rate": 0,
+              "l2_hit_rate": 0,
+              "l1_cache": {
+                "hits": 0,
+                "misses": 0,
+                "sets": 0,
+                "evictions": 0,
+                "expired": 0,
+                "hit_rate": 0,
+                "size": 0,
+                "max_size": 1000,
+                "ttl": 300
+              },
+              "redis_available": true
+            }
+          },
+          "recommendations": [
+            "考虑增加缓存容量或延长TTL",
+            "检查数据访问模式，优化缓存键设计",
+            "L1缓存命中率较低，考虑增大L1缓存容量"
+          ]
+        }
+      }
+    },
+    {
+      "test_name": "GET /api/metrics/prometheus",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.007697,
+      "timestamp": "2026-05-23T16:00:20.493707",
+      "response_data": "# HELP python_gc_objects_collected_total Objects collected during gc\n# TYPE python_gc_objects_collected_total counter\npython_gc_objects_collected_total{generation=\"0\"} 0.0\npython_gc_objects_collected_"
+    },
+    {
+      "test_name": "GET /api/metrics/summary",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.00435,
+      "timestamp": "2026-05-23T16:00:20.499250",
+      "response_data": {
+        "cache_hit_rate": "0.00%",
+        "active_users": 0.0,
+        "redis_connected": false,
+        "db_active_connections": 0.0,
+        "db_idle_connections": 0.0
+      }
+    },
+    {
+      "test_name": "GET /api/performance/",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.064755,
+      "timestamp": "2026-05-23T16:00:20.565324",
+      "response_data": {
+        "success": true,
+        "data": {
+          "system": {
+            "cpu": {
+              "percent": 4.2,
+              "count": 8
+            },
+            "memory": {
+              "used": 12.75,
+              "total": 15.24,
+              "percent": 83.6
+            },
+            "disk": {
+              "used": 58.85,
+              "total": 400.39,
+              "percent": 14.7
+            },
+            "uptime": 2.38
+          },
+          "cache": {
+            "hits": 0,
+            "misses": 0,
+            "sets": 0,
+            "deletes": 0,
+            "hit_rate": "0.00%"
+          },
+          "response_time": {
+            "unit": "ms",
+            "timestamp": 1779523220.5628064
+          }
+        }
+      }
+    },
+    {
+      "test_name": "GET /api/performance/cache/stats",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.008382,
+      "timestamp": "2026-05-23T16:00:20.574618",
+      "response_data": {
+        "success": true,
+        "data": {
+          "optimizer_stats": {
+            "hits": 0,
+            "misses": 0,
+            "sets": 0,
+            "deletes": 0,
+            "hit_rate": "0.00%"
+          },
+          "redis_info": {
+            "connected_clients": 3,
+            "used_memory_human": "1.00M",
+            "total_connections_received": 3642,
+            "keyspace_hits": 8403,
+            "keyspace_misses": 2568
+          }
+        }
+      }
+    },
+    {
+      "test_name": "GET /api/performance/recommendations",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.064544,
+      "timestamp": "2026-05-23T16:00:20.640307",
+      "response_data": {
+        "success": true,
+        "data": {
+          "recommendations_count": 2,
+          "recommendations": [
+            {
+              "category": "Memory",
+              "level": "warning",
+              "message": "内存使用率较高，建议检查内存泄漏或增加内存"
+            },
+            {
+              "category": "Cache",
+              "level": "info",
+              "message": "缓存命中率较低(0.0%)，建议优化缓存策略"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "test_name": "GET /api/v1/agents",
+      "expected_status": 200,
+      "actual_status": 500,
+      "success": false,
+      "response_time": 0.121951,
+      "timestamp": "2026-05-23T16:00:20.763649",
+      "response_data": {
+        "detail": {
+          "success": false,
+          "error": {
+            "code": "INTERNAL_SERVER_ERROR",
+            "message": "'AgentOrchestrator' object has no attribute 'get_agents'"
+          }
+        }
+      },
+      "error": "Expected 200, got 500"
+    },
+    {
+      "test_name": "POST /api/v1/agent/chat",
+      "expected_status": 200,
+      "actual_status": 500,
+      "success": false,
+      "response_time": 0.013493,
+      "timestamp": "2026-05-23T16:00:20.778350",
+      "response_data": {
+        "detail": {
+          "success": false,
+          "error": {
+            "code": "INTERNAL_SERVER_ERROR",
+            "message": "'AgentOrchestrator' object has no attribute 'dispatch_task'"
+          }
+        }
+      },
+      "error": "Expected 200, got 500"
+    },
+    {
+      "test_name": "POST /api/v1/auth/login",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.007531,
+      "timestamp": "2026-05-23T16:00:20.786991",
+      "response_data": {
+        "success": true,
+        "data": {
+          "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbl8wMDEiLCJ1c2VybmFtZSI6ImFkbWluIiwicm9sZXMiOlsiYWRtaW4iXSwidHlwZSI6ImFjY2VzcyIsImlhdCI6MTc3OTUyMzIyMCwiZXhwIjoxNzc5NTI1MDIwLCJqdGkiOiJZWTI0a0xSN0pMazBfYk5Pa2RnV0lnIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSJ9.uLWbK_HAZZ2GYr7ytJXNCu8MkfuA3F7QriWVreK1U_8",
+          "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbl8wMDEiLCJ0eXBlIjoicmVmcmVzaCIsImlhdCI6MTc3OTUyMzIyMCwiZXhwIjoxNzgwMTI4MDIwLCJqdGkiOiJTRkN6M0p0WWF4RHVVYVJ3d2hZNjdRIn0.6V6xRDKeXRb6tufucO4ifR4WiIsUehWzjBZqHHGR0CI",
+          "token_type": "Bearer",
+          "expires_in": 1800,
+          "user": {
+            "user_id": "admin_001",
+            "username": "admin",
+            "phone": "13800138001",
+            "email": "admin@example.com",
+            "roles": [
+              "admin"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "test_name": "GET /api/audit/logs",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.009676,
+      "timestamp": "2026-05-23T16:00:20.797786",
+      "response_data": [
+        {
+          "timestamp": "2026-05-23T10:27:20.873399",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "size=10",
+            "status_code": 200,
+            "duration": 0.029
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "b8a5032fce45"
+        },
+        {
+          "timestamp": "2026-05-23T10:27:20.875858",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/policies",
+          "details": {
+            "method": "GET",
+            "query_params": "size=5",
+            "status_code": 200,
+            "duration": 0.011
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "907851f56cee"
+        },
+        {
+          "timestamp": "2026-05-23T10:27:21.570000",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "page=1&size=9",
+            "status_code": 200,
+            "duration": 0.029
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "1e385d98c1ba"
+        },
+        {
+          "timestamp": "2026-05-23T10:27:28.123884",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "page=1&size=9&city=yx",
+            "status_code": 200,
+            "duration": 0.011
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "5b8f84380653"
+        },
+        {
+          "timestamp": "2026-05-23T10:27:37.122080",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "page=1&size=9&city=km",
+            "status_code": 200,
+            "duration": 0.009
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "835a1bd7a779"
+        },
+        {
+          "timestamp": "2026-05-23T10:27:47.960406",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "size=10",
+            "status_code": 200,
+            "duration": 0.01
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "0708fd55451b"
+        },
+        {
+          "timestamp": "2026-05-23T10:27:47.978606",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/policies",
+          "details": {
+            "method": "GET",
+            "query_params": "size=5",
+            "status_code": 200,
+            "duration": 0.004
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "2327bafc2b4b"
+        },
+        {
+          "timestamp": "2026-05-23T10:27:48.448648",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "page=1&size=9",
+            "status_code": 200,
+            "duration": 0.008
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "761291ee2e7a"
+        },
+        {
+          "timestamp": "2026-05-23T10:27:56.466596",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools/12705",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.016
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "9d27f36db365"
+        },
+        {
+          "timestamp": "2026-05-23T10:27:56.675094",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "keyword=&city=%E6%A5%9A%E9%9B%84%E5%B7%9E&page=1&size=5",
+            "status_code": 200,
+            "duration": 0.014
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "7ee065b86acc"
+        },
+        {
+          "timestamp": "2026-05-23T10:28:20.885027",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "page=29&size=9",
+            "status_code": 200,
+            "duration": 0.01
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "1f25ef49a04a"
+        },
+        {
+          "timestamp": "2026-05-23T10:28:26.878059",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools/12671",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.011
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "5b1fc9f13806"
+        },
+        {
+          "timestamp": "2026-05-23T10:28:27.268707",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "keyword=&city=%E7%8E%89%E6%BA%AA%E5%B8%82&page=1&size=5",
+            "status_code": 200,
+            "duration": 0.007
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "453b43c7e4d7"
+        },
+        {
+          "timestamp": "2026-05-23T10:30:20.746931",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/v1/crawler/status",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 404,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "850449f6a445"
+        },
+        {
+          "timestamp": "2026-05-23T10:30:45.428851",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "page=1&size=5",
+            "status_code": 200,
+            "duration": 0.01
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "58e8dabe9eda"
+        },
+        {
+          "timestamp": "2026-05-23T10:46:51.927914",
+          "action": "DATA_CREATE",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/auth/login",
+          "details": {
+            "method": "POST",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.008
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "7c4d5d56ccef"
+        },
+        {
+          "timestamp": "2026-05-23T10:46:52.180686",
+          "action": "DATA_CREATE",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/v1/auth/login",
+          "details": {
+            "method": "POST",
+            "query_params": "",
+            "status_code": 422,
+            "duration": 0.003
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "0e5050a93c7f"
+        },
+        {
+          "timestamp": "2026-05-23T10:46:57.782875",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "size=10",
+            "status_code": 200,
+            "duration": 0.011
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "3a0641f59b78"
+        },
+        {
+          "timestamp": "2026-05-23T10:46:57.886857",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/auth/me",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.006
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "4360f946b160"
+        },
+        {
+          "timestamp": "2026-05-23T10:46:57.888360",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/policies",
+          "details": {
+            "method": "GET",
+            "query_params": "size=5",
+            "status_code": 200,
+            "duration": 0.006
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "f6a733f91977"
+        },
+        {
+          "timestamp": "2026-05-23T10:50:38.132697",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "size=10",
+            "status_code": 200,
+            "duration": 0.018
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "2c3012791c03"
+        },
+        {
+          "timestamp": "2026-05-23T10:50:38.135687",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/policies",
+          "details": {
+            "method": "GET",
+            "query_params": "size=5",
+            "status_code": 200,
+            "duration": 0.009
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "52a8b03c231d"
+        },
+        {
+          "timestamp": "2026-05-23T10:50:38.137456",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/auth/me",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.01
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "c9321717dd5a"
+        },
+        {
+          "timestamp": "2026-05-23T10:50:38.425586",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "size=10",
+            "status_code": 200,
+            "duration": 0.017
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "c1f498b5ed05"
+        },
+        {
+          "timestamp": "2026-05-23T10:50:38.427074",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/v1/auth/me",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 401,
+            "duration": 0.017
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "720158fcb202"
+        },
+        {
+          "timestamp": "2026-05-23T10:50:38.428626",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/policies",
+          "details": {
+            "method": "GET",
+            "query_params": "size=5",
+            "status_code": 200,
+            "duration": 0.009
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "bb302f0bae30"
+        },
+        {
+          "timestamp": "2026-05-23T10:50:39.512181",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "page=1&size=9",
+            "status_code": 200,
+            "duration": 0.013
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "d1a9042113ce"
+        },
+        {
+          "timestamp": "2026-05-23T10:51:26.430705",
+          "action": "DATA_CREATE",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/v1/predict/score",
+          "details": {
+            "method": "POST",
+            "query_params": "",
+            "status_code": 404,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "110cf0cad3de"
+        },
+        {
+          "timestamp": "2026-05-23T10:52:46.258580",
+          "action": "DATA_CREATE",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/predict/score",
+          "details": {
+            "method": "POST",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.006
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "0c850d76b5cd"
+        },
+        {
+          "timestamp": "2026-05-23T10:55:33.479442",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "size=10",
+            "status_code": 200,
+            "duration": 0.018
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "1c1d2a4c1604"
+        },
+        {
+          "timestamp": "2026-05-23T10:55:33.480646",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/policies",
+          "details": {
+            "method": "GET",
+            "query_params": "size=5",
+            "status_code": 200,
+            "duration": 0.019
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "8189ecf1f8ba"
+        },
+        {
+          "timestamp": "2026-05-23T10:55:33.481629",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/auth/me",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.009
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "fca6904a54f1"
+        },
+        {
+          "timestamp": "2026-05-23T10:55:37.651131",
+          "action": "DATA_CREATE",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/ai/predict/score",
+          "details": {
+            "method": "POST",
+            "query_params": "",
+            "status_code": 404,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "60a18c774e79"
+        },
+        {
+          "timestamp": "2026-05-23T10:55:50.088017",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "size=10",
+            "status_code": 200,
+            "duration": 0.016
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "2edc7c7688a6"
+        },
+        {
+          "timestamp": "2026-05-23T10:55:50.089590",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/policies",
+          "details": {
+            "method": "GET",
+            "query_params": "size=5",
+            "status_code": 200,
+            "duration": 0.005
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "41c07f7f192d"
+        },
+        {
+          "timestamp": "2026-05-23T10:55:50.124635",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/auth/me",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "c969dbf544eb"
+        },
+        {
+          "timestamp": "2026-05-23T10:55:53.566336",
+          "action": "DATA_CREATE",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/ai/predict/score",
+          "details": {
+            "method": "POST",
+            "query_params": "",
+            "status_code": 404,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "922cc4e6806d"
+        },
+        {
+          "timestamp": "2026-05-23T10:56:03.676381",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "size=10",
+            "status_code": 200,
+            "duration": 0.013
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "edb0c6a9fc0f"
+        },
+        {
+          "timestamp": "2026-05-23T10:56:03.677779",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/policies",
+          "details": {
+            "method": "GET",
+            "query_params": "size=5",
+            "status_code": 200,
+            "duration": 0.014
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "e47b19b73ea0"
+        },
+        {
+          "timestamp": "2026-05-23T10:56:03.679660",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/auth/me",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 200,
+            "duration": 0.004
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "b79bc0d3b705"
+        },
+        {
+          "timestamp": "2026-05-23T10:56:06.948531",
+          "action": "DATA_CREATE",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/ai/predict/score",
+          "details": {
+            "method": "POST",
+            "query_params": "",
+            "status_code": 404,
+            "duration": 0.001
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "89b5d9d4917e"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:15.960681",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/v1/auth/me",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 401,
+            "duration": 0.016
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "add0ca23db2d"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:15.963247",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "size=10",
+            "status_code": 200,
+            "duration": 0.016
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "ea00c1f607ac"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:15.965437",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/policies",
+          "details": {
+            "method": "GET",
+            "query_params": "size=5",
+            "status_code": 200,
+            "duration": 0.008
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "25e571078cde"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:16.314685",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "size=10",
+            "status_code": 200,
+            "duration": 0.013
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "071d17ddf001"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:16.316252",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/v1/auth/me",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 401,
+            "duration": 0.014
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "1e62fc804055"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:16.317782",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/policies",
+          "details": {
+            "method": "GET",
+            "query_params": "size=5",
+            "status_code": 200,
+            "duration": 0.008
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "5749f2b06b02"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:16.728565",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "size=10",
+            "status_code": 200,
+            "duration": 0.017
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "f3f92cb29b49"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:16.729977",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/v1/auth/me",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 401,
+            "duration": 0.018
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "8904253e6ec2"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:16.732103",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/policies",
+          "details": {
+            "method": "GET",
+            "query_params": "size=5",
+            "status_code": 200,
+            "duration": 0.009
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "13dcc2d92e46"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:17.064097",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "size=10",
+            "status_code": 200,
+            "duration": 0.016
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "17f0b568efb8"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:17.067002",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/v1/auth/me",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 401,
+            "duration": 0.008
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "63e1bff46d9d"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:17.068984",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/policies",
+          "details": {
+            "method": "GET",
+            "query_params": "size=5",
+            "status_code": 200,
+            "duration": 0.009
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "fca0bb426ead"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:17.449743",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "size=10",
+            "status_code": 200,
+            "duration": 0.015
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "89aa58aedbd1"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:17.451698",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/v1/auth/me",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 401,
+            "duration": 0.016
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "513ab5c2f067"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:17.453883",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/policies",
+          "details": {
+            "method": "GET",
+            "query_params": "size=5",
+            "status_code": 200,
+            "duration": 0.01
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "6cb916259b55"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:17.807682",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "size=10",
+            "status_code": 200,
+            "duration": 0.014
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "4e979f0bb24f"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:17.808950",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/v1/auth/me",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 401,
+            "duration": 0.014
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "743cb6b584e8"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:17.810455",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/policies",
+          "details": {
+            "method": "GET",
+            "query_params": "size=5",
+            "status_code": 200,
+            "duration": 0.007
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "62af923008f4"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:18.169988",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "size=10",
+            "status_code": 200,
+            "duration": 0.015
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "e2c450aceab0"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:18.171619",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/policies",
+          "details": {
+            "method": "GET",
+            "query_params": "size=5",
+            "status_code": 200,
+            "duration": 0.016
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "e3a27ea46841"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:18.173081",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/v1/auth/me",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 401,
+            "duration": 0.009
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "a15da85a0f8c"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:18.530428",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "size=10",
+            "status_code": 200,
+            "duration": 0.01
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "bef65c7df813"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:18.536873",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/v1/auth/me",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 401,
+            "duration": 0.007
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "3faff862b3b0"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:18.538095",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/policies",
+          "details": {
+            "method": "GET",
+            "query_params": "size=5",
+            "status_code": 200,
+            "duration": 0.008
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "2a50bf2a33eb"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:18.901956",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "size=10",
+            "status_code": 200,
+            "duration": 0.014
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "aa0c3ef91a67"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:18.903344",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/v1/auth/me",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 401,
+            "duration": 0.007
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "ec43fff28860"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:18.904392",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/policies",
+          "details": {
+            "method": "GET",
+            "query_params": "size=5",
+            "status_code": 200,
+            "duration": 0.007
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "5ca5188440b6"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:19.311234",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "size=10",
+            "status_code": 200,
+            "duration": 0.01
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "2c313e69d24b"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:19.318982",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/v1/auth/me",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 401,
+            "duration": 0.01
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "a0a244c8493f"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:19.321770",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/policies",
+          "details": {
+            "method": "GET",
+            "query_params": "size=5",
+            "status_code": 200,
+            "duration": 0.009
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "f45d19352c5a"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:19.768013",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "size=10",
+            "status_code": 200,
+            "duration": 0.01
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "8949e6e02db9"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:19.774248",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/policies",
+          "details": {
+            "method": "GET",
+            "query_params": "size=5",
+            "status_code": 200,
+            "duration": 0.005
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "6171a392ec59"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:19.775526",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/v1/auth/me",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 401,
+            "duration": 0.006
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "aa58fda3b47d"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:20.206048",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "size=10",
+            "status_code": 200,
+            "duration": 0.037
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "07901861f99c"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:20.208542",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/policies",
+          "details": {
+            "method": "GET",
+            "query_params": "size=5",
+            "status_code": 200,
+            "duration": 0.011
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "fa31bd24dcaf"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:20.214937",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/v1/auth/me",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 401,
+            "duration": 0.007
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "7381acb7ffff"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:20.570243",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "size=10",
+            "status_code": 200,
+            "duration": 0.014
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "091b1f58620f"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:20.571891",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/v1/auth/me",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 401,
+            "duration": 0.015
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "ffba9ff955e8"
+        },
+        {
+          "timestamp": "2026-05-23T10:57:20.573564",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/policies",
+          "details": {
+            "method": "GET",
+            "query_params": "size=5",
+            "status_code": 200,
+            "duration": 0.008
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "7405362a8558"
+        },
+        {
+          "timestamp": "2026-05-23T10:59:27.716368",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "size=10",
+            "status_code": 200,
+            "duration": 0.019
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "f2bbd67e430f"
+        },
+        {
+          "timestamp": "2026-05-23T10:59:27.719898",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/v1/auth/me",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 401,
+            "duration": 0.01
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "3d7f93331cda"
+        },
+        {
+          "timestamp": "2026-05-23T10:59:27.721786",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/policies",
+          "details": {
+            "method": "GET",
+            "query_params": "size=5",
+            "status_code": 200,
+            "duration": 0.012
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "1708c771ffbf"
+        },
+        {
+          "timestamp": "2026-05-23T10:59:28.213532",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "size=10",
+            "status_code": 200,
+            "duration": 0.014
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "4bc54b885410"
+        },
+        {
+          "timestamp": "2026-05-23T10:59:28.214839",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/policies",
+          "details": {
+            "method": "GET",
+            "query_params": "size=5",
+            "status_code": 200,
+            "duration": 0.006
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "df8ce9799e36"
+        },
+        {
+          "timestamp": "2026-05-23T10:59:28.215807",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/v1/auth/me",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 401,
+            "duration": 0.007
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "0338df532675"
+        },
+        {
+          "timestamp": "2026-05-23T10:59:28.643633",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "size=10",
+            "status_code": 200,
+            "duration": 0.018
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "cbe151a0d149"
+        },
+        {
+          "timestamp": "2026-05-23T10:59:28.645758",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/policies",
+          "details": {
+            "method": "GET",
+            "query_params": "size=5",
+            "status_code": 200,
+            "duration": 0.009
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "261bfc96b051"
+        },
+        {
+          "timestamp": "2026-05-23T10:59:28.647275",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/v1/auth/me",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 401,
+            "duration": 0.01
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "0ab46de8eec6"
+        },
+        {
+          "timestamp": "2026-05-23T10:59:29.009909",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "size=10",
+            "status_code": 200,
+            "duration": 0.013
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "032065de7377"
+        },
+        {
+          "timestamp": "2026-05-23T10:59:29.016681",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/v1/auth/me",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 401,
+            "duration": 0.008
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "48ac21075acf"
+        },
+        {
+          "timestamp": "2026-05-23T10:59:29.019932",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/policies",
+          "details": {
+            "method": "GET",
+            "query_params": "size=5",
+            "status_code": 200,
+            "duration": 0.011
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "938977d069c9"
+        },
+        {
+          "timestamp": "2026-05-23T10:59:29.373407",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "size=10",
+            "status_code": 200,
+            "duration": 0.014
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "e664d6e827ff"
+        },
+        {
+          "timestamp": "2026-05-23T10:59:29.375227",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/v1/auth/me",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 401,
+            "duration": 0.015
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "c069d87d425b"
+        },
+        {
+          "timestamp": "2026-05-23T10:59:29.376864",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/policies",
+          "details": {
+            "method": "GET",
+            "query_params": "size=5",
+            "status_code": 200,
+            "duration": 0.009
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "f38c7b50d227"
+        },
+        {
+          "timestamp": "2026-05-23T10:59:29.803416",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "size=10",
+            "status_code": 200,
+            "duration": 0.02
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "11c59aa1f2bb"
+        },
+        {
+          "timestamp": "2026-05-23T10:59:29.805515",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/v1/auth/me",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 401,
+            "duration": 0.011
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "bb5cd261ff06"
+        },
+        {
+          "timestamp": "2026-05-23T10:59:29.808282",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/policies",
+          "details": {
+            "method": "GET",
+            "query_params": "size=5",
+            "status_code": 200,
+            "duration": 0.011
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "708f40b35b6b"
+        },
+        {
+          "timestamp": "2026-05-23T10:59:30.141783",
+          "action": "API_ACCESS",
+          "level": "INFO",
+          "user_id": null,
+          "resource": "/api/v1/schools",
+          "details": {
+            "method": "GET",
+            "query_params": "size=10",
+            "status_code": 200,
+            "duration": 0.014
+          },
+          "ip_address": "127.0.0.1",
+          "status": "SUCCESS",
+          "event_id": "f202c5e8ef7d"
+        },
+        {
+          "timestamp": "2026-05-23T10:59:30.145033",
+          "action": "API_ACCESS",
+          "level": "WARNING",
+          "user_id": null,
+          "resource": "/api/v1/auth/me",
+          "details": {
+            "method": "GET",
+            "query_params": "",
+            "status_code": 401,
+            "duration": 0.017
+          },
+          "ip_address": "127.0.0.1",
+          "status": "FAILURE",
+          "event_id": "e8bb2d33463c"
+        }
+      ]
+    },
+    {
+      "test_name": "GET /api/alerts/",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 10.193043,
+      "timestamp": "2026-05-23T16:00:30.991859",
+      "response_data": {
+        "success": true,
+        "data": {
+          "count": 0,
+          "alerts": []
+        }
+      }
+    },
+    {
+      "test_name": "GET /api/alerts/check",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 10.159746,
+      "timestamp": "2026-05-23T16:00:41.152832",
+      "response_data": {
+        "success": true,
+        "data": {
+          "new_alerts_count": 0,
+          "new_alerts": []
+        }
+      }
+    }
+  ],
+  "timestamp": "2026-05-23T16:00:41.153120"
+}

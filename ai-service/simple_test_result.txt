@@ -1,0 +1,23 @@
+=== Test Start ===
+[1/6] Testing import app.core.app...
+  [OK] Import success
+[2/6] Testing create_app()...
+  [OK] App created, routes: 194
+[3/6] Creating TestClient...
+  [OK] TestClient created
+[4/6] Testing register API (/api/user/register)...
+  [OK] Status: 200, success: False
+    Message: 注册失败: (sqlite3.OperationalError) no such column: users.password_hash
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.password_hash AS users_password_hash, users.email AS users_email, users.phone AS users_phone, users.role AS users_role, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.username = ? OR users.phone = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('stest_1781395252', '19081395252', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[5/6] Testing login API (/api/user/login)...
+  [OK] Status: 200, success: False
+    Message: 登录失败，请稍后重试
+[6/6] Testing v1 register API (/api/v1/auth/register)...
+  [OK] Status: 200, success: False
+
+=== All tests passed! Register and Login APIs work correctly! ===

@@ -1,0 +1,177 @@
+{
+  "test_summary": {
+    "total_tests": 8,
+    "passed": 6,
+    "failed": 2,
+    "pass_rate": "75.00%",
+    "avg_response_time": "0.137s",
+    "total_time": "5.20s"
+  },
+  "test_results": [
+    {
+      "test_name": "GET /api/health",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.069287,
+      "timestamp": "2026-05-17T23:05:37.252226",
+      "response_data": {
+        "success": true,
+        "data": {
+          "app": "AI Service",
+          "version": "1.0.0",
+          "status": "healthy",
+          "issues": [],
+          "system": {
+            "cpu": {
+              "percent": 33.3,
+              "count": 8
+            },
+            "memory": {
+              "used": 11.56,
+              "total": 15.24,
+              "percent": 75.8
+            },
+            "disk": {
+              "used": 58.25,
+              "total": 400.39,
+              "percent": 14.5
+            },
+            "network": {
+              "sent": 2656.27,
+              "recv": 17384.72
+            },
+            "uptime": 57.83,
+            "timestamp": "2026-05-17T23:05:37.250628"
+          },
+          "services": {
+            "redis": {
+              "available": true,
+              "url": "redis://localhost:6379/0"
+            },
+            "hermes": {
+              "available": true,
+              "url": "http://localhost:8888/v1/agent"
+            },
+            "timestamp": "2026-05-17T23:05:37.250642"
+          }
+        }
+      }
+    },
+    {
+      "test_name": "GET /api/health/metrics",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.067586,
+      "timestamp": "2026-05-17T23:05:37.321340",
+      "response_data": {
+        "success": true,
+        "data": {
+          "cpu": {
+            "percent": 61.5,
+            "count": 8
+          },
+          "memory": {
+            "used": 11.56,
+            "total": 15.24,
+            "percent": 75.8
+          },
+          "disk": {
+            "used": 58.25,
+            "total": 400.39,
+            "percent": 14.5
+          },
+          "network": {
+            "sent": 2656.27,
+            "recv": 17384.72
+          },
+          "uptime": 57.9,
+          "timestamp": "2026-05-17T23:05:37.320183"
+        }
+      }
+    },
+    {
+      "test_name": "GET /api/health/services",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.023446,
+      "timestamp": "2026-05-17T23:05:37.346180",
+      "response_data": {
+        "success": true,
+        "data": {
+          "redis": {
+            "available": true,
+            "url": "redis://localhost:6379/0"
+          },
+          "hermes": {
+            "available": true,
+            "url": "http://localhost:8888/v1/agent"
+          },
+          "timestamp": "2026-05-17T23:05:37.345129"
+        }
+      }
+    },
+    {
+      "test_name": "GET /api/health/cache",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.01538,
+      "timestamp": "2026-05-17T23:05:37.363382",
+      "response_data": {
+        "success": true,
+        "data": {
+          "cache_type": "Redis",
+          "test_result": "success"
+        }
+      }
+    },
+    {
+      "test_name": "POST /api/v1/agents/chat",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.009632,
+      "timestamp": "2026-05-17T23:05:37.375053",
+      "response_data": {
+        "success": true,
+        "response": "🦞 你好！我是云南中考择校智能服务中心\n\n我能为你提供：\n✅ 云南中考政策查询\n✅ 文山/丘北学校对比\n✅ 未央中学报名咨询\n✅ 志愿填报指导\n✅ 免费看校预约\n✅ 个性化学习计划生成\n\n请问孩子现在几年级？在哪个城市？",
+        "data": "🦞 你好！我是云南中考择校智能服务中心\n\n我能为你提供：\n✅ 云南中考政策查询\n✅ 文山/丘北学校对比\n✅ 未央中学报名咨询\n✅ 志愿填报指导\n✅ 免费看校预约\n✅ 个性化学习计划生成\n\n请问孩子现在几年级？在哪个城市？",
+        "message": "🦞 你好！我是云南中考择校智能服务中心\n\n我能为你提供：\n✅ 云南中考政策查询\n✅ 文山/丘北学校对比\n✅ 未央中学报名咨询\n✅ 志愿填报指导\n✅ 免费看校预约\n✅ 个性化学习计划生成\n\n请问孩子现在几年级？在哪个城市？"
+      }
+    },
+    {
+      "test_name": "POST /api/v1/agents/chat",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_time": 0.911729,
+      "timestamp": "2026-05-17T23:05:38.288567",
+      "response_data": {
+        "success": true,
+        "response": "🦞 你好！我是云南中考择校智能服务中心\n\n我能为你提供：\n✅ 云南中考政策查询\n✅ 文山/丘北学校对比\n✅ 未央中学报名咨询\n✅ 志愿填报指导\n✅ 免费看校预约\n✅ 个性化学习计划生成\n\n请问孩子现在几年级？在哪个城市？",
+        "data": "🦞 你好！我是云南中考择校智能服务中心\n\n我能为你提供：\n✅ 云南中考政策查询\n✅ 文山/丘北学校对比\n✅ 未央中学报名咨询\n✅ 志愿填报指导\n✅ 免费看校预约\n✅ 个性化学习计划生成\n\n请问孩子现在几年级？在哪个城市？",
+        "message": "🦞 你好！我是云南中考择校智能服务中心\n\n我能为你提供：\n✅ 云南中考政策查询\n✅ 文山/丘北学校对比\n✅ 未央中学报名咨询\n✅ 志愿填报指导\n✅ 免费看校预约\n✅ 个性化学习计划生成\n\n请问孩子现在几年级？在哪个城市？"
+      }
+    },
+    {
+      "test_name": "POST /api/v1/agents/chat",
+      "expected_status": 200,
+      "actual_status": "Error",
+      "success": false,
+      "error": "HTTPConnectionPool(host='127.0.0.1', port=8001): Max retries exceeded with url: /api/v1/agents/chat (Caused by NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=8001): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。\"))",
+      "timestamp": "2026-05-17T23:05:40.324503"
+    },
+    {
+      "test_name": "POST /api/v1/agents/chat",
+      "expected_status": 200,
+      "actual_status": "Error",
+      "success": false,
+      "error": "HTTPConnectionPool(host='127.0.0.1', port=8001): Max retries exceeded with url: /api/v1/agents/chat (Caused by NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=8001): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。\"))",
+      "timestamp": "2026-05-17T23:05:42.378357"
+    }
+  ],
+  "timestamp": "2026-05-17T23:05:42.378685"
+}

@@ -1,0 +1,82 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alertmanager
+  namespace: yunnan-ai-school
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: alertmanager
+  template:
+    metadata:
+      labels:
+        app: alertmanager
+    spec:
+      containers:
+      - name: alertmanager
+        image: prom/alertmanager:latest
+        args:
+          - '--config.file=/etc/alertmanager/config.yml'
+          - '--storage.path=/alertmanager'
+        ports:
+        - containerPort: 9093
+        volumeMounts:
+        - name: alertmanager-config
+          mountPath: /etc/alertmanager
+        - name: alertmanager-storage
+          mountPath: /alertmanager
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "50m"
+          limits:
+            memory: "256Mi"
+            cpu: "100m"
+      volumes:
+      - name: alertmanager-config
+        configMap:
+          name: alertmanager-config
+      - name: alertmanager-storage
+        emptyDir: {}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: alertmanager-config
+  namespace: yunnan-ai-school
+data:
+  config.yml: |
+    global:
+      resolve_timeout: 5m
+      smtp_smarthost: 'smtp.example.com:587'
+      smtp_from: 'alerts@yunnan-ai-school.local'
+      smtp_auth_username: 'alerts@yunnan-ai-school.local'
+      smtp_auth_password: 'your-email-password'
+    route:
+      group_by: ['alertname']
+      group_wait: 30s
+      group_interval: 5m
+      repeat_interval: 1h
+      receiver: 'email-alerts'
+    receivers:
+    - name: 'email-alerts'
+      email_configs:
+      - to: 'admin@yunnan-ai-school.local'
+        send_resolved: true
+    - name: 'webhook-alerts'
+      webhook_configs:
+      - url: 'https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK'
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: alertmanager
+  namespace: yunnan-ai-school
+spec:
+  type: ClusterIP
+  selector:
+    app: alertmanager
+  ports:
+  - port: 9093
+    targetPort: 9093

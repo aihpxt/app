@@ -1,0 +1,115 @@
+============================================================
+数据库索引优化报告
+============================================================
+
+数据库: E:\aiphxt-app\ai-service\data\school_platform.db
+时间: 2026-05-18T00:45:17.750781
+
+分析的表数: 16
+创建的索引数: 9
+
+
+表分析详情:
+
+  api_key_monitoring:
+    行数: 0
+    需要优化: 否
+
+  api_key_rotation:
+    行数: 0
+    需要优化: 否
+
+  api_key_rotation_history:
+    行数: 0
+    需要优化: 否
+
+  api_key_usage:
+    行数: 0
+    需要优化: 否
+
+  chat_messages:
+    行数: 0
+    需要优化: 否
+
+  chat_sessions:
+    行数: 0
+    需要优化: 否
+
+  collections:
+    行数: 4
+    需要优化: 否
+
+  favorites:
+    行数: 0
+    需要优化: 否
+
+  notification_settings:
+    行数: 453
+    需要优化: 否
+
+  notifications:
+    行数: 2265
+    需要优化: 否
+
+  policies:
+    行数: 21
+    需要优化: 否
+
+  schools:
+    行数: 424
+    需要优化: 否
+
+  test_history:
+    行数: 0
+    需要优化: 否
+
+  user_activities:
+    行数: 15
+    需要优化: 否
+
+  users:
+    行数: 21
+    需要优化: 否
+
+  version:
+    行数: 1
+    需要优化: 否
+
+
+创建的索引:
+
+  idx_schools_city_level:
+    表: schools
+    列: city, level
+
+  idx_schools_city_type:
+    表: schools
+    列: city, school_type
+
+  idx_schools_search:
+    表: schools
+    列: name, city
+
+  idx_favorites_school:
+    表: favorites
+    列: school_id
+
+  idx_sessions_user:
+    表: chat_sessions
+    列: user_id
+
+  idx_sessions_created:
+    表: chat_sessions
+    列: created_at
+
+  idx_sessions_user_created:
+    表: chat_sessions
+    列: user_id, created_at
+
+  idx_messages_session:
+    表: chat_messages
+    列: session_id
+
+  idx_messages_created:
+    表: chat_messages
+    列: created_at

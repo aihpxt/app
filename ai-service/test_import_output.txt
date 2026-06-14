@@ -1,0 +1,95 @@
+Start test
+Importing os and dotenv...
+Dotenv loaded
+Importing app...
+SUCCESS: app imported
+Number of routes: 302
+
+Routes (first 30):
+  ['GET', 'HEAD'] /openapi.json
+  ['GET', 'HEAD'] /docs
+  ['GET', 'HEAD'] /docs/oauth2-redirect
+  ['GET', 'HEAD'] /redoc
+  ['POST'] /agent/chat
+  ['POST'] /agent/feedback
+  ['GET'] /agent/session-report/{session_id}
+  ['GET'] /agent/hermes-health
+  ['GET'] /agent/incomplete-sessions
+  ['GET'] /agents
+  ['GET'] /agent/{agent_id}
+  ['POST'] /agents/chat
+  ['GET'] /sessions/stats
+  ['GET'] /sessions/{session_id}
+  ['POST'] /compare/schools
+  ['POST'] /chat/intent
+  ['POST'] /chat
+  ['POST'] /predict/score
+  ['POST'] /predict/admission
+  ['POST'] /recommend/schools
+  ['POST'] /match/schools
+  ['POST'] /volunteer/generate
+  ['POST'] /volunteer/risk
+  ['POST'] /transition/high-school
+  ['POST'] /feedback
+  ['POST'] /crawl/enhanced/school-compare
+  ['POST'] /crawl/enhanced/admission-calculator
+  ['GET'] /api/alerts/
+  ['GET'] /api/alerts/check
+  ['GET'] /api/alerts/rules
+
+
+Looking for specific routes:
+  ['POST'] /api/v1/auth/login
+  ['POST'] /api/v1/auth/logout
+  ['POST'] /api/v1/auth/refresh
+  ['GET'] /api/v1/auth/me
+  ['POST'] /api/v1/auth/register
+  ['GET'] /metrics
+  ['GET'] /policies
+  ['GET'] /policies/categories
+  ['GET'] /policies/search
+  ['GET'] /policies/prefectures
+  ['GET'] /policies/{policy_id}
+  ['GET'] /api/metrics/prometheus
+  ['GET'] /api/metrics/summary
+  ['GET'] /api/metrics/health
+  ['GET'] /api/metrics/web-vitals
+  ['POST'] /api/metrics/web-vitals
+  ['POST'] /api/v1/auth/login
+  ['POST'] /api/v1/auth/logout
+  ['POST'] /api/v1/auth/refresh
+  ['GET'] /api/v1/auth/me
+  ['POST'] /api/v1/auth/register
+  ['POST'] /api/user/login
+  ['POST'] /api/user/register
+  ['GET'] /api/user/info
+  ['POST'] /api/user/logout
+  ['POST'] /api/user/refresh
+  ['GET'] /api/metrics/prometheus
+  ['GET'] /api/metrics/summary
+  ['GET'] /api/metrics/health
+  ['GET'] /api/metrics/web-vitals
+  ['POST'] /api/metrics/web-vitals
+  ['GET'] /api/v1/metrics/api/metrics/prometheus
+  ['GET'] /api/v1/metrics/api/metrics/summary
+  ['GET'] /api/v1/metrics/api/metrics/health
+  ['GET'] /api/v1/metrics/api/metrics/web-vitals
+  ['POST'] /api/v1/metrics/api/metrics/web-vitals
+  ['GET'] /api/v1/integration/metrics
+  ['GET'] /api/integration/metrics
+  ['GET'] /api/v1/policies
+  ['GET'] /api/v1/policies/categories
+  ['GET'] /api/v1/policies/search
+  ['GET'] /api/v1/policies/prefectures
+  ['GET'] /api/v1/policies/{policy_id}
+  ['GET'] /api/policies
+  ['GET'] /api/policies/categories
+  ['GET'] /api/policies/search
+  ['GET'] /api/policies/prefectures
+  ['GET'] /api/policies/{policy_id}
+  ['GET'] /api/admin/users
+  ['GET'] /api/admin/policies
+  ['POST'] /api/admin/users
+  ['POST'] /api/admin/policies
+
+Done

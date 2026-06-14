@@ -1,0 +1,22 @@
+Script dir: D:\aiphxt-app\ai-service
+CWD: D:\aiphxt-app\ai-service
+DB Path (from config): D:\aiphxt-app\ai-service\app.db
+DB Manager: <app.core.database_pool.DatabaseManager object at 0x000001921A0DA490>
+Engine: Engine(sqlite:///D:\aiphxt-app\ai-service\app.db)
+Session: <sqlalchemy.orm.session.Session object at 0x000001921D9AB2D0>
+DB connection: OK
+
+Testing bcrypt:
+  Hash: $2b$12$Tcak2f9Gt7W.vWmcuBquZ.YH/nDCogM8I8/ixImbe2n...
+  bcrypt: OK
+
+Testing User model:
+  User model: <class 'app.models.user.User'>
+  Table name: users
+  User model: OK
+
+Testing register function import:
+  register function: <function register at 0x000001921FB818A0>
+  register import: OK
+
+=== END ===

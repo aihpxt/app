@@ -1,0 +1,133 @@
+{
+  "test_summary": {
+    "total_tests": 8,
+    "passed": 0,
+    "failed": 8,
+    "pass_rate": "0.00%",
+    "avg_response_time": "0.014s",
+    "total_time": "0.13s"
+  },
+  "test_results": [
+    {
+      "test_name": "GET /api/health",
+      "expected_status": 200,
+      "actual_status": 404,
+      "success": false,
+      "response_time": 0.009877,
+      "timestamp": "2026-05-18T13:13:44.597429",
+      "response_data": {
+        "detail": "Not Found"
+      },
+      "error": "Expected 200, got 404"
+    },
+    {
+      "test_name": "GET /api/health/metrics",
+      "expected_status": 200,
+      "actual_status": 404,
+      "success": false,
+      "response_time": 0.017683,
+      "timestamp": "2026-05-18T13:13:44.617064",
+      "response_data": {
+        "detail": "Not Found"
+      },
+      "error": "Expected 200, got 404"
+    },
+    {
+      "test_name": "GET /api/health/services",
+      "expected_status": 200,
+      "actual_status": 404,
+      "success": false,
+      "response_time": 0.004781,
+      "timestamp": "2026-05-18T13:13:44.623207",
+      "response_data": {
+        "detail": "Not Found"
+      },
+      "error": "Expected 200, got 404"
+    },
+    {
+      "test_name": "GET /api/health/cache",
+      "expected_status": 200,
+      "actual_status": 404,
+      "success": false,
+      "response_time": 0.004542,
+      "timestamp": "2026-05-18T13:13:44.629786",
+      "response_data": {
+        "detail": "Not Found"
+      },
+      "error": "Expected 200, got 404"
+    },
+    {
+      "test_name": "POST /api/v1/agents/chat",
+      "expected_status": 200,
+      "actual_status": 500,
+      "success": false,
+      "response_time": 0.045051,
+      "timestamp": "2026-05-18T13:13:44.676774",
+      "response_data": {
+        "detail": {
+          "success": false,
+          "error": {
+            "code": "INTERNAL_SERVER_ERROR",
+            "message": "No module named 'config'"
+          }
+        }
+      },
+      "error": "Expected 200, got 500"
+    },
+    {
+      "test_name": "POST /api/v1/agents/chat",
+      "expected_status": 200,
+      "actual_status": 500,
+      "success": false,
+      "response_time": 0.009691,
+      "timestamp": "2026-05-18T13:13:44.689160",
+      "response_data": {
+        "detail": {
+          "success": false,
+          "error": {
+            "code": "INTERNAL_SERVER_ERROR",
+            "message": "No module named 'config'"
+          }
+        }
+      },
+      "error": "Expected 200, got 500"
+    },
+    {
+      "test_name": "POST /api/v1/agents/chat",
+      "expected_status": 200,
+      "actual_status": 500,
+      "success": false,
+      "response_time": 0.009208,
+      "timestamp": "2026-05-18T13:13:44.700918",
+      "response_data": {
+        "detail": {
+          "success": false,
+          "error": {
+            "code": "INTERNAL_SERVER_ERROR",
+            "message": "No module named 'config'"
+          }
+        }
+      },
+      "error": "Expected 200, got 500"
+    },
+    {
+      "test_name": "POST /api/v1/agents/chat",
+      "expected_status": 200,
+      "actual_status": 500,
+      "success": false,
+      "response_time": 0.00964,
+      "timestamp": "2026-05-18T13:13:44.712188",
+      "response_data": {
+        "detail": {
+          "success": false,
+          "error": {
+            "code": "INTERNAL_SERVER_ERROR",
+            "message": "No module named 'config'"
+          }
+        }
+      },
+      "error": "Expected 200, got 500"
+    }
+  ],
+  "timestamp": "2026-05-18T13:13:44.712713"
+}

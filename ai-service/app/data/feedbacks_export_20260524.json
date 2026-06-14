@@ -1,0 +1,92 @@
+[
+  {
+    "feedback_id": "21313d61-eac2-4f9d-845c-6109fae62103",
+    "session_id": "123",
+    "question": "昆一中怎么样？",
+    "answer": "昆一中是省级重点中学...",
+    "rating": 5,
+    "comment": "回答很详细",
+    "timestamp": "2026-05-24T09:10:53.798913"
+  },
+  {
+    "feedback_id": "5577f98a-2f8f-477e-b73b-082c4ec5eb96",
+    "session_id": "123",
+    "question": "中考总分多少？",
+    "answer": "云南省中考总分700分",
+    "rating": 4,
+    "comment": "",
+    "timestamp": "2026-05-24T09:10:53.800100"
+  },
+  {
+    "feedback_id": "2eb2ed9f-9207-4908-8200-9f86cdca5174",
+    "session_id": "123",
+    "question": "志愿怎么填？",
+    "answer": "建议按照分数梯度填报",
+    "rating": 3,
+    "comment": "希望更详细",
+    "timestamp": "2026-05-24T09:10:53.801756"
+  },
+  {
+    "feedback_id": "5532b7aa-016b-43e8-9676-4292902738a8",
+    "session_id": "456",
+    "question": "昆三中录取线",
+    "answer": "大约650分左右",
+    "rating": 5,
+    "comment": "",
+    "timestamp": "2026-05-24T09:10:53.803178"
+  },
+  {
+    "feedback_id": "5f00142d-3777-4f52-9cab-de1727bc7c5f",
+    "session_id": "456",
+    "question": "加分政策",
+    "answer": "少数民族可加5-10分",
+    "rating": 4,
+    "comment": "清楚明了",
+    "timestamp": "2026-05-24T09:10:53.804424"
+  },
+  {
+    "feedback_id": "6741369e-e1db-4c28-8de7-113094c16791",
+    "session_id": "789",
+    "question": "测试问题1",
+    "answer": "测试回答1",
+    "rating": 4,
+    "comment": "",
+    "timestamp": "2026-05-24T09:10:53.807451"
+  },
+  {
+    "feedback_id": "186efc14-317f-4d06-a9aa-d0215426e134",
+    "session_id": "789",
+    "question": "测试问题2",
+    "answer": "测试回答2",
+    "rating": 4,
+    "comment": "",
+    "timestamp": "2026-05-24T09:10:53.809074"
+  },
+  {
+    "feedback_id": "eb90a9e4-7ab7-4d1e-9ff1-21690c71f2a9",
+    "session_id": "789",
+    "question": "测试问题3",
+    "answer": "测试回答3",
+    "rating": 4,
+    "comment": "",
+    "timestamp": "2026-05-24T09:10:53.810269"
+  },
+  {
+    "feedback_id": "027ac4c5-668a-44b5-a983-20945fffaca4",
+    "session_id": "789",
+    "question": "测试问题4",
+    "answer": "测试回答4",
+    "rating": 4,
+    "comment": "",
+    "timestamp": "2026-05-24T09:10:53.811318"
+  },
+  {
+    "feedback_id": "c54c5eed-44eb-4d96-b556-28958aa7c995",
+    "session_id": "789",
+    "question": "测试问题5",
+    "answer": "测试回答5",
+    "rating": 4,
+    "comment": "",
+    "timestamp": "2026-05-24T09:10:53.812425"
+  }
+]

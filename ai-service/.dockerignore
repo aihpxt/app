@@ -1,0 +1,44 @@
+# 排除Python缓存文件
+__pycache__/
+*.pyc
+
+# 排除缓存目录
+cache/
+
+# 排除日志目录
+logs/
+
+# 排除学校页面目录
+school_pages/
+
+# 排除测试文件
+*test*.py
+
+# 排除数据备份文件
+*.db
+*.json
+*.csv
+
+# 排除临时文件
+*.tmp
+*.temp
+
+# 排除编辑器文件
+.vscode/
+.idea/
+
+# 排除操作系统文件
+Thumbs.db
+.DS_Store
+
+# 排除打包文件
+dist/
+build/
+*.egg-info/
+
+# 排除环境配置文件
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

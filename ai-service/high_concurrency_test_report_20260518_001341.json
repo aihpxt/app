@@ -1,0 +1,920 @@
+{
+  "test_summary": {
+    "total_requests": 100,
+    "successful_requests": 10,
+    "failed_requests": 90,
+    "success_rate": "10.00%",
+    "total_time": "0.30s",
+    "throughput": "335.50 req/s",
+    "avg_response_time": "0.049s",
+    "min_response_time": "0.022s",
+    "max_response_time": "0.072s"
+  },
+  "error_stats": {
+    "端点/api/v1/agents/chat请求频率超限": 10,
+    "全局请求频率超限": 80
+  },
+  "results": [
+    {
+      "request_id": 4,
+      "question": "未央中学怎么样？",
+      "status_code": 200,
+      "response_time": 0.02174997329711914,
+      "success": true,
+      "error": null,
+      "timestamp": "2026-05-18T00:13:41.501699"
+    },
+    {
+      "request_id": 3,
+      "question": "如何填报志愿？",
+      "status_code": 200,
+      "response_time": 0.03506207466125488,
+      "success": true,
+      "error": null,
+      "timestamp": "2026-05-18T00:13:41.514443"
+    },
+    {
+      "request_id": 2,
+      "question": "2026年中考政策有哪些变化？",
+      "status_code": 200,
+      "response_time": 0.03602886199951172,
+      "success": true,
+      "error": null,
+      "timestamp": "2026-05-18T00:13:41.515079"
+    },
+    {
+      "request_id": 0,
+      "question": "昆明有哪些好高中？",
+      "status_code": 200,
+      "response_time": 0.038750410079956055,
+      "success": true,
+      "error": null,
+      "timestamp": "2026-05-18T00:13:41.516791"
+    },
+    {
+      "request_id": 1,
+      "question": "分数650分能上什么学校？",
+      "status_code": 200,
+      "response_time": 0.04453730583190918,
+      "success": true,
+      "error": null,
+      "timestamp": "2026-05-18T00:13:41.523205"
+    },
+    {
+      "request_id": 5,
+      "question": "昆明一中录取分数线是多少？",
+      "status_code": 200,
+      "response_time": 0.05225038528442383,
+      "success": true,
+      "error": null,
+      "timestamp": "2026-05-18T00:13:41.533897"
+    },
+    {
+      "request_id": 12,
+      "question": "2026年中考政策有哪些变化？",
+      "status_code": 429,
+      "response_time": 0.041690826416015625,
+      "success": false,
+      "error": "端点/api/v1/agents/chat请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.534526"
+    },
+    {
+      "request_id": 6,
+      "question": "中考志愿填报技巧有哪些？",
+      "status_code": 200,
+      "response_time": 0.05438709259033203,
+      "success": true,
+      "error": null,
+      "timestamp": "2026-05-18T00:13:41.536931"
+    },
+    {
+      "request_id": 9,
+      "question": "高中学校对比分析",
+      "status_code": 429,
+      "response_time": 0.05217576026916504,
+      "success": false,
+      "error": "端点/api/v1/agents/chat请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.541522"
+    },
+    {
+      "request_id": 14,
+      "question": "未央中学怎么样？",
+      "status_code": 429,
+      "response_time": 0.05213785171508789,
+      "success": false,
+      "error": "端点/api/v1/agents/chat请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.546809"
+    },
+    {
+      "request_id": 11,
+      "question": "分数650分能上什么学校？",
+      "status_code": 429,
+      "response_time": 0.06024670600891113,
+      "success": false,
+      "error": "端点/api/v1/agents/chat请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.551919"
+    },
+    {
+      "request_id": 8,
+      "question": "云南中考政策解读",
+      "status_code": 200,
+      "response_time": 0.06719470024108887,
+      "success": true,
+      "error": null,
+      "timestamp": "2026-05-18T00:13:41.554808"
+    },
+    {
+      "request_id": 13,
+      "question": "如何填报志愿？",
+      "status_code": 429,
+      "response_time": 0.06157231330871582,
+      "success": false,
+      "error": "端点/api/v1/agents/chat请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.555368"
+    },
+    {
+      "request_id": 7,
+      "question": "如何选择合适的高中？",
+      "status_code": 200,
+      "response_time": 0.07205414772033691,
+      "success": true,
+      "error": null,
+      "timestamp": "2026-05-18T00:13:41.557977"
+    },
+    {
+      "request_id": 15,
+      "question": "昆明一中录取分数线是多少？",
+      "status_code": 429,
+      "response_time": 0.06386518478393555,
+      "success": false,
+      "error": "端点/api/v1/agents/chat请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.559762"
+    },
+    {
+      "request_id": 17,
+      "question": "如何选择合适的高中？",
+      "status_code": 429,
+      "response_time": 0.05807304382324219,
+      "success": false,
+      "error": "端点/api/v1/agents/chat请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.561883"
+    },
+    {
+      "request_id": 10,
+      "question": "昆明有哪些好高中？",
+      "status_code": 200,
+      "response_time": 0.07161355018615723,
+      "success": true,
+      "error": null,
+      "timestamp": "2026-05-18T00:13:41.562120"
+    },
+    {
+      "request_id": 16,
+      "question": "中考志愿填报技巧有哪些？",
+      "status_code": 429,
+      "response_time": 0.06397032737731934,
+      "success": false,
+      "error": "端点/api/v1/agents/chat请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.563611"
+    },
+    {
+      "request_id": 19,
+      "question": "高中学校对比分析",
+      "status_code": 429,
+      "response_time": 0.05885648727416992,
+      "success": false,
+      "error": "端点/api/v1/agents/chat请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.566633"
+    },
+    {
+      "request_id": 20,
+      "question": "昆明有哪些好高中？",
+      "status_code": 429,
+      "response_time": 0.057787418365478516,
+      "success": false,
+      "error": "端点/api/v1/agents/chat请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.568406"
+    },
+    {
+      "request_id": 18,
+      "question": "云南中考政策解读",
+      "status_code": 429,
+      "response_time": 0.0631871223449707,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.570630"
+    },
+    {
+      "request_id": 21,
+      "question": "分数650分能上什么学校？",
+      "status_code": 429,
+      "response_time": 0.058550357818603516,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.574317"
+    },
+    {
+      "request_id": 23,
+      "question": "如何填报志愿？",
+      "status_code": 429,
+      "response_time": 0.06083106994628906,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.579079"
+    },
+    {
+      "request_id": 22,
+      "question": "2026年中考政策有哪些变化？",
+      "status_code": 429,
+      "response_time": 0.06459259986877441,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.580795"
+    },
+    {
+      "request_id": 24,
+      "question": "未央中学怎么样？",
+      "status_code": 429,
+      "response_time": 0.0583500862121582,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.582749"
+    },
+    {
+      "request_id": 25,
+      "question": "昆明一中录取分数线是多少？",
+      "status_code": 429,
+      "response_time": 0.051267385482788086,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.585348"
+    },
+    {
+      "request_id": 26,
+      "question": "中考志愿填报技巧有哪些？",
+      "status_code": 429,
+      "response_time": 0.052568674087524414,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.587873"
+    },
+    {
+      "request_id": 27,
+      "question": "如何选择合适的高中？",
+      "status_code": 429,
+      "response_time": 0.05109405517578125,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.588729"
+    },
+    {
+      "request_id": 28,
+      "question": "云南中考政策解读",
+      "status_code": 429,
+      "response_time": 0.05138063430786133,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.593315"
+    },
+    {
+      "request_id": 29,
+      "question": "高中学校对比分析",
+      "status_code": 429,
+      "response_time": 0.0477902889251709,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.595035"
+    },
+    {
+      "request_id": 30,
+      "question": "昆明有哪些好高中？",
+      "status_code": 429,
+      "response_time": 0.047452688217163086,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.599653"
+    },
+    {
+      "request_id": 31,
+      "question": "分数650分能上什么学校？",
+      "status_code": 429,
+      "response_time": 0.04692482948303223,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.601962"
+    },
+    {
+      "request_id": 32,
+      "question": "2026年中考政策有哪些变化？",
+      "status_code": 429,
+      "response_time": 0.04979896545410156,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.605790"
+    },
+    {
+      "request_id": 33,
+      "question": "如何填报志愿？",
+      "status_code": 429,
+      "response_time": 0.04834413528442383,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.608308"
+    },
+    {
+      "request_id": 34,
+      "question": "未央中学怎么样？",
+      "status_code": 429,
+      "response_time": 0.05181241035461426,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.612598"
+    },
+    {
+      "request_id": 35,
+      "question": "昆明一中录取分数线是多少？",
+      "status_code": 429,
+      "response_time": 0.052324533462524414,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.615217"
+    },
+    {
+      "request_id": 37,
+      "question": "如何选择合适的高中？",
+      "status_code": 429,
+      "response_time": 0.05327320098876953,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.617111"
+    },
+    {
+      "request_id": 36,
+      "question": "中考志愿填报技巧有哪些？",
+      "status_code": 429,
+      "response_time": 0.05623292922973633,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.619321"
+    },
+    {
+      "request_id": 39,
+      "question": "高中学校对比分析",
+      "status_code": 429,
+      "response_time": 0.05228710174560547,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.622030"
+    },
+    {
+      "request_id": 38,
+      "question": "云南中考政策解读",
+      "status_code": 429,
+      "response_time": 0.05644059181213379,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.623349"
+    },
+    {
+      "request_id": 40,
+      "question": "昆明有哪些好高中？",
+      "status_code": 429,
+      "response_time": 0.05428886413574219,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.626814"
+    },
+    {
+      "request_id": 41,
+      "question": "分数650分能上什么学校？",
+      "status_code": 429,
+      "response_time": 0.05382037162780762,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.629875"
+    },
+    {
+      "request_id": 42,
+      "question": "2026年中考政策有哪些变化？",
+      "status_code": 429,
+      "response_time": 0.0514378547668457,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.631226"
+    },
+    {
+      "request_id": 43,
+      "question": "如何填报志愿？",
+      "status_code": 429,
+      "response_time": 0.05332446098327637,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.635585"
+    },
+    {
+      "request_id": 44,
+      "question": "未央中学怎么样？",
+      "status_code": 429,
+      "response_time": 0.054344892501831055,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.637677"
+    },
+    {
+      "request_id": 45,
+      "question": "昆明一中录取分数线是多少？",
+      "status_code": 429,
+      "response_time": 0.05473828315734863,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.640441"
+    },
+    {
+      "request_id": 47,
+      "question": "如何选择合适的高中？",
+      "status_code": 429,
+      "response_time": 0.05424666404724121,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.643819"
+    },
+    {
+      "request_id": 46,
+      "question": "中考志愿填报技巧有哪些？",
+      "status_code": 429,
+      "response_time": 0.059446096420288086,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.647989"
+    },
+    {
+      "request_id": 49,
+      "question": "高中学校对比分析",
+      "status_code": 429,
+      "response_time": 0.054041385650634766,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.649796"
+    },
+    {
+      "request_id": 50,
+      "question": "昆明有哪些好高中？",
+      "status_code": 429,
+      "response_time": 0.05192160606384277,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.652072"
+    },
+    {
+      "request_id": 48,
+      "question": "云南中考政策解读",
+      "status_code": 429,
+      "response_time": 0.059333086013793945,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.653886"
+    },
+    {
+      "request_id": 52,
+      "question": "2026年中考政策有哪些变化？",
+      "status_code": 429,
+      "response_time": 0.05025672912597656,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.656341"
+    },
+    {
+      "request_id": 51,
+      "question": "分数650分能上什么学校？",
+      "status_code": 429,
+      "response_time": 0.05520486831665039,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.659386"
+    },
+    {
+      "request_id": 53,
+      "question": "如何填报志愿？",
+      "status_code": 429,
+      "response_time": 0.052958011627197266,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.661856"
+    },
+    {
+      "request_id": 54,
+      "question": "未央中学怎么样？",
+      "status_code": 429,
+      "response_time": 0.05066704750061035,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.663723"
+    },
+    {
+      "request_id": 55,
+      "question": "昆明一中录取分数线是多少？",
+      "status_code": 429,
+      "response_time": 0.05106544494628906,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.666723"
+    },
+    {
+      "request_id": 56,
+      "question": "中考志愿填报技巧有哪些？",
+      "status_code": 429,
+      "response_time": 0.05256509780883789,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.670301"
+    },
+    {
+      "request_id": 57,
+      "question": "如何选择合适的高中？",
+      "status_code": 429,
+      "response_time": 0.052329063415527344,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.672306"
+    },
+    {
+      "request_id": 58,
+      "question": "云南中考政策解读",
+      "status_code": 429,
+      "response_time": 0.05285024642944336,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.675775"
+    },
+    {
+      "request_id": 59,
+      "question": "高中学校对比分析",
+      "status_code": 429,
+      "response_time": 0.05467414855957031,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.678956"
+    },
+    {
+      "request_id": 60,
+      "question": "昆明有哪些好高中？",
+      "status_code": 429,
+      "response_time": 0.05336451530456543,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.680426"
+    },
+    {
+      "request_id": 61,
+      "question": "分数650分能上什么学校？",
+      "status_code": 429,
+      "response_time": 0.0522770881652832,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.683174"
+    },
+    {
+      "request_id": 62,
+      "question": "2026年中考政策有哪些变化？",
+      "status_code": 429,
+      "response_time": 0.05215096473693848,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.685476"
+    },
+    {
+      "request_id": 63,
+      "question": "如何填报志愿？",
+      "status_code": 429,
+      "response_time": 0.05121874809265137,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.687898"
+    },
+    {
+      "request_id": 64,
+      "question": "未央中学怎么样？",
+      "status_code": 429,
+      "response_time": 0.05164361000061035,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.690153"
+    },
+    {
+      "request_id": 65,
+      "question": "昆明一中录取分数线是多少？",
+      "status_code": 429,
+      "response_time": 0.05001354217529297,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.692575"
+    },
+    {
+      "request_id": 66,
+      "question": "中考志愿填报技巧有哪些？",
+      "status_code": 429,
+      "response_time": 0.04970216751098633,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.694898"
+    },
+    {
+      "request_id": 67,
+      "question": "如何选择合适的高中？",
+      "status_code": 429,
+      "response_time": 0.048882484436035156,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.697290"
+    },
+    {
+      "request_id": 68,
+      "question": "云南中考政策解读",
+      "status_code": 429,
+      "response_time": 0.04939842224121094,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.699859"
+    },
+    {
+      "request_id": 70,
+      "question": "昆明有哪些好高中？",
+      "status_code": 429,
+      "response_time": 0.04752397537231445,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.702412"
+    },
+    {
+      "request_id": 69,
+      "question": "高中学校对比分析",
+      "status_code": 429,
+      "response_time": 0.0507967472076416,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.703778"
+    },
+    {
+      "request_id": 71,
+      "question": "分数650分能上什么学校？",
+      "status_code": 429,
+      "response_time": 0.04931068420410156,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.706074"
+    },
+    {
+      "request_id": 72,
+      "question": "2026年中考政策有哪些变化？",
+      "status_code": 429,
+      "response_time": 0.04847288131713867,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.708797"
+    },
+    {
+      "request_id": 73,
+      "question": "如何填报志愿？",
+      "status_code": 429,
+      "response_time": 0.04919576644897461,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.711625"
+    },
+    {
+      "request_id": 74,
+      "question": "未央中学怎么样？",
+      "status_code": 429,
+      "response_time": 0.04976820945739746,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.714567"
+    },
+    {
+      "request_id": 75,
+      "question": "昆明一中录取分数线是多少？",
+      "status_code": 429,
+      "response_time": 0.0501711368560791,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.718008"
+    },
+    {
+      "request_id": 76,
+      "question": "中考志愿填报技巧有哪些？",
+      "status_code": 429,
+      "response_time": 0.049749135971069336,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.720457"
+    },
+    {
+      "request_id": 77,
+      "question": "如何选择合适的高中？",
+      "status_code": 429,
+      "response_time": 0.0494837760925293,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.722657"
+    },
+    {
+      "request_id": 78,
+      "question": "云南中考政策解读",
+      "status_code": 429,
+      "response_time": 0.04887652397155762,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.725366"
+    },
+    {
+      "request_id": 79,
+      "question": "高中学校对比分析",
+      "status_code": 429,
+      "response_time": 0.04899716377258301,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.728444"
+    },
+    {
+      "request_id": 80,
+      "question": "昆明有哪些好高中？",
+      "status_code": 429,
+      "response_time": 0.0502927303314209,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.731413"
+    },
+    {
+      "request_id": 81,
+      "question": "分数650分能上什么学校？",
+      "status_code": 429,
+      "response_time": 0.04880523681640625,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.732879"
+    },
+    {
+      "request_id": 82,
+      "question": "2026年中考政策有哪些变化？",
+      "status_code": 429,
+      "response_time": 0.048365116119384766,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.734805"
+    },
+    {
+      "request_id": 84,
+      "question": "未央中学怎么样？",
+      "status_code": 429,
+      "response_time": 0.04615473747253418,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.737005"
+    },
+    {
+      "request_id": 83,
+      "question": "如何填报志愿？",
+      "status_code": 429,
+      "response_time": 0.05043196678161621,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.739324"
+    },
+    {
+      "request_id": 85,
+      "question": "昆明一中录取分数线是多少？",
+      "status_code": 429,
+      "response_time": 0.04883575439453125,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.741840"
+    },
+    {
+      "request_id": 86,
+      "question": "中考志愿填报技巧有哪些？",
+      "status_code": 429,
+      "response_time": 0.04797077178955078,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.743998"
+    },
+    {
+      "request_id": 87,
+      "question": "如何选择合适的高中？",
+      "status_code": 429,
+      "response_time": 0.04847216606140137,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.746102"
+    },
+    {
+      "request_id": 88,
+      "question": "云南中考政策解读",
+      "status_code": 429,
+      "response_time": 0.04770231246948242,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.747976"
+    },
+    {
+      "request_id": 89,
+      "question": "高中学校对比分析",
+      "status_code": 429,
+      "response_time": 0.047060251235961914,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.749749"
+    },
+    {
+      "request_id": 90,
+      "question": "昆明有哪些好高中？",
+      "status_code": 429,
+      "response_time": 0.04693961143493652,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.751588"
+    },
+    {
+      "request_id": 91,
+      "question": "分数650分能上什么学校？",
+      "status_code": 429,
+      "response_time": 0.04561638832092285,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.753669"
+    },
+    {
+      "request_id": 92,
+      "question": "2026年中考政策有哪些变化？",
+      "status_code": 429,
+      "response_time": 0.046730995178222656,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.756913"
+    },
+    {
+      "request_id": 93,
+      "question": "如何填报志愿？",
+      "status_code": 429,
+      "response_time": 0.04833984375,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.760365"
+    },
+    {
+      "request_id": 94,
+      "question": "未央中学怎么样？",
+      "status_code": 429,
+      "response_time": 0.047957658767700195,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.763712"
+    },
+    {
+      "request_id": 95,
+      "question": "昆明一中录取分数线是多少？",
+      "status_code": 429,
+      "response_time": 0.047128915786743164,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.766046"
+    },
+    {
+      "request_id": 96,
+      "question": "中考志愿填报技巧有哪些？",
+      "status_code": 429,
+      "response_time": 0.04768824577331543,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.768449"
+    },
+    {
+      "request_id": 97,
+      "question": "如何选择合适的高中？",
+      "status_code": 429,
+      "response_time": 0.046912431716918945,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.770283"
+    },
+    {
+      "request_id": 98,
+      "question": "云南中考政策解读",
+      "status_code": 429,
+      "response_time": 0.04536843299865723,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.771892"
+    },
+    {
+      "request_id": 99,
+      "question": "高中学校对比分析",
+      "status_code": 429,
+      "response_time": 0.043601274490356445,
+      "success": false,
+      "error": "全局请求频率超限",
+      "timestamp": "2026-05-18T00:13:41.773147"
+    }
+  ],
+  "timestamp": "2026-05-18T00:13:41.775237"
+}

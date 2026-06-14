@@ -1,0 +1,46 @@
+{
+  "steps": [
+    {
+      "step": "test_1_start_openclaw",
+      "success": true,
+      "timestamp": 1781388934.506399
+    },
+    {
+      "step": "test_1_openclaw",
+      "success": true,
+      "timestamp": 1781389122.932155
+    },
+    {
+      "step": "test_2_start_multi_llm",
+      "success": true,
+      "timestamp": 1781389122.932155
+    },
+    {
+      "step": "test_2_multi_llm",
+      "success": true,
+      "timestamp": 1781389122.9331646
+    },
+    {
+      "step": "test_3_start_specialists",
+      "success": true,
+      "timestamp": 1781389122.9341774
+    },
+    {
+      "step": "test_3_specialists",
+      "success": false,
+      "timestamp": 1781389122.9403121,
+      "error": "NameError: name 'List' is not defined\nTraceback (most recent call last):\n  File \"D:\\aiphxt-app\\ai-service\\test_agent_diagnose.py\", line 44, in <module>\n    from agents.specialists import ControlCenterSpecialistAgent\n  File \"D:\\aiphxt-app\\ai-service\\agents\\specialists.py\", line 591, in <module>\n    class ControlCenterSpecialistAgent(BaseAgent):\n  File \"D:\\aiphxt-app\\ai-service\\agents\\specialists.py\", line 602, in ControlCenterSpecialistAgent\n    def _extract_school_from_history(self, history: Lis"
+    },
+    {
+      "step": "test_4_start_agent_reg",
+      "success": true,
+      "timestamp": 1781389122.9403121
+    },
+    {
+      "step": "test_4_agent_reg",
+      "success": true,
+      "timestamp": 1781389122.9767394
+    }
+  ],
+  "final_status": "completed"
+}
