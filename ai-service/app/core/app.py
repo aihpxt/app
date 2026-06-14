@@ -46,9 +46,26 @@ def create_app() -> FastAPI:
     try:
         from app.utils.db import _ensure_database
         _ensure_database()
-        logger.info(f"数据库初始化成功: {os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'sqlite', 'data', 'unified_school_data.db')}")
+        logger.info(f"数据库初始化成功")
     except Exception as e:
         logger.warning(f"数据库初始化失败: {e}")
+
+    # 初始化智能体（核心修复：确保 control_center_agent 等智能体被注册）
+    try:
+        from agents.agent_registration import initialize_agents
+        ok = initialize_agents()
+        from agents.registry import agent_registry
+        registered_count = len(agent_registry.list_agents())
+        logger.info(f"智能体初始化完成: ok={ok}, 已注册 {registered_count} 个智能体")
+    except Exception as e:
+        logger.warning(f"智能体初始化失败: {e}")
+        try:
+            import agents.agent_registration  # noqa: F401
+            from agents.registry import agent_registry
+            registered_count = len(agent_registry.list_agents())
+            logger.info(f"智能体已注册: {registered_count} 个智能体")
+        except Exception as e2:
+            logger.warning(f"智能体注册也失败: {e2}")
 
     # 注册路由
     try:

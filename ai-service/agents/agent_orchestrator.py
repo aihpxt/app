@@ -10,7 +10,15 @@ from threading import RLock
 import time
 
 from agents.base_agent import BaseAgent, IntentMatch
-from agents.registry import AgentRegistry, AgentNotFoundError
+from agents.registry import AgentRegistry, AgentNotFoundError, agent_registry
+
+# 关键修复：导入 agent_registration 会自动执行 register_all_agents()，
+# 从而把所有智能体注册到全局注册表。
+try:
+    import agents.agent_registration  # noqa: F401
+except Exception as _e:
+    import logging as _logging
+    _logging.getLogger(__name__).warning(f"agent_registration 导入失败: {_e}")
 
 logger = logging.getLogger(__name__)
 
@@ -63,13 +71,15 @@ class AgentOrchestrator:
     
     def __init__(self):
         if not hasattr(self, '_initialized'):
-            self._registry = AgentRegistry()
+            # 关键修复：使用全局的 agent_registry，而不是创建新的空实例
+            # 所有智能体都通过 agent_registration 模块注册到这个全局 registry 中
+            self._registry = agent_registry
             self._load_info: Dict[str, AgentLoadInfo] = {}
             self._strategy = DispatchStrategy.HYBRID
             self._intent_cache: Dict[str, str] = {}  # 意图到智能体的缓存
             self._context_window_size = 10
             self._initialized = True
-            logger.info("智能体编排器初始化完成")
+            logger.info(f"智能体编排器初始化完成，已注册 {len(self._registry.list_agents())} 个智能体")
     
     def set_strategy(self, strategy: DispatchStrategy):
         """设置调度策略"""
@@ -354,17 +364,20 @@ class AgentOrchestrator:
     def dispatch_task(self, agent_id: str, user_input: str, context: Dict = None) -> Dict[str, Any]:
         """
         分派任务到指定智能体（兼容旧接口）
-        
-        Args:
-            agent_id: 智能体ID
-            user_input: 用户输入
-            context: 上下文信息
-        
-        Returns:
-            执行结果
+        - 智能体未注册或执行失败时返回 success=False 且 response 为空
+        - 调用方应检查 success 字段决定是否使用该响应
         """
         try:
+            # 使用公共 API 检查智能体是否已注册
+            if not self._registry.has_agent(agent_id):
+                logger.warning(f"智能体 {agent_id} 未注册，返回 None 让调用方回退")
+                return {'success': False, 'response': None, 'data': None, 'agent_id': agent_id}
+            
             response = self.execute_agent(agent_id, user_input, context or {})
+            # 确保 response 是非空字符串
+            if not response or not str(response).strip():
+                return {'success': False, 'response': None, 'data': None, 'agent_id': agent_id}
+            
             return {
                 'success': True,
                 'response': response,
@@ -373,12 +386,7 @@ class AgentOrchestrator:
             }
         except Exception as e:
             logger.error(f"任务分派失败: {e}", exc_info=True)
-            return {
-                'success': False,
-                'response': str(e),
-                'data': str(e),
-                'agent_id': agent_id
-            }
+            return {'success': False, 'response': None, 'data': None, 'agent_id': agent_id}
     
     def get_agents(self) -> List[Dict[str, Any]]:
         """

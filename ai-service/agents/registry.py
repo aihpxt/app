@@ -146,6 +146,18 @@ class AgentRegistry:
         """
         return list(self._agents.keys())
     
+    def has_agent(self, agent_id: str) -> bool:
+        """
+        检查智能体是否已注册
+        
+        Args:
+            agent_id: 智能体唯一标识
+            
+        Returns:
+            True 如果智能体已注册，否则 False
+        """
+        return agent_id in self._agents
+    
     def get_agent_info(self, agent_id: str) -> AgentInfo:
         """
         获取智能体信息
@@ -396,3 +408,24 @@ def get_default_agent() -> BaseAgent:
         默认智能体实例
     """
     return agent_registry.get_default_agent()
+
+
+# 延迟导入：在 registry 初始化完成后触发智能体注册
+# 注意：这里不能在模块级直接 import agents.agent_registration，否则会形成循环导入
+# 所以使用"懒加载"——当第一个智能体被调用时会触发（由 agent_orchestrator 负责导入）
+# 这里提供一个显式的初始化函数作为备用入口
+def ensure_agents_registered():
+    """确保所有智能体都被注册（可被外部显式调用）"""
+    try:
+        if not agent_registry.list_agents():
+            # 导入后会自动执行该模块的 register_all_agents()
+            import agents.agent_registration  # noqa: F401
+    except Exception:
+        pass
+
+
+# 在模块导入完成后再显式调用一次，确保智能体被注册
+try:
+    ensure_agents_registered()
+except Exception:
+    pass

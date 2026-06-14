@@ -13,6 +13,13 @@ import hashlib
 import time
 import re
 
+# 关键修复：在模块加载时触发智能体注册
+# 只要本模块被导入，agent_registration 的 register_all_agents() 就会执行
+try:
+    import agents.agent_registration  # noqa: F401
+except Exception:
+    pass
+
 router = APIRouter()
 
 
@@ -209,9 +216,11 @@ async def chat_with_agent(data: Dict[str, Any] = Body(...)):
             from agents.agent_orchestrator import get_agent_orchestrator
             orchestrator = get_agent_orchestrator()
             result = orchestrator.dispatch_task(agent_id, user_input, context)
-            if result:
-                response_text = result.get('response', result.get('data', ''))
-                if response_text and str(response_text).strip():
+            # 关键修复：必须检查 success=True 且 response 为非空字符串
+            if result and result.get('success') is True:
+                candidate = result.get('response', result.get('data', ''))
+                if candidate and isinstance(candidate, str) and candidate.strip():
+                    response_text = candidate
                     used_orchestrator = True
         except Exception:
             response_text = None
