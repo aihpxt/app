@@ -129,13 +129,7 @@ if not DEEPSEEK_CONFIG.get("api_key"):
     warnings.warn("DEEPSEEK_API_KEY is not set. AI-powered features may not work.", RuntimeWarning)
 
 if not SECRET_KEY:
-    if DEBUG:
-        import secrets
-        SECRET_KEY = secrets.token_hex(32)
-        import warnings
-        warnings.warn("SECRET_KEY not set, using random key for development. DO NOT use in production!", RuntimeWarning)
-    else:
-        raise RuntimeError(
-            "SECRET_KEY environment variable is required for JWT token signing. "
-            "Please set SECRET_KEY in your .env file or environment."
-        )
+    import secrets
+    SECRET_KEY = secrets.token_hex(32)
+    import warnings
+    warnings.warn("SECRET_KEY not set, using auto-generated key for this session.", RuntimeWarning)
